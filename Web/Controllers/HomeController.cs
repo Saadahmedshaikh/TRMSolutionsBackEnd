@@ -9,9 +9,20 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-
+        
         public ActionResult Index()
         {
+            var rig = new List<Equipment>();
+
+            using (var ctx = new PrognosDBContext())
+            {
+                rig = ctx.Equipment.ToList();
+            }
+            foreach(var r in rig)
+            {
+
+            }
+           
             return View();
         }
 
