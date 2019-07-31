@@ -1,0 +1,22 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\Core.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\Common.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\NLog.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\Common.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\NLog.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\obj\Debug\Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\obj\Debug\Core.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\Core.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\Core.pdb
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\Common.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\NLog.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\Common.pdb
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\NLog.xml
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\obj\Debug\Core.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\obj\Debug\Core.pdb

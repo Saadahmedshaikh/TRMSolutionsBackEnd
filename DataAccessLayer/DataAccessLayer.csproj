@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68EDE161-5DA2-49D2-9B7A-FAA27107EC2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlertModule.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertModulePermission.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="analysis_CheckForColumnUniqueValuesIssues_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetGroup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetGroup_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetGroup_Tombstone_Temp.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetTransferRequest.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRAttachedDocument.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRENode.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATREquipmentDetail.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRFilledQuestion.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRLevelBasePriority.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRNotificationLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRQuestionsSet.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRReviewedRequest.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRRoutingLevel.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRRoutingLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRRoutingLogAction.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATRUserDefinedRouting.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ATR_FETCH_RIG_EQUIPMENT_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD_ReqRigEqDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD_Requests.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD_RigEqDoc.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BulkAddLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalibrationRegister.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategorySpecification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategorySpecification_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="ClientSynchronizations.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColorCode.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColorCode_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyMiscellaneousRigEquipmentAttribute.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyMiscellaneousRigEquipmentDocumentAttribute.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyRMRAttribute.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConflictingPMServiceFormDefination.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ControlType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyActivityReport.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyActivityReportDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyLogBOPPressure.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataImportHistory.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dec14_PMDiagramValue.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dec14_PMProcedureValue.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dec14_PMServiceForms.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dec14_RigEquipmentScheduleJobs_DeletedByQuery.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dec14_UserMeasurementAlerts.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Documents.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Documents_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Documents_duplicateDocs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicateJobDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicateJobSummary.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EngineeringRequest.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EngineeringRequestCCNotification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentCategory.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentCategory_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentCriticality.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentDocument.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentDocument_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentDocument_duplicateDocs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentDocument_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentOneTimeJobs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentOneTimeJobTasks.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSchedule.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSchedule_1.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSchedule_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSpecification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSpecification_backup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSpecsCategory.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSpecsCategory_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentTemp.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentTransferHistoryLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment_1.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExRegister.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExRegisterDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExRegisterDetailsCopy.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExRegisterDetailsHistory.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExRegisterDetailsUpdate.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FaultGroup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FindScheduleJobs_Main_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FleetCoordinates.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormTypes.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GraphType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IACDCodes.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICR_tmp.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImprovementCommitment.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImprovementCommitment_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImprovementCommitment_TombStone1.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobsCompletedByCleanUpProc.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Language.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiftingGearRegister.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiftingGearRegisterDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedResource.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedResource_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialTransferDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialTransferHistoryLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousEquipmentDocumentType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousRigEquipment.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousRigEquipmentAttribute.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousRigEquipmentDocument.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousRigEquipmentDocumentAttribute.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousRigEquipmentDropDownDefaultValue.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousRigEquipmentSpecification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MorningReport.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MorningReportOperations.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MorningReportSchedule.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MorningReportTrainings.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MorningReport_march232017.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="morningreport_scriptTable.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mr.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mro.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MR_FuelUsageDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NPT72Hours.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OilInventory.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Old_EquipmentSchedule_Tombstone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Old_LocalizedResource_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Old_OrgUserRole_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Old_PMServiceFormSectionProcedures_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Old_SecUserUserGroup_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgRole.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgUnit.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgUnitType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgUserRole.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgUserRole_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgUserRole_scriptTable.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrgUserRole_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PakistanWeeklyReport_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionBaseUserNotification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMDiagram.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMDiagramFields.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMDiagramFields_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMDiagramValue.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMDiagram_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMProcedure.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMProcedureFields.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMProcedureFields_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMProcedureValue.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMProcedure_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormDefinition.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceForms.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormSection.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormSectionDiagrams.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormSectionDiagrams_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormSectionProcedures.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormSectionProcedures_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMServiceFormSection_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pmserviceforms_26032017.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PressureVesselRegister.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PressureVesselRegisterDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessStatus.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrognosDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrognosDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrognosDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrognosDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrognosDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QualityReport_WorkloadStatusByCriticality_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityReport_WorkloadStatusForSpecificAssetGroups_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityReport_WorkloadStatus_MainNewLogic_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityReport_WorkloadStatus_Main_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityReport_WorkloadStatus_NEW_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualityReport_WorkloadStatus_Suspended_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QueryText.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RaisedRMRAttribute.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RaisedRMRDocument.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RaisedRMRRoutingEscalation.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RamsAlert.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RAMSAssetRegister.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReleifValveRegister.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReleifValveRegisterDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFiles.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFilesTab.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTab.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTabSecUSerGroup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceTranslation.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceTranslation_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rigchildren_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigDetailsHistoryLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigDetails_1.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipment.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentDocuments.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentHours.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentInspections.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentOneTimeJob.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentOneTimeJobTasks.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentOverallHours.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentParentFamily.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentSchedule.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentScheduleBkup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentScheduleJobs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentSchedule_1.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentSpecification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentSpecificationTemplate.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentSpecification_Backup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentSuspension.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentTransferDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentUnscheduledRepairDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentUnscheduledRepairDetails_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipmentUnscheduledRepairs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipment_1.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipment_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEquipment_temp.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEq_18MonthsJobPlan.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEq_18MonthsPlanDetails.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigEq_18Month_OverhaulPlanDetail.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigModificationRequest.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigRepairAlerts.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RigStatusLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RMRActionLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RMRSuperordinateRoutingHierarchy.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleBasis.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptsRepository.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecActivityLog.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecActivityLogDetail.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecApplication.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecPasswordHistory.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecPermission.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecPolicy.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecPolicyGroup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUser.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserGroup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserGroupPermission.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserGroupPermission_MtrBck.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserGroupPermission_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserGroupRelation.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserGroup_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserStatus.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserUserGroup.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUserUserGroup_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECUSER_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spDailyActivityReportStatus_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spDailyOperationSummaryCheck_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spDailyOPeration_WithRig_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetBasicDashboard_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetEquipmentByName_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetReportTabs_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetRigGeoLocations_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spJobsCompletedPercentByRigs_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spJobsOverduePercentByYear_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spJobsOverduePMsByDate_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Split_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spMonthlyRigJobReport_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spNewMonthlyRigJobReport_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spro_RigEquipmentsOptimised_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spUserReport_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_CurrentAndPreviousWeeklyReportByCountry_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_FuelUsageSummary_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetRigEquipmentSpecificationTemplate_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_SearchDocuments_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_SwapRigEquipment_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_FindCasesWhereAfterAckOriginalJobScrewed_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_FindPMSUnackedBySeniorToolPusher_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_GetDataForPMsAndMorningReportByRig_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_GetRigUserList_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_MapFormDefToData_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_ReplicateSchedule_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_RigStatusByRegion_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="support_WhoLastSynced_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System_TombStone.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System_TombStone_23June2010select.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_locations.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempTableDocuments.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_DownloadExistingSch_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestMonthlyActivityReport_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test_PMServiceForms.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test_RigEquipmentScheduleJobs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoList.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uplaoad_PMFormSEctionPMProcandDiagramsEx_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserEmailNotification.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserMeasurementAlerts.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserMeasurementAlerts_bk.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserNotificationType.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_CheckAllActivityForPMandService_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_DownloadPMServiceForms_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetAllEquipmentBy_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetAllSchedules_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetDataForTranslation2_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetDataForTranslation_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetDiffBetweenTwoPMFormDef_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetUpcomingOverdueTask_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_helper_CompareEquipmentFamilySchedules_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_Helper_ListAllSchedules_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_MonitorProgressLast2Days_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_StepsForDeletionOfDuplicateEquipment_Result.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwGeneratorDetailSpecifications.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwPMFormsWithEquipmentNameConflicts_Details.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwPMFormsWithEquipmentNameConflicts_Summary.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebDropdownValue.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebInterface.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebInterfaceAccessRole.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebJobs.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebRouting.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebView.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebViewOrgRolePreviledge.cs">
+      <DependentUpon>PrognosDBModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PrognosDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PrognosDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="PrognosDBModel.edmx.diagram">
+      <DependentUpon>PrognosDBModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PrognosDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PrognosDBModel.edmx</DependentUpon>
+      <LastGenOutput>PrognosDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PrognosDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PrognosDBModel.edmx</DependentUpon>
+      <LastGenOutput>PrognosDBModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

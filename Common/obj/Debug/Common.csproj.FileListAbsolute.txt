@@ -1,0 +1,14 @@
+c:\users\administrator\documents\visual studio 2015\Projects\PMS_Web\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\PMS_Web\Common\bin\Debug\Common.dll
+c:\users\administrator\documents\visual studio 2015\Projects\PMS_Web\Common\bin\Debug\Common.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\PMS_Web\Common\obj\Debug\Common.dll
+c:\users\administrator\documents\visual studio 2015\Projects\PMS_Web\Common\obj\Debug\Common.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Common\bin\Debug\NLog.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\PMS_Web\Common\bin\Debug\NLog.xml
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\bin\Debug\Common.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\bin\Debug\Common.pdb
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\bin\Debug\NLog.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\bin\Debug\NLog.xml
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\obj\Debug\Common.dll
+C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Common\obj\Debug\Common.pdb
