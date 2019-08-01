@@ -9,12 +9,12 @@
 
 namespace DataAccessLayer
 {
-    using global::System.Data.Entity;
-    using global::System.Data.Entity.Infrastructure;
-    using global::System.Data.Entity.Core.Objects;
-    using global::System.Linq;
-    using global::System;
-
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
+    
     public partial class PrognosDBContext : DbContext
     {
         public PrognosDBContext()
@@ -27,6 +27,15 @@ namespace DataAccessLayer
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Equipment> Equipment { get; set; }
+        public virtual DbSet<RigEquipment> RigEquipment { get; set; }
+        public virtual DbSet<RigEquipmentHours> RigEquipmentHours { get; set; }
+        public virtual DbSet<DuplicateJobDetails> DuplicateJobDetails { get; set; }
+        public virtual DbSet<DuplicateJobSummary> DuplicateJobSummary { get; set; }
+        public virtual DbSet<MR_FuelUsageDetails> MR_FuelUsageDetails { get; set; }
+        public virtual DbSet<vwGeneratorDetailSpecifications> vwGeneratorDetailSpecifications { get; set; }
+        public virtual DbSet<vwPMFormsWithEquipmentNameConflicts_Details> vwPMFormsWithEquipmentNameConflicts_Details { get; set; }
+        public virtual DbSet<vwPMFormsWithEquipmentNameConflicts_Summary> vwPMFormsWithEquipmentNameConflicts_Summary { get; set; }
         public virtual DbSet<AlertModule> AlertModule { get; set; }
         public virtual DbSet<AlertModulePermission> AlertModulePermission { get; set; }
         public virtual DbSet<AssetGroup> AssetGroup { get; set; }
@@ -67,7 +76,6 @@ namespace DataAccessLayer
         public virtual DbSet<DocumentType> DocumentType { get; set; }
         public virtual DbSet<EngineeringRequest> EngineeringRequest { get; set; }
         public virtual DbSet<EngineeringRequestCCNotification> EngineeringRequestCCNotification { get; set; }
-        public virtual DbSet<Equipment> Equipment { get; set; }
         public virtual DbSet<Equipment_1> Equipment_1 { get; set; }
         public virtual DbSet<EquipmentCategory> EquipmentCategory { get; set; }
         public virtual DbSet<EquipmentCriticality> EquipmentCriticality { get; set; }
@@ -147,10 +155,8 @@ namespace DataAccessLayer
         public virtual DbSet<RigDetailsHistoryLog> RigDetailsHistoryLog { get; set; }
         public virtual DbSet<RigEq_18MonthsJobPlan> RigEq_18MonthsJobPlan { get; set; }
         public virtual DbSet<RigEq_18MonthsPlanDetails> RigEq_18MonthsPlanDetails { get; set; }
-        public virtual DbSet<RigEquipment> RigEquipment { get; set; }
         public virtual DbSet<RigEquipment_1> RigEquipment_1 { get; set; }
         public virtual DbSet<RigEquipmentDocuments> RigEquipmentDocuments { get; set; }
-        public virtual DbSet<RigEquipmentHours> RigEquipmentHours { get; set; }
         public virtual DbSet<RigEquipmentInspections> RigEquipmentInspections { get; set; }
         public virtual DbSet<RigEquipmentOneTimeJob> RigEquipmentOneTimeJob { get; set; }
         public virtual DbSet<RigEquipmentOneTimeJobTasks> RigEquipmentOneTimeJobTasks { get; set; }
@@ -264,30 +270,10 @@ namespace DataAccessLayer
         public virtual DbSet<Test_PMServiceForms> Test_PMServiceForms { get; set; }
         public virtual DbSet<Test_RigEquipmentScheduleJobs> Test_RigEquipmentScheduleJobs { get; set; }
         public virtual DbSet<UserMeasurementAlerts_bk> UserMeasurementAlerts_bk { get; set; }
-        public virtual DbSet<DuplicateJobDetails> DuplicateJobDetails { get; set; }
-        public virtual DbSet<DuplicateJobSummary> DuplicateJobSummary { get; set; }
-        public virtual DbSet<MR_FuelUsageDetails> MR_FuelUsageDetails { get; set; }
-        public virtual DbSet<vwGeneratorDetailSpecifications> vwGeneratorDetailSpecifications { get; set; }
-        public virtual DbSet<vwPMFormsWithEquipmentNameConflicts_Details> vwPMFormsWithEquipmentNameConflicts_Details { get; set; }
-        public virtual DbSet<vwPMFormsWithEquipmentNameConflicts_Summary> vwPMFormsWithEquipmentNameConflicts_Summary { get; set; }
     
-        [DbFunction("PrognosDBContext", "Split")]
-        public virtual IQueryable<Split_Result> Split(string @string, string delimiter)
+        public virtual ObjectResult<Nullable<System.Guid>> AddProcedureFields()
         {
-            var stringParameter = @string != null ?
-                new ObjectParameter("String", @string) :
-                new ObjectParameter("String", typeof(string));
-    
-            var delimiterParameter = delimiter != null ?
-                new ObjectParameter("Delimiter", delimiter) :
-                new ObjectParameter("Delimiter", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Split_Result>("[PrognosDBContext].[Split](@String, @Delimiter)", stringParameter, delimiterParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<Guid>> AddProcedureFields()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<Guid>>("AddProcedureFields");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("AddProcedureFields");
         }
     
         public virtual ObjectResult<analysis_CheckForColumnUniqueValuesIssues_Result> analysis_CheckForColumnUniqueValuesIssues()
@@ -355,7 +341,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteExtraSpecifications");
         }
     
-        public virtual int Fetch_MiscellaneousRigEquipment(Nullable<int> condition, Nullable<Guid> rigID, Nullable<Guid> countryID, Nullable<Guid> equimentCategoryID, Nullable<Guid> equimentID, Nullable<Guid> miscRigEquimentID, Nullable<Guid> rigEquimentID, string loginID)
+        public virtual int Fetch_MiscellaneousRigEquipment(Nullable<int> condition, Nullable<System.Guid> rigID, Nullable<System.Guid> countryID, Nullable<System.Guid> equimentCategoryID, Nullable<System.Guid> equimentID, Nullable<System.Guid> miscRigEquimentID, Nullable<System.Guid> rigEquimentID, string loginID)
         {
             var conditionParameter = condition.HasValue ?
                 new ObjectParameter("Condition", condition) :
@@ -363,27 +349,27 @@ namespace DataAccessLayer
     
             var rigIDParameter = rigID.HasValue ?
                 new ObjectParameter("RigID", rigID) :
-                new ObjectParameter("RigID", typeof(Guid));
+                new ObjectParameter("RigID", typeof(System.Guid));
     
             var countryIDParameter = countryID.HasValue ?
                 new ObjectParameter("CountryID", countryID) :
-                new ObjectParameter("CountryID", typeof(Guid));
+                new ObjectParameter("CountryID", typeof(System.Guid));
     
             var equimentCategoryIDParameter = equimentCategoryID.HasValue ?
                 new ObjectParameter("EquimentCategoryID", equimentCategoryID) :
-                new ObjectParameter("EquimentCategoryID", typeof(Guid));
+                new ObjectParameter("EquimentCategoryID", typeof(System.Guid));
     
             var equimentIDParameter = equimentID.HasValue ?
                 new ObjectParameter("EquimentID", equimentID) :
-                new ObjectParameter("EquimentID", typeof(Guid));
+                new ObjectParameter("EquimentID", typeof(System.Guid));
     
             var miscRigEquimentIDParameter = miscRigEquimentID.HasValue ?
                 new ObjectParameter("MiscRigEquimentID", miscRigEquimentID) :
-                new ObjectParameter("MiscRigEquimentID", typeof(Guid));
+                new ObjectParameter("MiscRigEquimentID", typeof(System.Guid));
     
             var rigEquimentIDParameter = rigEquimentID.HasValue ?
                 new ObjectParameter("RigEquimentID", rigEquimentID) :
-                new ObjectParameter("RigEquimentID", typeof(Guid));
+                new ObjectParameter("RigEquimentID", typeof(System.Guid));
     
             var loginIDParameter = loginID != null ?
                 new ObjectParameter("LoginID", loginID) :
@@ -429,140 +415,140 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MakeMigrationScript", objnameParameter);
         }
     
-        public virtual ObjectResult<PakistanWeeklyReport_Result> PakistanWeeklyReport(Nullable<DateTime> from_dt, Nullable<DateTime> to_dt, Nullable<Guid> countryID)
+        public virtual ObjectResult<PakistanWeeklyReport_Result> PakistanWeeklyReport(Nullable<System.DateTime> from_dt, Nullable<System.DateTime> to_dt, Nullable<System.Guid> countryID)
         {
             var from_dtParameter = from_dt.HasValue ?
                 new ObjectParameter("from_dt", from_dt) :
-                new ObjectParameter("from_dt", typeof(DateTime));
+                new ObjectParameter("from_dt", typeof(System.DateTime));
     
             var to_dtParameter = to_dt.HasValue ?
                 new ObjectParameter("to_dt", to_dt) :
-                new ObjectParameter("to_dt", typeof(DateTime));
+                new ObjectParameter("to_dt", typeof(System.DateTime));
     
             var countryIDParameter = countryID.HasValue ?
                 new ObjectParameter("CountryID", countryID) :
-                new ObjectParameter("CountryID", typeof(Guid));
+                new ObjectParameter("CountryID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PakistanWeeklyReport_Result>("PakistanWeeklyReport", from_dtParameter, to_dtParameter, countryIDParameter);
         }
     
-        public virtual int QualityReport_PMStatus1095Days(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus1095Days(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus1095Days", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus1095DaysForSpecificAssetGroups(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus1095DaysForSpecificAssetGroups(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus1095DaysForSpecificAssetGroups", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus180Days(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus180Days(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus180Days", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus180DaysForSpecificAssetGroups(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus180DaysForSpecificAssetGroups(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus180DaysForSpecificAssetGroups", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus1825Days(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus1825Days(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus1825Days", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus1825DaysForSpecificAssetGroups(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus1825DaysForSpecificAssetGroups(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus1825DaysForSpecificAssetGroups", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus30Days(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus30Days(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus30Days", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus30DaysForSpecificAssetGroups(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus30DaysForSpecificAssetGroups(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus30DaysForSpecificAssetGroups", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus365Days(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus365Days(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus365Days", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus365DaysForSpecificAssetGroups(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus365DaysForSpecificAssetGroups(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus365DaysForSpecificAssetGroups", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus90Days(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus90Days(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus90Days", cur_dtParameter);
         }
     
-        public virtual int QualityReport_PMStatus90DaysForSpecificAssetGroups(Nullable<DateTime> cur_dt)
+        public virtual int QualityReport_PMStatus90DaysForSpecificAssetGroups(Nullable<System.DateTime> cur_dt)
         {
             var cur_dtParameter = cur_dt.HasValue ?
                 new ObjectParameter("cur_dt", cur_dt) :
-                new ObjectParameter("cur_dt", typeof(DateTime));
+                new ObjectParameter("cur_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_PMStatus90DaysForSpecificAssetGroups", cur_dtParameter);
         }
     
-        public virtual int QualityReport_WorkloadStatus(Nullable<DateTime> from_dt, Nullable<DateTime> to_dt)
+        public virtual int QualityReport_WorkloadStatus(Nullable<System.DateTime> from_dt, Nullable<System.DateTime> to_dt)
         {
             var from_dtParameter = from_dt.HasValue ?
                 new ObjectParameter("from_dt", from_dt) :
-                new ObjectParameter("from_dt", typeof(DateTime));
+                new ObjectParameter("from_dt", typeof(System.DateTime));
     
             var to_dtParameter = to_dt.HasValue ?
                 new ObjectParameter("to_dt", to_dt) :
-                new ObjectParameter("to_dt", typeof(DateTime));
+                new ObjectParameter("to_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_WorkloadStatus", from_dtParameter, to_dtParameter);
         }
@@ -613,15 +599,15 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<QualityReport_WorkloadStatusForSpecificAssetGroups_Result>("QualityReport_WorkloadStatusForSpecificAssetGroups", intervalParameter);
         }
     
-        public virtual int QualityReport_WorkloadStatusNewLogic(Nullable<DateTime> from_dt, Nullable<DateTime> to_dt)
+        public virtual int QualityReport_WorkloadStatusNewLogic(Nullable<System.DateTime> from_dt, Nullable<System.DateTime> to_dt)
         {
             var from_dtParameter = from_dt.HasValue ?
                 new ObjectParameter("from_dt", from_dt) :
-                new ObjectParameter("from_dt", typeof(DateTime));
+                new ObjectParameter("from_dt", typeof(System.DateTime));
     
             var to_dtParameter = to_dt.HasValue ?
                 new ObjectParameter("to_dt", to_dt) :
-                new ObjectParameter("to_dt", typeof(DateTime));
+                new ObjectParameter("to_dt", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("QualityReport_WorkloadStatusNewLogic", from_dtParameter, to_dtParameter);
         }
@@ -636,20 +622,20 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<rigchildren_Result>("rigchildren");
         }
     
-        public virtual int RigEquipmentScheduleSuspension(Nullable<Guid> sRigID)
+        public virtual int RigEquipmentScheduleSuspension(Nullable<System.Guid> sRigID)
         {
             var sRigIDParameter = sRigID.HasValue ?
                 new ObjectParameter("sRigID", sRigID) :
-                new ObjectParameter("sRigID", typeof(Guid));
+                new ObjectParameter("sRigID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RigEquipmentScheduleSuspension", sRigIDParameter);
         }
     
-        public virtual int RigEquipmentScheduleSuspension_UAT(Nullable<Guid> sRigID)
+        public virtual int RigEquipmentScheduleSuspension_UAT(Nullable<System.Guid> sRigID)
         {
             var sRigIDParameter = sRigID.HasValue ?
                 new ObjectParameter("sRigID", sRigID) :
-                new ObjectParameter("sRigID", typeof(Guid));
+                new ObjectParameter("sRigID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RigEquipmentScheduleSuspension_UAT", sRigIDParameter);
         }
@@ -680,15 +666,15 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AssignAllRigEquipmentNameAndIsSpare");
         }
     
-        public virtual int SP_AssignRigEquipment(Nullable<Guid> orgUnitID, Nullable<Guid> equipmentID, Nullable<bool> update, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
+        public virtual int SP_AssignRigEquipment(Nullable<System.Guid> orgUnitID, Nullable<System.Guid> equipmentID, Nullable<bool> update, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
         {
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             var equipmentIDParameter = equipmentID.HasValue ?
                 new ObjectParameter("EquipmentID", equipmentID) :
-                new ObjectParameter("EquipmentID", typeof(Guid));
+                new ObjectParameter("EquipmentID", typeof(System.Guid));
     
             var updateParameter = update.HasValue ?
                 new ObjectParameter("Update", update) :
@@ -697,15 +683,15 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AssignRigEquipment", orgUnitIDParameter, equipmentIDParameter, updateParameter, returnEquipmentName, returnIsSpare);
         }
     
-        public virtual int SP_AssignRigEquipmentNameAndIsSpare(Nullable<Guid> orgUnitID, Nullable<Guid> equipmentID, Nullable<bool> update, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
+        public virtual int SP_AssignRigEquipmentNameAndIsSpare(Nullable<System.Guid> orgUnitID, Nullable<System.Guid> equipmentID, Nullable<bool> update, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
         {
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             var equipmentIDParameter = equipmentID.HasValue ?
                 new ObjectParameter("EquipmentID", equipmentID) :
-                new ObjectParameter("EquipmentID", typeof(Guid));
+                new ObjectParameter("EquipmentID", typeof(System.Guid));
     
             var updateParameter = update.HasValue ?
                 new ObjectParameter("Update", update) :
@@ -714,15 +700,15 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AssignRigEquipmentNameAndIsSpare", orgUnitIDParameter, equipmentIDParameter, updateParameter, returnEquipmentName, returnIsSpare);
         }
     
-        public virtual int SP_AssignRigEquipmentToSpare(Nullable<Guid> orgUnitID, Nullable<Guid> equipmentID, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
+        public virtual int SP_AssignRigEquipmentToSpare(Nullable<System.Guid> orgUnitID, Nullable<System.Guid> equipmentID, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
         {
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             var equipmentIDParameter = equipmentID.HasValue ?
                 new ObjectParameter("EquipmentID", equipmentID) :
-                new ObjectParameter("EquipmentID", typeof(Guid));
+                new ObjectParameter("EquipmentID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AssignRigEquipmentToSpare", orgUnitIDParameter, equipmentIDParameter, returnEquipmentName, returnIsSpare);
         }
@@ -830,11 +816,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_Insert_RAMSManual_BMS_TSL_all_rigs");
         }
     
-        public virtual ObjectResult<string> SP_LoadDistinctWellNo(Nullable<Guid> orgUnitID)
+        public virtual ObjectResult<string> SP_LoadDistinctWellNo(Nullable<System.Guid> orgUnitID)
         {
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SP_LoadDistinctWellNo", orgUnitIDParameter);
         }
@@ -899,62 +885,62 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SearchDocuments_Result>("sp_SearchDocuments", cRUDParameter, rigLstParameter, assetIDParameter, documentNameParameter, documentTypeIDParameter);
         }
     
-        public virtual int SP_SetRigEquipmentFamilyRelations(Nullable<Guid> orgUnitId)
+        public virtual int SP_SetRigEquipmentFamilyRelations(Nullable<System.Guid> orgUnitId)
         {
             var orgUnitIdParameter = orgUnitId.HasValue ?
                 new ObjectParameter("OrgUnitId", orgUnitId) :
-                new ObjectParameter("OrgUnitId", typeof(Guid));
+                new ObjectParameter("OrgUnitId", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_SetRigEquipmentFamilyRelations", orgUnitIdParameter);
         }
     
-        public virtual int SP_SumMorningReportFieldsByLatestWell(Nullable<DateTime> endDate, Nullable<Guid> orgUnitID, ObjectParameter p06HrsDepthSUM, ObjectParameter p24HrsDepthSUM, ObjectParameter fTGLast24HrsSUM, ObjectParameter repairDaysSum)
+        public virtual int SP_SumMorningReportFieldsByLatestWell(Nullable<System.DateTime> endDate, Nullable<System.Guid> orgUnitID, ObjectParameter p06HrsDepthSUM, ObjectParameter p24HrsDepthSUM, ObjectParameter fTGLast24HrsSUM, ObjectParameter repairDaysSum)
         {
             var endDateParameter = endDate.HasValue ?
                 new ObjectParameter("EndDate", endDate) :
-                new ObjectParameter("EndDate", typeof(DateTime));
+                new ObjectParameter("EndDate", typeof(System.DateTime));
     
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_SumMorningReportFieldsByLatestWell", endDateParameter, orgUnitIDParameter, p06HrsDepthSUM, p24HrsDepthSUM, fTGLast24HrsSUM, repairDaysSum);
         }
     
-        public virtual ObjectResult<SP_SwapRigEquipment_Result> SP_SwapRigEquipment(Nullable<Guid> orgUnitID, Nullable<Guid> originalEquipment, Nullable<Guid> swapEquipment, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
+        public virtual ObjectResult<SP_SwapRigEquipment_Result> SP_SwapRigEquipment(Nullable<System.Guid> orgUnitID, Nullable<System.Guid> originalEquipment, Nullable<System.Guid> swapEquipment, ObjectParameter returnEquipmentName, ObjectParameter returnIsSpare)
         {
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             var originalEquipmentParameter = originalEquipment.HasValue ?
                 new ObjectParameter("OriginalEquipment", originalEquipment) :
-                new ObjectParameter("OriginalEquipment", typeof(Guid));
+                new ObjectParameter("OriginalEquipment", typeof(System.Guid));
     
             var swapEquipmentParameter = swapEquipment.HasValue ?
                 new ObjectParameter("SwapEquipment", swapEquipment) :
-                new ObjectParameter("SwapEquipment", typeof(Guid));
+                new ObjectParameter("SwapEquipment", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SwapRigEquipment_Result>("SP_SwapRigEquipment", orgUnitIDParameter, originalEquipmentParameter, swapEquipmentParameter, returnEquipmentName, returnIsSpare);
         }
     
-        public virtual int SP_UpdateJobDateORJobHours(Nullable<Guid> rigEquipmentScheduleJobsID, Nullable<DateTime> jobDate, Nullable<DateTime> jobAlertDate, Nullable<DateTime> jobOverDueDate, Nullable<double> jobMeterHours)
+        public virtual int SP_UpdateJobDateORJobHours(Nullable<System.Guid> rigEquipmentScheduleJobsID, Nullable<System.DateTime> jobDate, Nullable<System.DateTime> jobAlertDate, Nullable<System.DateTime> jobOverDueDate, Nullable<double> jobMeterHours)
         {
             var rigEquipmentScheduleJobsIDParameter = rigEquipmentScheduleJobsID.HasValue ?
                 new ObjectParameter("RigEquipmentScheduleJobsID", rigEquipmentScheduleJobsID) :
-                new ObjectParameter("RigEquipmentScheduleJobsID", typeof(Guid));
+                new ObjectParameter("RigEquipmentScheduleJobsID", typeof(System.Guid));
     
             var jobDateParameter = jobDate.HasValue ?
                 new ObjectParameter("JobDate", jobDate) :
-                new ObjectParameter("JobDate", typeof(DateTime));
+                new ObjectParameter("JobDate", typeof(System.DateTime));
     
             var jobAlertDateParameter = jobAlertDate.HasValue ?
                 new ObjectParameter("JobAlertDate", jobAlertDate) :
-                new ObjectParameter("JobAlertDate", typeof(DateTime));
+                new ObjectParameter("JobAlertDate", typeof(System.DateTime));
     
             var jobOverDueDateParameter = jobOverDueDate.HasValue ?
                 new ObjectParameter("JobOverDueDate", jobOverDueDate) :
-                new ObjectParameter("JobOverDueDate", typeof(DateTime));
+                new ObjectParameter("JobOverDueDate", typeof(System.DateTime));
     
             var jobMeterHoursParameter = jobMeterHours.HasValue ?
                 new ObjectParameter("JobMeterHours", jobMeterHours) :
@@ -976,11 +962,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_UpdateOnlineStatusInSecUser", loginIDParameter, exitParameter);
         }
     
-        public virtual int SP_UpdateRigEquipmentSchedulesAndJobs(Nullable<Guid> rigEquipScheduleID, Nullable<bool> isSuspend)
+        public virtual int SP_UpdateRigEquipmentSchedulesAndJobs(Nullable<System.Guid> rigEquipScheduleID, Nullable<bool> isSuspend)
         {
             var rigEquipScheduleIDParameter = rigEquipScheduleID.HasValue ?
                 new ObjectParameter("RigEquipScheduleID", rigEquipScheduleID) :
-                new ObjectParameter("RigEquipScheduleID", typeof(Guid));
+                new ObjectParameter("RigEquipScheduleID", typeof(System.Guid));
     
             var isSuspendParameter = isSuspend.HasValue ?
                 new ObjectParameter("IsSuspend", isSuspend) :
@@ -989,11 +975,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_UpdateRigEquipmentSchedulesAndJobs", rigEquipScheduleIDParameter, isSuspendParameter);
         }
     
-        public virtual int SP_UpdateRigEquipmentSpecificationTemplate(Nullable<Guid> rigEquipmentSpecificationTemplateID, string equipmentValue)
+        public virtual int SP_UpdateRigEquipmentSpecificationTemplate(Nullable<System.Guid> rigEquipmentSpecificationTemplateID, string equipmentValue)
         {
             var rigEquipmentSpecificationTemplateIDParameter = rigEquipmentSpecificationTemplateID.HasValue ?
                 new ObjectParameter("rigEquipmentSpecificationTemplateID", rigEquipmentSpecificationTemplateID) :
-                new ObjectParameter("rigEquipmentSpecificationTemplateID", typeof(Guid));
+                new ObjectParameter("rigEquipmentSpecificationTemplateID", typeof(System.Guid));
     
             var equipmentValueParameter = equipmentValue != null ?
                 new ObjectParameter("equipmentValue", equipmentValue) :
@@ -1012,24 +998,24 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int spCloseInspection(Nullable<Guid> jobID)
+        public virtual int spCloseInspection(Nullable<System.Guid> jobID)
         {
             var jobIDParameter = jobID.HasValue ?
                 new ObjectParameter("jobID", jobID) :
-                new ObjectParameter("jobID", typeof(Guid));
+                new ObjectParameter("jobID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spCloseInspection", jobIDParameter);
         }
     
-        public virtual int spCopyEquipmentSchedule(Nullable<Guid> pEquipmentID, Nullable<Guid> pEquipmentScheduleID, string pLoginid)
+        public virtual int spCopyEquipmentSchedule(Nullable<System.Guid> pEquipmentID, Nullable<System.Guid> pEquipmentScheduleID, string pLoginid)
         {
             var pEquipmentIDParameter = pEquipmentID.HasValue ?
                 new ObjectParameter("pEquipmentID", pEquipmentID) :
-                new ObjectParameter("pEquipmentID", typeof(Guid));
+                new ObjectParameter("pEquipmentID", typeof(System.Guid));
     
             var pEquipmentScheduleIDParameter = pEquipmentScheduleID.HasValue ?
                 new ObjectParameter("pEquipmentScheduleID", pEquipmentScheduleID) :
-                new ObjectParameter("pEquipmentScheduleID", typeof(Guid));
+                new ObjectParameter("pEquipmentScheduleID", typeof(System.Guid));
     
             var pLoginidParameter = pLoginid != null ?
                 new ObjectParameter("pLoginid", pLoginid) :
@@ -1038,11 +1024,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spCopyEquipmentSchedule", pEquipmentIDParameter, pEquipmentScheduleIDParameter, pLoginidParameter);
         }
     
-        public virtual int spCreateEquipmentScheduleAndCopyToRigEqSchdl(Nullable<Guid> pEquipmentScheduleID, string pEquipmentID)
+        public virtual int spCreateEquipmentScheduleAndCopyToRigEqSchdl(Nullable<System.Guid> pEquipmentScheduleID, string pEquipmentID)
         {
             var pEquipmentScheduleIDParameter = pEquipmentScheduleID.HasValue ?
                 new ObjectParameter("pEquipmentScheduleID", pEquipmentScheduleID) :
-                new ObjectParameter("pEquipmentScheduleID", typeof(Guid));
+                new ObjectParameter("pEquipmentScheduleID", typeof(System.Guid));
     
             var pEquipmentIDParameter = pEquipmentID != null ?
                 new ObjectParameter("pEquipmentID", pEquipmentID) :
@@ -1051,7 +1037,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spCreateEquipmentScheduleAndCopyToRigEqSchdl", pEquipmentScheduleIDParameter, pEquipmentIDParameter);
         }
     
-        public virtual int spCreateRAMSAlert(string pAlertMessage, Nullable<Guid> pEquipmentDocumentID, Nullable<Guid> pEquipmentID, Nullable<Guid> pRigEquipmentID, string pCreatedBy)
+        public virtual int spCreateRAMSAlert(string pAlertMessage, Nullable<System.Guid> pEquipmentDocumentID, Nullable<System.Guid> pEquipmentID, Nullable<System.Guid> pRigEquipmentID, string pCreatedBy)
         {
             var pAlertMessageParameter = pAlertMessage != null ?
                 new ObjectParameter("pAlertMessage", pAlertMessage) :
@@ -1059,15 +1045,15 @@ namespace DataAccessLayer
     
             var pEquipmentDocumentIDParameter = pEquipmentDocumentID.HasValue ?
                 new ObjectParameter("pEquipmentDocumentID", pEquipmentDocumentID) :
-                new ObjectParameter("pEquipmentDocumentID", typeof(Guid));
+                new ObjectParameter("pEquipmentDocumentID", typeof(System.Guid));
     
             var pEquipmentIDParameter = pEquipmentID.HasValue ?
                 new ObjectParameter("pEquipmentID", pEquipmentID) :
-                new ObjectParameter("pEquipmentID", typeof(Guid));
+                new ObjectParameter("pEquipmentID", typeof(System.Guid));
     
             var pRigEquipmentIDParameter = pRigEquipmentID.HasValue ?
                 new ObjectParameter("pRigEquipmentID", pRigEquipmentID) :
-                new ObjectParameter("pRigEquipmentID", typeof(Guid));
+                new ObjectParameter("pRigEquipmentID", typeof(System.Guid));
     
             var pCreatedByParameter = pCreatedBy != null ?
                 new ObjectParameter("pCreatedBy", pCreatedBy) :
@@ -1076,21 +1062,21 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spCreateRAMSAlert", pAlertMessageParameter, pEquipmentDocumentIDParameter, pEquipmentIDParameter, pRigEquipmentIDParameter, pCreatedByParameter);
         }
     
-        public virtual ObjectResult<Nullable<Guid>> spCreateRigEquipment(Nullable<Guid> pOrgUnitID, Nullable<Guid> pEquipmentID, string pLoginid)
+        public virtual ObjectResult<Nullable<System.Guid>> spCreateRigEquipment(Nullable<System.Guid> pOrgUnitID, Nullable<System.Guid> pEquipmentID, string pLoginid)
         {
             var pOrgUnitIDParameter = pOrgUnitID.HasValue ?
                 new ObjectParameter("pOrgUnitID", pOrgUnitID) :
-                new ObjectParameter("pOrgUnitID", typeof(Guid));
+                new ObjectParameter("pOrgUnitID", typeof(System.Guid));
     
             var pEquipmentIDParameter = pEquipmentID.HasValue ?
                 new ObjectParameter("pEquipmentID", pEquipmentID) :
-                new ObjectParameter("pEquipmentID", typeof(Guid));
+                new ObjectParameter("pEquipmentID", typeof(System.Guid));
     
             var pLoginidParameter = pLoginid != null ?
                 new ObjectParameter("pLoginid", pLoginid) :
                 new ObjectParameter("pLoginid", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<Guid>>("spCreateRigEquipment", pOrgUnitIDParameter, pEquipmentIDParameter, pLoginidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("spCreateRigEquipment", pOrgUnitIDParameter, pEquipmentIDParameter, pLoginidParameter);
         }
     
         public virtual ObjectResult<spDailyActivityReportStatus_Result> spDailyActivityReportStatus(string pCountryName)
@@ -1116,11 +1102,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spDailyOperationSummaryCheck_Result>("spDailyOperationSummaryCheck");
         }
     
-        public virtual int spDeleteEquipmentDocument(Nullable<Guid> pDocumentID)
+        public virtual int spDeleteEquipmentDocument(Nullable<System.Guid> pDocumentID)
         {
             var pDocumentIDParameter = pDocumentID.HasValue ?
                 new ObjectParameter("pDocumentID", pDocumentID) :
-                new ObjectParameter("pDocumentID", typeof(Guid));
+                new ObjectParameter("pDocumentID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDeleteEquipmentDocument", pDocumentIDParameter);
         }
@@ -1188,7 +1174,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spJobsCompletedPercentByRigs_Result>("spJobsCompletedPercentByRigs");
         }
     
-        public virtual int spJobsCompletedPMsPercentByRigDateSpan(string rigNamePara, Nullable<DateTime> cDateParaFrom, Nullable<DateTime> cDateParaTo, string sortColPara)
+        public virtual int spJobsCompletedPMsPercentByRigDateSpan(string rigNamePara, Nullable<System.DateTime> cDateParaFrom, Nullable<System.DateTime> cDateParaTo, string sortColPara)
         {
             var rigNameParaParameter = rigNamePara != null ?
                 new ObjectParameter("rigNamePara", rigNamePara) :
@@ -1196,11 +1182,11 @@ namespace DataAccessLayer
     
             var cDateParaFromParameter = cDateParaFrom.HasValue ?
                 new ObjectParameter("cDateParaFrom", cDateParaFrom) :
-                new ObjectParameter("cDateParaFrom", typeof(DateTime));
+                new ObjectParameter("cDateParaFrom", typeof(System.DateTime));
     
             var cDateParaToParameter = cDateParaTo.HasValue ?
                 new ObjectParameter("cDateParaTo", cDateParaTo) :
-                new ObjectParameter("cDateParaTo", typeof(DateTime));
+                new ObjectParameter("cDateParaTo", typeof(System.DateTime));
     
             var sortColParaParameter = sortColPara != null ?
                 new ObjectParameter("sortColPara", sortColPara) :
@@ -1223,6 +1209,20 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spJobsOverduePMsByDate_Result>("spJobsOverduePMsByDate");
         }
     
+        [DbFunction("PrognosDBContext", "Split")]
+        public virtual IQueryable<string> Split(string @string, string delimiter)
+        {
+            var stringParameter = @string != null ?
+                new ObjectParameter("String", @string) :
+                new ObjectParameter("String", typeof(string));
+    
+            var delimiterParameter = delimiter != null ?
+                new ObjectParameter("Delimiter", delimiter) :
+                new ObjectParameter("Delimiter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[PrognosDBContext].[Split](@String, @Delimiter)", stringParameter, delimiterParameter);
+        }
+    
         public virtual ObjectResult<spMonthlyRigJobReport_Result> spMonthlyRigJobReport(string pRigName)
         {
             var pRigNameParameter = pRigName != null ?
@@ -1242,17 +1242,17 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spPMFormsWithEquipmentNameConflicts_Resolve");
         }
     
-        public virtual ObjectResult<Nullable<Guid>> spPMProcedureCopy(Nullable<Guid> pPMProcedureID, string pLoginid)
+        public virtual ObjectResult<Nullable<System.Guid>> spPMProcedureCopy(Nullable<System.Guid> pPMProcedureID, string pLoginid)
         {
             var pPMProcedureIDParameter = pPMProcedureID.HasValue ?
                 new ObjectParameter("pPMProcedureID", pPMProcedureID) :
-                new ObjectParameter("pPMProcedureID", typeof(Guid));
+                new ObjectParameter("pPMProcedureID", typeof(System.Guid));
     
             var pLoginidParameter = pLoginid != null ?
                 new ObjectParameter("pLoginid", pLoginid) :
                 new ObjectParameter("pLoginid", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<Guid>>("spPMProcedureCopy", pPMProcedureIDParameter, pLoginidParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.Guid>>("spPMProcedureCopy", pPMProcedureIDParameter, pLoginidParameter);
         }
     
         public virtual ObjectResult<string> spro_GetDocumentDetails(string cRUD, string wHERE)
@@ -1268,7 +1268,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("spro_GetDocumentDetails", cRUDParameter, wHEREParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> spro_RigEq_18Month_OverHaulPlanDetail(string cRUD, string wHERE, Nullable<Guid> rigEquipmentPlanID, Nullable<Guid> rigEquipmentID, Nullable<Guid> overHaulType, Nullable<int> assetID, Nullable<Guid> rigEqUnscheduledRepairsID, Nullable<decimal> estimatedBudget, Nullable<DateTime> createdOn, string createdBy, string updatedBy)
+        public virtual ObjectResult<Nullable<int>> spro_RigEq_18Month_OverHaulPlanDetail(string cRUD, string wHERE, Nullable<System.Guid> rigEquipmentPlanID, Nullable<System.Guid> rigEquipmentID, Nullable<System.Guid> overHaulType, Nullable<int> assetID, Nullable<System.Guid> rigEqUnscheduledRepairsID, Nullable<decimal> estimatedBudget, Nullable<System.DateTime> createdOn, string createdBy, string updatedBy)
         {
             var cRUDParameter = cRUD != null ?
                 new ObjectParameter("CRUD", cRUD) :
@@ -1280,15 +1280,15 @@ namespace DataAccessLayer
     
             var rigEquipmentPlanIDParameter = rigEquipmentPlanID.HasValue ?
                 new ObjectParameter("RigEquipmentPlanID", rigEquipmentPlanID) :
-                new ObjectParameter("RigEquipmentPlanID", typeof(Guid));
+                new ObjectParameter("RigEquipmentPlanID", typeof(System.Guid));
     
             var rigEquipmentIDParameter = rigEquipmentID.HasValue ?
                 new ObjectParameter("RigEquipmentID", rigEquipmentID) :
-                new ObjectParameter("RigEquipmentID", typeof(Guid));
+                new ObjectParameter("RigEquipmentID", typeof(System.Guid));
     
             var overHaulTypeParameter = overHaulType.HasValue ?
                 new ObjectParameter("OverHaulType", overHaulType) :
-                new ObjectParameter("OverHaulType", typeof(Guid));
+                new ObjectParameter("OverHaulType", typeof(System.Guid));
     
             var assetIDParameter = assetID.HasValue ?
                 new ObjectParameter("AssetID", assetID) :
@@ -1296,7 +1296,7 @@ namespace DataAccessLayer
     
             var rigEqUnscheduledRepairsIDParameter = rigEqUnscheduledRepairsID.HasValue ?
                 new ObjectParameter("RigEqUnscheduledRepairsID", rigEqUnscheduledRepairsID) :
-                new ObjectParameter("RigEqUnscheduledRepairsID", typeof(Guid));
+                new ObjectParameter("RigEqUnscheduledRepairsID", typeof(System.Guid));
     
             var estimatedBudgetParameter = estimatedBudget.HasValue ?
                 new ObjectParameter("EstimatedBudget", estimatedBudget) :
@@ -1304,7 +1304,7 @@ namespace DataAccessLayer
     
             var createdOnParameter = createdOn.HasValue ?
                 new ObjectParameter("CreatedOn", createdOn) :
-                new ObjectParameter("CreatedOn", typeof(DateTime));
+                new ObjectParameter("CreatedOn", typeof(System.DateTime));
     
             var createdByParameter = createdBy != null ?
                 new ObjectParameter("CreatedBy", createdBy) :
@@ -1317,7 +1317,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spro_RigEq_18Month_OverHaulPlanDetail", cRUDParameter, wHEREParameter, rigEquipmentPlanIDParameter, rigEquipmentIDParameter, overHaulTypeParameter, assetIDParameter, rigEqUnscheduledRepairsIDParameter, estimatedBudgetParameter, createdOnParameter, createdByParameter, updatedByParameter);
         }
     
-        public virtual int spro_RigEq_18MonthsPlan(string cRUD, string wHERE, Nullable<Guid> rigEquipmentPlanID, Nullable<Guid> orgUnitID, Nullable<Guid> rigEquipScheduleID, string scheduleBasis, Nullable<int> interval, Nullable<bool> isActive, Nullable<bool> isDepreciated, Nullable<DateTime> createdOn, string createdBy, string updatedBy)
+        public virtual int spro_RigEq_18MonthsPlan(string cRUD, string wHERE, Nullable<System.Guid> rigEquipmentPlanID, Nullable<System.Guid> orgUnitID, Nullable<System.Guid> rigEquipScheduleID, string scheduleBasis, Nullable<int> interval, Nullable<bool> isActive, Nullable<bool> isDepreciated, Nullable<System.DateTime> createdOn, string createdBy, string updatedBy)
         {
             var cRUDParameter = cRUD != null ?
                 new ObjectParameter("CRUD", cRUD) :
@@ -1329,15 +1329,15 @@ namespace DataAccessLayer
     
             var rigEquipmentPlanIDParameter = rigEquipmentPlanID.HasValue ?
                 new ObjectParameter("RigEquipmentPlanID", rigEquipmentPlanID) :
-                new ObjectParameter("RigEquipmentPlanID", typeof(Guid));
+                new ObjectParameter("RigEquipmentPlanID", typeof(System.Guid));
     
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             var rigEquipScheduleIDParameter = rigEquipScheduleID.HasValue ?
                 new ObjectParameter("RigEquipScheduleID", rigEquipScheduleID) :
-                new ObjectParameter("RigEquipScheduleID", typeof(Guid));
+                new ObjectParameter("RigEquipScheduleID", typeof(System.Guid));
     
             var scheduleBasisParameter = scheduleBasis != null ?
                 new ObjectParameter("ScheduleBasis", scheduleBasis) :
@@ -1357,7 +1357,7 @@ namespace DataAccessLayer
     
             var createdOnParameter = createdOn.HasValue ?
                 new ObjectParameter("CreatedOn", createdOn) :
-                new ObjectParameter("CreatedOn", typeof(DateTime));
+                new ObjectParameter("CreatedOn", typeof(System.DateTime));
     
             var createdByParameter = createdBy != null ?
                 new ObjectParameter("CreatedBy", createdBy) :
@@ -1370,7 +1370,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spro_RigEq_18MonthsPlan", cRUDParameter, wHEREParameter, rigEquipmentPlanIDParameter, orgUnitIDParameter, rigEquipScheduleIDParameter, scheduleBasisParameter, intervalParameter, isActiveParameter, isDepreciatedParameter, createdOnParameter, createdByParameter, updatedByParameter);
         }
     
-        public virtual int spro_RigEq_18MonthsPlanDetails(string cRUD, string wHERE, Nullable<Guid> rigEq_PlanDetailsID, Nullable<Guid> rigEquipmentPlanID, Nullable<Guid> rigEquipmentScheduleJobsID, Nullable<DateTime> jobPlanDate, Nullable<int> sequence, Nullable<DateTime> createdOn, string createdBy, string updatedBy)
+        public virtual int spro_RigEq_18MonthsPlanDetails(string cRUD, string wHERE, Nullable<System.Guid> rigEq_PlanDetailsID, Nullable<System.Guid> rigEquipmentPlanID, Nullable<System.Guid> rigEquipmentScheduleJobsID, Nullable<System.DateTime> jobPlanDate, Nullable<int> sequence, Nullable<System.DateTime> createdOn, string createdBy, string updatedBy)
         {
             var cRUDParameter = cRUD != null ?
                 new ObjectParameter("CRUD", cRUD) :
@@ -1382,19 +1382,19 @@ namespace DataAccessLayer
     
             var rigEq_PlanDetailsIDParameter = rigEq_PlanDetailsID.HasValue ?
                 new ObjectParameter("RigEq_PlanDetailsID", rigEq_PlanDetailsID) :
-                new ObjectParameter("RigEq_PlanDetailsID", typeof(Guid));
+                new ObjectParameter("RigEq_PlanDetailsID", typeof(System.Guid));
     
             var rigEquipmentPlanIDParameter = rigEquipmentPlanID.HasValue ?
                 new ObjectParameter("RigEquipmentPlanID", rigEquipmentPlanID) :
-                new ObjectParameter("RigEquipmentPlanID", typeof(Guid));
+                new ObjectParameter("RigEquipmentPlanID", typeof(System.Guid));
     
             var rigEquipmentScheduleJobsIDParameter = rigEquipmentScheduleJobsID.HasValue ?
                 new ObjectParameter("RigEquipmentScheduleJobsID", rigEquipmentScheduleJobsID) :
-                new ObjectParameter("RigEquipmentScheduleJobsID", typeof(Guid));
+                new ObjectParameter("RigEquipmentScheduleJobsID", typeof(System.Guid));
     
             var jobPlanDateParameter = jobPlanDate.HasValue ?
                 new ObjectParameter("JobPlanDate", jobPlanDate) :
-                new ObjectParameter("JobPlanDate", typeof(DateTime));
+                new ObjectParameter("JobPlanDate", typeof(System.DateTime));
     
             var sequenceParameter = sequence.HasValue ?
                 new ObjectParameter("Sequence", sequence) :
@@ -1402,7 +1402,7 @@ namespace DataAccessLayer
     
             var createdOnParameter = createdOn.HasValue ?
                 new ObjectParameter("CreatedOn", createdOn) :
-                new ObjectParameter("CreatedOn", typeof(DateTime));
+                new ObjectParameter("CreatedOn", typeof(System.DateTime));
     
             var createdByParameter = createdBy != null ?
                 new ObjectParameter("CreatedBy", createdBy) :
@@ -1415,7 +1415,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spro_RigEq_18MonthsPlanDetails", cRUDParameter, wHEREParameter, rigEq_PlanDetailsIDParameter, rigEquipmentPlanIDParameter, rigEquipmentScheduleJobsIDParameter, jobPlanDateParameter, sequenceParameter, createdOnParameter, createdByParameter, updatedByParameter);
         }
     
-        public virtual ObjectResult<spro_RigEquipmentsOptimised_Result> spro_RigEquipmentsOptimised(string cRUD, string wHERE, Nullable<Guid> orgUnitID, Nullable<bool> isKeyEquipment, string hasValuetype)
+        public virtual ObjectResult<spro_RigEquipmentsOptimised_Result> spro_RigEquipmentsOptimised(string cRUD, string wHERE, Nullable<System.Guid> orgUnitID, Nullable<bool> isKeyEquipment, string hasValuetype)
         {
             var cRUDParameter = cRUD != null ?
                 new ObjectParameter("CRUD", cRUD) :
@@ -1427,7 +1427,7 @@ namespace DataAccessLayer
     
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             var isKeyEquipmentParameter = isKeyEquipment.HasValue ?
                 new ObjectParameter("IsKeyEquipment", isKeyEquipment) :
@@ -1440,7 +1440,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spro_RigEquipmentsOptimised_Result>("spro_RigEquipmentsOptimised", cRUDParameter, wHEREParameter, orgUnitIDParameter, isKeyEquipmentParameter, hasValuetypeParameter);
         }
     
-        public virtual int spro_UserDashboard(string cRUD, string wHERE, string loginID, string roleIDs, Nullable<Guid> currentRoleID)
+        public virtual int spro_UserDashboard(string cRUD, string wHERE, string loginID, string roleIDs, Nullable<System.Guid> currentRoleID)
         {
             var cRUDParameter = cRUD != null ?
                 new ObjectParameter("CRUD", cRUD) :
@@ -1460,29 +1460,29 @@ namespace DataAccessLayer
     
             var currentRoleIDParameter = currentRoleID.HasValue ?
                 new ObjectParameter("CurrentRoleID", currentRoleID) :
-                new ObjectParameter("CurrentRoleID", typeof(Guid));
+                new ObjectParameter("CurrentRoleID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spro_UserDashboard", cRUDParameter, wHEREParameter, loginIDParameter, roleIDsParameter, currentRoleIDParameter);
         }
     
-        public virtual int spSetRigEquipmentScheduleAsPerRigStatus(Nullable<Guid> pOrgUnitID, Nullable<Guid> equipmentID, Nullable<Guid> rigEquipmentID)
+        public virtual int spSetRigEquipmentScheduleAsPerRigStatus(Nullable<System.Guid> pOrgUnitID, Nullable<System.Guid> equipmentID, Nullable<System.Guid> rigEquipmentID)
         {
             var pOrgUnitIDParameter = pOrgUnitID.HasValue ?
                 new ObjectParameter("pOrgUnitID", pOrgUnitID) :
-                new ObjectParameter("pOrgUnitID", typeof(Guid));
+                new ObjectParameter("pOrgUnitID", typeof(System.Guid));
     
             var equipmentIDParameter = equipmentID.HasValue ?
                 new ObjectParameter("EquipmentID", equipmentID) :
-                new ObjectParameter("EquipmentID", typeof(Guid));
+                new ObjectParameter("EquipmentID", typeof(System.Guid));
     
             var rigEquipmentIDParameter = rigEquipmentID.HasValue ?
                 new ObjectParameter("RigEquipmentID", rigEquipmentID) :
-                new ObjectParameter("RigEquipmentID", typeof(Guid));
+                new ObjectParameter("RigEquipmentID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spSetRigEquipmentScheduleAsPerRigStatus", pOrgUnitIDParameter, equipmentIDParameter, rigEquipmentIDParameter);
         }
     
-        public virtual int spUpdate(string flag, string entryID, string description, string certNo, Nullable<DateTime> dateReceived, Nullable<DateTime> datePlacedInService, Nullable<DateTime> lastInspection, Nullable<DateTime> nextInspection, string pONo, Nullable<DateTime> dateRemovedFromService, string sAPNo, string sWL, string manufacturer, Nullable<Guid> orgUnitID)
+        public virtual int spUpdate(string flag, string entryID, string description, string certNo, Nullable<System.DateTime> dateReceived, Nullable<System.DateTime> datePlacedInService, Nullable<System.DateTime> lastInspection, Nullable<System.DateTime> nextInspection, string pONo, Nullable<System.DateTime> dateRemovedFromService, string sAPNo, string sWL, string manufacturer, Nullable<System.Guid> orgUnitID)
         {
             var flagParameter = flag != null ?
                 new ObjectParameter("Flag", flag) :
@@ -1502,19 +1502,19 @@ namespace DataAccessLayer
     
             var dateReceivedParameter = dateReceived.HasValue ?
                 new ObjectParameter("DateReceived", dateReceived) :
-                new ObjectParameter("DateReceived", typeof(DateTime));
+                new ObjectParameter("DateReceived", typeof(System.DateTime));
     
             var datePlacedInServiceParameter = datePlacedInService.HasValue ?
                 new ObjectParameter("DatePlacedInService", datePlacedInService) :
-                new ObjectParameter("DatePlacedInService", typeof(DateTime));
+                new ObjectParameter("DatePlacedInService", typeof(System.DateTime));
     
             var lastInspectionParameter = lastInspection.HasValue ?
                 new ObjectParameter("LastInspection", lastInspection) :
-                new ObjectParameter("LastInspection", typeof(DateTime));
+                new ObjectParameter("LastInspection", typeof(System.DateTime));
     
             var nextInspectionParameter = nextInspection.HasValue ?
                 new ObjectParameter("NextInspection", nextInspection) :
-                new ObjectParameter("NextInspection", typeof(DateTime));
+                new ObjectParameter("NextInspection", typeof(System.DateTime));
     
             var pONoParameter = pONo != null ?
                 new ObjectParameter("PONo", pONo) :
@@ -1522,7 +1522,7 @@ namespace DataAccessLayer
     
             var dateRemovedFromServiceParameter = dateRemovedFromService.HasValue ?
                 new ObjectParameter("DateRemovedFromService", dateRemovedFromService) :
-                new ObjectParameter("DateRemovedFromService", typeof(DateTime));
+                new ObjectParameter("DateRemovedFromService", typeof(System.DateTime));
     
             var sAPNoParameter = sAPNo != null ?
                 new ObjectParameter("SAPNo", sAPNo) :
@@ -1538,16 +1538,16 @@ namespace DataAccessLayer
     
             var orgUnitIDParameter = orgUnitID.HasValue ?
                 new ObjectParameter("OrgUnitID", orgUnitID) :
-                new ObjectParameter("OrgUnitID", typeof(Guid));
+                new ObjectParameter("OrgUnitID", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdate", flagParameter, entryIDParameter, descriptionParameter, certNoParameter, dateReceivedParameter, datePlacedInServiceParameter, lastInspectionParameter, nextInspectionParameter, pONoParameter, dateRemovedFromServiceParameter, sAPNoParameter, sWLParameter, manufacturerParameter, orgUnitIDParameter);
         }
     
-        public virtual int spUpdateRigCertificateNoByRigEquipmentID(Nullable<Guid> pRigEquipmentId, string pCertNo, Nullable<int> pCatNo, Nullable<DateTime> pDate)
+        public virtual int spUpdateRigCertificateNoByRigEquipmentID(Nullable<System.Guid> pRigEquipmentId, string pCertNo, Nullable<int> pCatNo, Nullable<System.DateTime> pDate)
         {
             var pRigEquipmentIdParameter = pRigEquipmentId.HasValue ?
                 new ObjectParameter("pRigEquipmentId", pRigEquipmentId) :
-                new ObjectParameter("pRigEquipmentId", typeof(Guid));
+                new ObjectParameter("pRigEquipmentId", typeof(System.Guid));
     
             var pCertNoParameter = pCertNo != null ?
                 new ObjectParameter("pCertNo", pCertNo) :
@@ -1559,7 +1559,7 @@ namespace DataAccessLayer
     
             var pDateParameter = pDate.HasValue ?
                 new ObjectParameter("pDate", pDate) :
-                new ObjectParameter("pDate", typeof(DateTime));
+                new ObjectParameter("pDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateRigCertificateNoByRigEquipmentID", pRigEquipmentIdParameter, pCertNoParameter, pCatNoParameter, pDateParameter);
         }
@@ -1604,11 +1604,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("support_CopytoRigStatusLog");
         }
     
-        public virtual int support_CorrectOneTimeJob(Nullable<Guid> oneTimeJobId)
+        public virtual int support_CorrectOneTimeJob(Nullable<System.Guid> oneTimeJobId)
         {
             var oneTimeJobIdParameter = oneTimeJobId.HasValue ?
                 new ObjectParameter("OneTimeJobId", oneTimeJobId) :
-                new ObjectParameter("OneTimeJobId", typeof(Guid));
+                new ObjectParameter("OneTimeJobId", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("support_CorrectOneTimeJob", oneTimeJobIdParameter);
         }
@@ -1862,16 +1862,16 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_DeleteDataFromAllTables");
         }
     
-        public virtual int usp_DeleteEquipment(Nullable<Guid> equipmentId)
+        public virtual int usp_DeleteEquipment(Nullable<System.Guid> equipmentId)
         {
             var equipmentIdParameter = equipmentId.HasValue ?
                 new ObjectParameter("EquipmentId", equipmentId) :
-                new ObjectParameter("EquipmentId", typeof(Guid));
+                new ObjectParameter("EquipmentId", typeof(System.Guid));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_DeleteEquipment", equipmentIdParameter);
         }
     
-        public virtual int usp_Doc(string docName, Nullable<Guid> assetID, Nullable<int> categoryNo, Nullable<DateTime> documentDate, string documentNo, string filename)
+        public virtual int usp_Doc(string docName, Nullable<System.Guid> assetID, Nullable<int> categoryNo, Nullable<System.DateTime> documentDate, string documentNo, string filename)
         {
             var docNameParameter = docName != null ?
                 new ObjectParameter("DocName", docName) :
@@ -1879,7 +1879,7 @@ namespace DataAccessLayer
     
             var assetIDParameter = assetID.HasValue ?
                 new ObjectParameter("AssetID", assetID) :
-                new ObjectParameter("AssetID", typeof(Guid));
+                new ObjectParameter("AssetID", typeof(System.Guid));
     
             var categoryNoParameter = categoryNo.HasValue ?
                 new ObjectParameter("CategoryNo", categoryNo) :
@@ -1887,7 +1887,7 @@ namespace DataAccessLayer
     
             var documentDateParameter = documentDate.HasValue ?
                 new ObjectParameter("DocumentDate", documentDate) :
-                new ObjectParameter("DocumentDate", typeof(DateTime));
+                new ObjectParameter("DocumentDate", typeof(System.DateTime));
     
             var documentNoParameter = documentNo != null ?
                 new ObjectParameter("DocumentNo", documentNo) :
@@ -1936,11 +1936,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_GetAllSchedules_Result>("usp_GetAllSchedules", rigNoParameter);
         }
     
-        public virtual ObjectResult<usp_GetDataForTranslation_Result> usp_GetDataForTranslation(Nullable<Guid> ruLanguageID, string rvCreatedBy)
+        public virtual ObjectResult<usp_GetDataForTranslation_Result> usp_GetDataForTranslation(Nullable<System.Guid> ruLanguageID, string rvCreatedBy)
         {
             var ruLanguageIDParameter = ruLanguageID.HasValue ?
                 new ObjectParameter("ruLanguageID", ruLanguageID) :
-                new ObjectParameter("ruLanguageID", typeof(Guid));
+                new ObjectParameter("ruLanguageID", typeof(System.Guid));
     
             var rvCreatedByParameter = rvCreatedBy != null ?
                 new ObjectParameter("rvCreatedBy", rvCreatedBy) :
@@ -1949,11 +1949,11 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_GetDataForTranslation_Result>("usp_GetDataForTranslation", ruLanguageIDParameter, rvCreatedByParameter);
         }
     
-        public virtual ObjectResult<usp_GetDataForTranslation2_Result> usp_GetDataForTranslation2(Nullable<Guid> ruLanguageID, string rvCreatedBy)
+        public virtual ObjectResult<usp_GetDataForTranslation2_Result> usp_GetDataForTranslation2(Nullable<System.Guid> ruLanguageID, string rvCreatedBy)
         {
             var ruLanguageIDParameter = ruLanguageID.HasValue ?
                 new ObjectParameter("ruLanguageID", ruLanguageID) :
-                new ObjectParameter("ruLanguageID", typeof(Guid));
+                new ObjectParameter("ruLanguageID", typeof(System.Guid));
     
             var rvCreatedByParameter = rvCreatedBy != null ?
                 new ObjectParameter("rvCreatedBy", rvCreatedBy) :
@@ -2082,7 +2082,7 @@ namespace DataAccessLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_MonitorProgressLast2Days_Result>("usp_MonitorProgressLast2Days");
         }
     
-        public virtual int usp_PIB(string opportunityForIMprovement, string correctiveAction, Nullable<DateTime> correctiveTargetDate, string preventiveAction, Nullable<DateTime> preventiveTargetDate, Nullable<int> addOnly)
+        public virtual int usp_PIB(string opportunityForIMprovement, string correctiveAction, Nullable<System.DateTime> correctiveTargetDate, string preventiveAction, Nullable<System.DateTime> preventiveTargetDate, Nullable<int> addOnly)
         {
             var opportunityForIMprovementParameter = opportunityForIMprovement != null ?
                 new ObjectParameter("OpportunityForIMprovement", opportunityForIMprovement) :
@@ -2094,7 +2094,7 @@ namespace DataAccessLayer
     
             var correctiveTargetDateParameter = correctiveTargetDate.HasValue ?
                 new ObjectParameter("CorrectiveTargetDate", correctiveTargetDate) :
-                new ObjectParameter("CorrectiveTargetDate", typeof(DateTime));
+                new ObjectParameter("CorrectiveTargetDate", typeof(System.DateTime));
     
             var preventiveActionParameter = preventiveAction != null ?
                 new ObjectParameter("PreventiveAction", preventiveAction) :
@@ -2102,7 +2102,7 @@ namespace DataAccessLayer
     
             var preventiveTargetDateParameter = preventiveTargetDate.HasValue ?
                 new ObjectParameter("PreventiveTargetDate", preventiveTargetDate) :
-                new ObjectParameter("PreventiveTargetDate", typeof(DateTime));
+                new ObjectParameter("PreventiveTargetDate", typeof(System.DateTime));
     
             var addOnlyParameter = addOnly.HasValue ?
                 new ObjectParameter("AddOnly", addOnly) :

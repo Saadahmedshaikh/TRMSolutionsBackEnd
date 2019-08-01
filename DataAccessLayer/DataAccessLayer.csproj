@@ -11,6 +11,7 @@
     <AssemblyName>DataAccessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -788,9 +790,6 @@
     <Compile Include="spJobsOverduePMsByDate_Result.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Split_Result.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="spMonthlyRigJobReport_Result.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
@@ -967,17 +966,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="PrognosDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PrognosDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="PrognosDBModel.edmx.diagram">
       <DependentUpon>PrognosDBModel.edmx</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="PrognosDBModel.Context.tt">
@@ -990,9 +990,6 @@
       <DependentUpon>PrognosDBModel.edmx</DependentUpon>
       <LastGenOutput>PrognosDBModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

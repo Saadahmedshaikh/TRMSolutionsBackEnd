@@ -17,10 +17,10 @@ namespace DataAccessLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Equipment()
         {
+            this.RigEquipment = new HashSet<RigEquipment>();
             this.PMServiceFormDefinition = new HashSet<PMServiceFormDefinition>();
             this.EquipmentSchedule = new HashSet<EquipmentSchedule>();
             this.EquipmentDocument = new HashSet<EquipmentDocument>();
-            this.RigEquipment = new HashSet<RigEquipment>();
             this.RigEquipment_1 = new HashSet<RigEquipment_1>();
             this.EquipmentSchedule1 = new HashSet<EquipmentSchedule>();
             this.EquipmentSpecification = new HashSet<EquipmentSpecification>();
@@ -66,6 +66,8 @@ namespace DataAccessLayer
         public Nullable<bool> CATIV { get; set; }
         public bool IsKeyEquipment { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RigEquipment> RigEquipment { get; set; }
         public virtual AssetGroup AssetGroup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PMServiceFormDefinition> PMServiceFormDefinition { get; set; }
@@ -73,8 +75,6 @@ namespace DataAccessLayer
         public virtual ICollection<EquipmentSchedule> EquipmentSchedule { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EquipmentDocument> EquipmentDocument { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RigEquipment> RigEquipment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RigEquipment_1> RigEquipment_1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

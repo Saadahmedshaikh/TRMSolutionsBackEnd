@@ -4,397 +4,397 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="81038917e034438eb6d630d28e958b81" Name="Diagram1">
-        <EntityTypeShape EntityType="PrognosDBModel.AlertModule" Width="1.5" PointX="2.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.AlertModulePermission" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.AssetGroup" Width="1.5" PointX="9.75" PointY="133" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.AssetTransferRequest" Width="1.5" PointX="5.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRAttachedDocument" Width="1.5" PointX="13.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRENode" Width="1.5" PointX="12.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATREquipmentDetail" Width="1.5" PointX="14.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRFilledQuestion" Width="1.5" PointX="15.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRLevelBasePriority" Width="1.5" PointX="7.75" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRNotificationLog" Width="1.5" PointX="15.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRQuestionsSet" Width="1.5" PointX="0.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRReviewedRequest" Width="1.5" PointX="2.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRRoutingLevel" Width="1.5" PointX="4.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRRoutingLog" Width="1.5" PointX="16.75" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRRoutingLogAction" Width="1.5" PointX="17.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ATRUserDefinedRouting" Width="1.5" PointX="16.75" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.BD_ReqRigEqDetails" Width="1.5" PointX="18.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.BD_Requests" Width="1.5" PointX="18.75" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.BD_RigEqDoc" Width="1.5" PointX="12.75" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.BulkAddLog" Width="1.5" PointX="18.75" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.CalibrationRegister" Width="1.5" PointX="5.25" PointY="75.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.CategorySpecification" Width="1.5" PointX="17.25" PointY="141.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ClientSynchronizations" Width="1.5" PointX="5.25" PointY="81.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Color" Width="1.5" PointX="6.5" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ColorCode" Width="1.5" PointX="8.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.CompanyMiscellaneousRigEquipmentAttribute" Width="1.5" PointX="18.75" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.CompanyMiscellaneousRigEquipmentDocumentAttribute" Width="1.5" PointX="19.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.CompanyRMRAttribute" Width="1.5" PointX="9.75" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ConflictingPMServiceFormDefination" Width="1.5" PointX="20.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ControlType" Width="1.5" PointX="8.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DailyActivityReport" Width="1.5" PointX="8.25" PointY="153.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DailyActivityReportDetails" Width="1.5" PointX="10.5" PointY="161.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DailyLog" Width="1.5" PointX="18.75" PointY="127" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DailyLogBOPPressure" Width="1.5" PointX="5.25" PointY="92.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DataImportHistory" Width="1.5" PointX="5.25" PointY="97.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DataType" Width="1.5" PointX="8.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Documents" Width="1.5" PointX="12" PointY="128.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DocumentType" Width="1.5" PointX="9.75" PointY="129.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EngineeringRequest" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EngineeringRequestCCNotification" Width="1.5" PointX="2.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Equipment" Width="1.5" PointX="12" PointY="135.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Equipment_1" Width="1.5" PointX="21" PointY="129.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentCategory" Width="1.5" PointX="9.75" PointY="137.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentCriticality" Width="1.5" PointX="9.75" PointY="141.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument" Width="1.5" PointX="14.25" PointY="141" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentOneTimeJobs" Width="1.5" PointX="14.25" PointY="121.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentOneTimeJobTasks" Width="1.5" PointX="16.5" PointY="121.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSchedule" Width="1.5" PointX="12" PointY="168.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSchedule_1" Width="1.5" PointX="4.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecification" Width="1.5" PointX="23.5" PointY="137.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecification_backup" Width="1.5" PointX="6.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecsCategory" Width="1.5" PointX="9.75" PointY="145" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentTransferHistoryLog" Width="1.5" PointX="5.25" PointY="100.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ExRegister" Width="1.5" PointX="5.25" PointY="105" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetails" Width="1.5" PointX="7.5" PointY="105.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetailsCopy" Width="1.5" PointX="20.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetailsHistory" Width="1.5" PointX="9.75" PointY="105.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetailsUpdate" Width="1.5" PointX="5.25" PointY="108.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.FaultGroup" Width="1.5" PointX="12" PointY="124.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.FleetCoordinates" Width="1.5" PointX="20.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.FormTypes" Width="1.5" PointX="12" PointY="175.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.GraphType" Width="1.5" PointX="8.75" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.IACDCodes" Width="1.5" PointX="5.25" PointY="238.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ImprovementCommitment" Width="1.5" PointX="18.75" PointY="130.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Jobs" Width="1.5" PointX="20.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.JobsCompletedByCleanUpProc" Width="1.5" PointX="21.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Language" Width="1.5" PointX="10.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.LiftingGearRegister" Width="1.5" PointX="5.25" PointY="117" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.LiftingGearRegisterDetails" Width="1.5" PointX="7.5" PointY="116" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.LocalizedResource" Width="1.5" PointX="10.75" PointY="16.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MaterialTransferDetails" Width="1.5" PointX="7.5" PointY="123" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MaterialTransferHistoryLog" Width="1.5" PointX="5.25" PointY="121.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousEquipmentDocumentType" Width="1.5" PointX="14.75" PointY="22.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipment" Width="1.5" PointX="16.75" PointY="22.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentAttribute" Width="1.5" PointX="22.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentDocument" Width="1.5" PointX="22.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentDocumentAttribute" Width="1.5" PointX="22.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentDropDownDefaultValue" Width="1.5" PointX="22.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentSpecification" Width="1.5" PointX="22.75" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MorningReport" Width="1.5" PointX="5.25" PointY="143.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MorningReportOperations" Width="1.5" PointX="7.5" PointY="178.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MorningReportTrainings" Width="1.5" PointX="7.5" PointY="185.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OilInventory" Width="1.5" PointX="5.25" PointY="128.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgRole" Width="1.5" PointX="6" PointY="87.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgUnit" Width="1.5" PointX="3" PointY="150.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgUnitType" Width="1.5" PointX="0.75" PointY="154.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole" Width="1.5" PointX="8.25" PointY="149" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PermissionBaseUserNotification" Width="1.5" PointX="22.75" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PermissionType" Width="1.5" PointX="23.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMDiagram" Width="1.5" PointX="20.25" PointY="140" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMDiagramFields" Width="1.5" PointX="11" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMDiagramValue" Width="1.5" PointX="24.75" PointY="145.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMProcedure" Width="1.5" PointX="23.25" PointY="166.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMProcedureFields" Width="1.5" PointX="25.5" PointY="85.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMProcedureValue" Width="1.5" PointX="27.75" PointY="145.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormDefinition" Width="1.5" PointX="14.25" PointY="171.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceForms" Width="1.5" PointX="16.5" PointY="152" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSection" Width="1.5" PointX="20.25" PointY="143.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionDiagrams" Width="1.5" PointX="22.5" PointY="141.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionProcedures" Width="1.5" PointX="25.5" PointY="166.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PressureVesselRegister" Width="1.5" PointX="5.25" PointY="140.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PressureVesselRegisterDetails" Width="1.5" PointX="16.5" PointY="146" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ProcessStatus" Width="1.5" PointX="8.75" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RaisedRMRAttribute" Width="1.5" PointX="10.75" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RaisedRMRDocument" Width="1.5" PointX="0.75" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RaisedRMRRoutingEscalation" Width="1.5" PointX="24.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RamsAlert" Width="1.5" PointX="5.25" PointY="219.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RAMSAssetRegister" Width="1.5" PointX="24.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ReleifValveRegister" Width="1.5" PointX="5.25" PointY="223.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ReleifValveRegisterDetails" Width="1.5" PointX="16.5" PointY="187.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ReportFiles" Width="1.5" PointX="12.75" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ReportFilesTab" Width="1.5" PointX="16" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ReportTab" Width="1.5" PointX="13.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ReportTabSecUSerGroup" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ResourceTranslation" Width="1.5" PointX="13" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigDetails" Width="1.5" PointX="5.25" PointY="226.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigDetails_1" Width="1.5" PointX="24.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigDetailsHistoryLog" Width="1.5" PointX="18.75" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEq_18MonthsJobPlan" Width="1.5" PointX="25.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEq_18MonthsPlanDetails" Width="1.5" PointX="14.75" PointY="26.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment" Width="1.5" PointX="14.25" PointY="148.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment_1" Width="1.5" PointX="11.25" PointY="150.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentDocuments" Width="1.5" PointX="16.5" PointY="163.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentHours" Width="1.5" PointX="16.5" PointY="168" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentInspections" Width="1.5" PointX="16.5" PointY="172.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentOneTimeJob" Width="1.5" PointX="19.5" PointY="152.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentOneTimeJobTasks" Width="1.5" PointX="21.75" PointY="159" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentOverallHours" Width="1.5" PointX="16.5" PointY="183.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentParentFamily" Width="1.5" PointX="24.75" PointY="26.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSchedule" Width="1.5" PointX="22.5" PointY="152.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSchedule_1" Width="1.5" PointX="2.75" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentScheduleJobs" Width="1.5" PointX="30.75" PointY="152.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSpecification" Width="1.5" PointX="19.5" PointY="147.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSpecification_Backup" Width="1.5" PointX="26.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSpecificationTemplate" Width="1.5" PointX="4.75" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentTransferDetails" Width="1.5" PointX="7.5" PointY="100.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentUnscheduledRepairDetails" Width="1.5" PointX="18.75" PointY="197.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentUnscheduledRepairs" Width="1.5" PointX="16.5" PointY="196.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigModificationRequest" Width="1.5" PointX="6.75" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigRepairAlerts" Width="1.5" PointX="9.75" PointY="179.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigStatusLog" Width="1.5" PointX="5.25" PointY="270.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RMRActionLog" Width="1.5" PointX="26.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RMRSuperordinateRoutingHierarchy" Width="1.5" PointX="26.75" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ScheduleBasis" Width="1.5" PointX="9.75" PointY="169" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ScheduleType" Width="1.5" PointX="9.75" PointY="172.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ScriptsRepository" Width="1.5" PointX="26.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecActivityLog" Width="1.5" PointX="18.75" PointY="122.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecActivityLogDetail" Width="1.5" PointX="21" PointY="61.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecApplication" Width="1.5" PointX="1.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecPasswordHistory" Width="1.5" PointX="18.75" PointY="164.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecPermission" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecPolicy" Width="1.5" PointX="16.5" PointY="125.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecPolicyGroup" Width="1.5" PointX="14.25" PointY="133.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUser" Width="1.5" PointX="16.5" PointY="132.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroup" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupPermission" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupRelation" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserStatus" Width="1.5" PointX="14.25" PointY="137" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserUserGroup" Width="1.5" PointX="18.75" PointY="72.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.sysdiagrams" Width="1.5" PointX="26.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.System" Width="1.5" PointX="7.5" PointY="133.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.tbl_locations" Width="1.5" PointX="20.75" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ToDoList" Width="1.5" PointX="5.25" PointY="274.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.UserEmailNotification" Width="1.5" PointX="26.75" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.UserMeasurementAlerts" Width="1.5" PointX="18.75" PointY="159.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.UserNotificationType" Width="1.5" PointX="27.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebDropdownValue" Width="1.5" PointX="8.75" PointY="28.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebInterface" Width="1.5" PointX="26.75" PointY="28.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebInterfaceAccessRole" Width="1.5" PointX="28.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebJobs" Width="1.5" PointX="28.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebRouting" Width="1.5" PointX="28.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebView" Width="1.5" PointX="10.75" PointY="29.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.WebViewOrgRolePreviledge" Width="1.5" PointX="28.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.AssetGroup_TombStone" Width="1.5" PointX="16.75" PointY="29.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.AssetGroup_Tombstone_Temp" Width="1.5" PointX="28.75" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.CategorySpecification_TombStone" Width="1.5" PointX="28.75" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ColorCode_TombStone" Width="1.5" PointX="28.75" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Dec14_PMDiagramValue" Width="1.5" PointX="12.75" PointY="30.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Dec14_PMProcedureValue" Width="1.5" PointX="18.75" PointY="30.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Dec14_PMServiceForms" Width="1.5" PointX="20.75" PointY="30.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Dec14_RigEquipmentScheduleJobs_DeletedByQuery" Width="1.5" PointX="22.75" PointY="30.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Dec14_UserMeasurementAlerts" Width="1.5" PointX="30.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Documents_bk" Width="1.5" PointX="30.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Documents_duplicateDocs" Width="1.5" PointX="4.75" PointY="31.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentCategory_TombStone" Width="1.5" PointX="6.75" PointY="31.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument_bk" Width="1.5" PointX="30.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument_duplicateDocs" Width="1.5" PointX="30.75" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument_TombStone" Width="1.5" PointX="30.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSchedule_TombStone" Width="1.5" PointX="30.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecsCategory_TombStone" Width="1.5" PointX="30.75" PointY="26.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.EquipmentTemp" Width="1.5" PointX="28.75" PointY="31.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ICR_tmp" Width="1.5" PointX="30.75" PointY="30.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ImprovementCommitment_bk" Width="1.5" PointX="0.75" PointY="32.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ImprovementCommitment_TombStone1" Width="1.5" PointX="8.75" PointY="32.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.LocalizedResource_TombStone" Width="1.5" PointX="24.75" PointY="32.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MorningReport_march232017" Width="1.5" PointX="32.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.morningreport_scriptTable" Width="1.5" PointX="14.75" PointY="33.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MorningReportSchedule" Width="1.5" PointX="34.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.mr" Width="1.5" PointX="34.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.mro" Width="1.5" PointX="2.75" PointY="35.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.NPT72Hours" Width="1.5" PointX="4.75" PointY="35.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Old_EquipmentSchedule_Tombstone" Width="1.5" PointX="20.75" PointY="36.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Old_LocalizedResource_TombStone" Width="1.5" PointX="22.75" PointY="36.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Old_OrgUserRole_TombStone" Width="1.5" PointX="24.75" PointY="36.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Old_PMServiceFormSectionProcedures_TombStone" Width="1.5" PointX="36.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Old_SecUserUserGroup_TombStone" Width="1.5" PointX="36.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole_bk" Width="1.5" PointX="36.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole_scriptTable" Width="1.5" PointX="36.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole_TombStone" Width="1.5" PointX="36.75" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMDiagram_TombStone" Width="1.5" PointX="36.75" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMDiagramFields_TombStone" Width="1.5" PointX="36.75" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMProcedure_TombStone" Width="1.5" PointX="26.75" PointY="37.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMProcedureFields_TombStone" Width="1.5" PointX="36.75" PointY="30.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.pmserviceforms_26032017" Width="1.5" PointX="36.75" PointY="36.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSection_TombStone" Width="1.5" PointX="38.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionDiagrams_TombStone" Width="1.5" PointX="38.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionProcedures_TombStone" Width="1.5" PointX="38.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.QueryText" Width="1.5" PointX="38.75" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.ResourceTranslation_TombStone" Width="1.5" PointX="38.75" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEq_18Month_OverhaulPlanDetail" Width="1.5" PointX="38.75" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment_bk" Width="1.5" PointX="38.75" PointY="24.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment_temp" Width="1.5" PointX="28.75" PointY="39.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentScheduleBkup" Width="1.5" PointX="38.75" PointY="34.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSuspension" Width="1.5" PointX="38.75" PointY="39.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentUnscheduledRepairDetails_TombStone" Width="1.5" PointX="0.75" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SECUSER_bk" Width="1.5" PointX="2.75" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroup_TombStone" Width="1.5" PointX="4.75" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupPermission_MtrBck" Width="1.5" PointX="6.75" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupPermission_TombStone" Width="1.5" PointX="8.75" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.SecUserUserGroup_TombStone" Width="1.5" PointX="22.75" PointY="40.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.System_TombStone" Width="1.5" PointX="40.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.System_TombStone_23June2010select" Width="1.5" PointX="40.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.tempTableDocuments" Width="1.5" PointX="40.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Test" Width="1.5" PointX="40.75" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Test_PMServiceForms" Width="1.5" PointX="40.75" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.Test_RigEquipmentScheduleJobs" Width="1.5" PointX="40.75" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.UserMeasurementAlerts_bk" Width="1.5" PointX="40.75" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DuplicateJobDetails" Width="1.5" PointX="40.75" PointY="25.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.DuplicateJobSummary" Width="1.5" PointX="24.75" PointY="41.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.MR_FuelUsageDetails" Width="1.5" PointX="40.75" PointY="32.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.vwGeneratorDetailSpecifications" Width="1.5" PointX="40.75" PointY="37.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.vwPMFormsWithEquipmentNameConflicts_Details" Width="1.5" PointX="38.75" PointY="42.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PrognosDBModel.vwPMFormsWithEquipmentNameConflicts_Summary" Width="1.5" PointX="40.75" PointY="42.5" IsExpanded="true" />
-        <AssociationConnector Association="PrognosDBModel.RefAssetGroup66" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefAssetGroup67" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSystem63" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSystem64" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_CalibrationRegister_OrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefCategorySpecification84" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefCategorySpecification85" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSpecsCategory260" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit168" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefColor222" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefColorCode197" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMDiagram190" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefControlType191" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefControlType194" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_DailyActivityReport_OrgRole" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_DailyActivityReport_OrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_DailyActivityReportDetails_DailyActivityReport" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser174" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit109" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_DataImportHistory_OrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefDataType192" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefDataType195" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefDocuments3" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefDocumentType4" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment131" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment2059" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment5" ManuallyRouted="false" />
+      <Diagram DiagramId="109c93b66c904c5993c776ccdfd97d58" Name="Diagram1" ZoomLevel="51">
+        <EntityTypeShape EntityType="PrognosDBModel.Equipment" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentHours" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.DuplicateJobDetails" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.DuplicateJobSummary" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.MR_FuelUsageDetails" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.vwGeneratorDetailSpecifications" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.vwPMFormsWithEquipmentNameConflicts_Details" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrognosDBModel.vwPMFormsWithEquipmentNameConflicts_Summary" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
         <AssociationConnector Association="PrognosDBModel.RefEquipment55" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment56" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment59" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment85" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipment86" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentCategory61" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality6" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSpecsCategory261" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentCategory62" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality7" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSpecsCategory262" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality83" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality84" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentOneTimeJobs87" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule1058" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule1059" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule1060" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule132" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefScheduleBasis2023" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefScheduleBasis23" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefScheduleType2021" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefScheduleType21" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefEquipmentTransferHistoryLog94" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit79" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit82" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ExRegister_OrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetails_ExRegisterDetails" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetails_RigEquipment" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetailsHistory_ExRegisterDetails" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetailsUpdate_OrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefFormTypes133" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefGraphType193" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefGraphType196" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefIACDCodes162" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser234" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser235" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser236" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser237" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefLanguage199" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefLiftingGearRegister156" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit248" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefLocalizedResource200" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferDetails_MaterialTransferHistoryLog" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferDetails_RigEquipment" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferHistoryLog_OrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferHistoryLog_OrgUnit1" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefMorningReport161" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefMorningReport247" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit246" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefMorningReportOperations259" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment163" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit107" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgRole130" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgRole251" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgRole47" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit104" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit108" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit1092" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit1093" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit176" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit177" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit249" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit250" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit257" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit48" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnit92" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefOrgUnitType46" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentOneTimeJobOrgUnit" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMDiagram188" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceForms143" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSectionDiagrams189" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMProcedure180" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMProcedure182" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceForms142" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSectionProcedures185" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormDefinition179" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormDefinition183" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceForms159" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment141" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSection181" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSection187" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefPressureVesselRegister152" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment153" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefReleifValveRegister154" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment155" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ReportFilesTab_ReportTab" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_ReportTabSecUSerGroup_ReportTabSecUSerGroup" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_RigEquipmentDocuments_RigEquipmentDocuments" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.FK_RigEquipmentOverallHours_RigEquipment" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment1002" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment1003" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment102" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment158" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment2" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment64" ManuallyRouted="false" />
         <AssociationConnector Association="PrognosDBModel.RefRigEquipment65" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment85" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment88" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment93" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipment96" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentOneTimeJob90" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentSchedule228" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser230" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentUnscheduledRepairs98" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser165" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecActivityLog26" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser25" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecPermission27" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.REFSEC_APPLICATION8" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser42" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.REFSEC_PERMISSION23" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecPolicyGroup53" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecPolicyGroup52" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser160" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUser33" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUserStatus31" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup29" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup36" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup38" ManuallyRouted="false" />
-        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup40" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PrognosDBModel.AlertModule" Width="1.5" PointX="12.625" PointY="23.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.AlertModulePermission" Width="1.5" PointX="14.625" PointY="25.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.AssetGroup" Width="1.5" PointX="3.75" PointY="14.625" />
+        <EntityTypeShape EntityType="PrognosDBModel.AssetTransferRequest" Width="1.5" PointX="20.625" PointY="26.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRAttachedDocument" Width="1.5" PointX="22.625" PointY="26.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRENode" Width="1.5" PointX="25.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATREquipmentDetail" Width="1.5" PointX="8.625" PointY="33.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRFilledQuestion" Width="1.5" PointX="30.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRLevelBasePriority" Width="1.5" PointX="22.625" PointY="34.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRNotificationLog" Width="1.5" PointX="30.625" PointY="30.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRQuestionsSet" Width="1.5" PointX="30.625" PointY="34.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRReviewedRequest" Width="1.5" PointX="12.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRRoutingLevel" Width="1.5" PointX="32.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRRoutingLog" Width="1.5" PointX="32.625" PointY="30.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRRoutingLogAction" Width="1.5" PointX="14.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ATRUserDefinedRouting" Width="1.5" PointX="32.625" PointY="35.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.BD_ReqRigEqDetails" Width="1.5" PointX="33.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.BD_Requests" Width="1.5" PointX="33.625" PointY="23.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.BD_RigEqDoc" Width="1.5" PointX="34.625" PointY="27.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.BulkAddLog" Width="1.5" PointX="34.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.CalibrationRegister" Width="1.5" PointX="20.125" PointY="121.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.CategorySpecification" Width="1.5" PointX="8.25" PointY="25.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.ClientSynchronizations" Width="1.5" PointX="20.125" PointY="184.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.Color" Width="1.5" PointX="26.375" PointY="42.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ColorCode" Width="1.5" PointX="28.625" PointY="42.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.CompanyMiscellaneousRigEquipmentAttribute" Width="1.5" PointX="12.625" PointY="29.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.CompanyMiscellaneousRigEquipmentDocumentAttribute" Width="1.5" PointX="14.625" PointY="29.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.CompanyRMRAttribute" Width="1.5" PointX="34.625" PointY="32.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ConflictingPMServiceFormDefination" Width="1.5" PointX="27.625" PointY="31.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ControlType" Width="1.5" PointX="28.625" PointY="14.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.DailyActivityReport" Width="1.5" PointX="20.125" PointY="169.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.DailyActivityReportDetails" Width="1.5" PointX="22.375" PointY="173.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.DailyLog" Width="1.5" PointX="25.75" PointY="65" />
+        <EntityTypeShape EntityType="PrognosDBModel.DailyLogBOPPressure" Width="1.5" PointX="20.125" PointY="105.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.DataImportHistory" Width="1.5" PointX="20.125" PointY="194.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.DataType" Width="1.5" PointX="28.625" PointY="11.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.Documents" Width="1.5" PointX="6" PointY="27.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.DocumentType" Width="1.5" PointX="6" PointY="32.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.EngineeringRequest" Width="1.5" PointX="34.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EngineeringRequestCCNotification" Width="1.5" PointX="5.625" PointY="39.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Equipment_1" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentCategory" Width="1.5" PointX="0.75" PointY="10.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentCriticality" Width="1.5" PointX="0.75" PointY="18.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument" Width="1.5" PointX="8.25" PointY="6" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentOneTimeJobs" Width="1.5" PointX="8.25" PointY="29.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentOneTimeJobTasks" Width="1.5" PointX="10.5" PointY="29.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSchedule" Width="1.5" PointX="13" PointY="60.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSchedule_1" Width="1.5" PointX="7.625" PointY="39.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecification" Width="1.5" PointX="10.5" PointY="23.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecification_backup" Width="1.5" PointX="35.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecsCategory" Width="1.5" PointX="0.75" PointY="15" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentTransferHistoryLog" Width="1.5" PointX="20.125" PointY="155.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.ExRegister" Width="1.5" PointX="20.125" PointY="91.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetails" Width="1.5" PointX="22.375" PointY="49.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetailsCopy" Width="1.5" PointX="35.625" PointY="17.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetailsHistory" Width="1.5" PointX="24.625" PointY="49.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.ExRegisterDetailsUpdate" Width="1.5" PointX="20.125" PointY="177.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.FaultGroup" Width="1.5" PointX="6" PointY="36" />
+        <EntityTypeShape EntityType="PrognosDBModel.FleetCoordinates" Width="1.5" PointX="30.625" PointY="39.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.FormTypes" Width="1.5" PointX="13" PointY="57.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.GraphType" Width="1.5" PointX="28.625" PointY="18.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.IACDCodes" Width="1.5" PointX="20.125" PointY="100.625" />
+        <EntityTypeShape EntityType="PrognosDBModel.ImprovementCommitment" Width="1.5" PointX="25.75" PointY="56.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.Jobs" Width="1.5" PointX="36.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.JobsCompletedByCleanUpProc" Width="1.5" PointX="24.625" PointY="35.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Language" Width="1.5" PointX="12.625" PointY="33.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.LiftingGearRegister" Width="1.5" PointX="20.125" PointY="143.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.LiftingGearRegisterDetails" Width="1.5" PointX="22.375" PointY="142.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.LocalizedResource" Width="1.5" PointX="12.625" PointY="73.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.MaterialTransferDetails" Width="1.5" PointX="22.375" PointY="79.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.MaterialTransferHistoryLog" Width="1.5" PointX="20.125" PointY="148.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousEquipmentDocumentType" Width="1.5" PointX="35.625" PointY="24.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipment" Width="1.5" PointX="36.625" PointY="27.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentAttribute" Width="1.5" PointX="36.625" PointY="31.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentDocument" Width="1.5" PointX="36.625" PointY="35.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentDocumentAttribute" Width="1.5" PointX="32.625" PointY="40.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentDropDownDefaultValue" Width="1.5" PointX="36.625" PointY="38.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MiscellaneousRigEquipmentSpecification" Width="1.5" PointX="37.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MorningReport" Width="1.5" PointX="20.125" PointY="197.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.MorningReportOperations" Width="1.5" PointX="22.375" PointY="136.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.MorningReportTrainings" Width="1.5" PointX="22.375" PointY="238.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.OilInventory" Width="1.5" PointX="20.125" PointY="131.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgRole" Width="1.5" PointX="13" PointY="68.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgUnit" Width="1.5" PointX="17.875" PointY="166.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgUnitType" Width="1.5" PointX="15.625" PointY="170.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole" Width="1.5" PointX="23.125" PointY="170" />
+        <EntityTypeShape EntityType="PrognosDBModel.PermissionBaseUserNotification" Width="1.5" PointX="12.625" PointY="41.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PermissionType" Width="1.5" PointX="37.625" PointY="17.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMDiagram" Width="1.5" PointX="15.25" PointY="40.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMDiagramFields" Width="1.5" PointX="30.875" PointY="13.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMDiagramValue" Width="1.5" PointX="19.75" PointY="5.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMProcedure" Width="1.5" PointX="18.25" PointY="36.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMProcedureFields" Width="1.5" PointX="30.875" PointY="24.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMProcedureValue" Width="1.5" PointX="22.75" PointY="5.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormDefinition" Width="1.5" PointX="15.25" PointY="62.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceForms" Width="1.5" PointX="17.5" PointY="11.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSection" Width="1.5" PointX="18.25" PointY="32.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionDiagrams" Width="1.5" PointX="17.5" PointY="40.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionProcedures" Width="1.5" PointX="20.5" PointY="34.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.PressureVesselRegister" Width="1.5" PointX="20.125" PointY="159.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.PressureVesselRegisterDetails" Width="1.5" PointX="22.375" PointY="84.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.ProcessStatus" Width="1.5" PointX="37.625" PointY="20.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RaisedRMRAttribute" Width="1.5" PointX="37.625" PointY="23.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RaisedRMRDocument" Width="1.5" PointX="38.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RaisedRMRRoutingEscalation" Width="1.5" PointX="38.625" PointY="27.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RamsAlert" Width="1.5" PointX="20.125" PointY="163.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.RAMSAssetRegister" Width="1.5" PointX="38.625" PointY="31.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ReleifValveRegister" Width="1.5" PointX="20.125" PointY="139.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.ReleifValveRegisterDetails" Width="1.5" PointX="22.375" PointY="74" />
+        <EntityTypeShape EntityType="PrognosDBModel.ReportFiles" Width="1.5" PointX="38.625" PointY="35.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ReportFilesTab" Width="1.5" PointX="32.875" PointY="20" />
+        <EntityTypeShape EntityType="PrognosDBModel.ReportTab" Width="1.5" PointX="30.625" PointY="20" />
+        <EntityTypeShape EntityType="PrognosDBModel.ReportTabSecUSerGroup" Width="1.5" PointX="27.875" PointY="34.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.ResourceTranslation" Width="1.5" PointX="14.875" PointY="33" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigDetails" Width="1.5" PointX="20.125" PointY="110.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigDetails_1" Width="1.5" PointX="34.625" PointY="42.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigDetailsHistoryLog" Width="1.5" PointX="38.625" PointY="39.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEq_18MonthsJobPlan" Width="1.5" PointX="39.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEq_18MonthsPlanDetails" Width="1.5" PointX="39.625" PointY="17.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment_1" Width="1.5" PointX="26.125" PointY="83" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentDocuments" Width="1.5" PointX="10.5" PointY="52.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentInspections" Width="1.5" PointX="10.5" PointY="42.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentOneTimeJob" Width="1.5" PointX="23.125" PointY="90.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentOneTimeJobTasks" Width="1.5" PointX="25.375" PointY="94" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentOverallHours" Width="1.5" PointX="10.5" PointY="39.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentParentFamily" Width="1.5" PointX="39.625" PointY="21.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSchedule" Width="1.5" PointX="15.5" PointY="19.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSchedule_1" Width="1.5" PointX="36.625" PointY="43.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentScheduleJobs" Width="1.5" PointX="17.75" PointY="26.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSpecification" Width="1.5" PointX="10.5" PointY="9.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSpecification_Backup" Width="1.5" PointX="38.625" PointY="43.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSpecificationTemplate" Width="1.5" PointX="40.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentTransferDetails" Width="1.5" PointX="25.375" PointY="79.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentUnscheduledRepairDetails" Width="1.5" PointX="12.75" PointY="47.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentUnscheduledRepairs" Width="1.5" PointX="10.5" PointY="47" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigModificationRequest" Width="1.5" PointX="15.625" PointY="44.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigRepairAlerts" Width="1.5" PointX="24.625" PointY="137.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigStatusLog" Width="1.5" PointX="20.125" PointY="127.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.RMRActionLog" Width="1.5" PointX="17.625" PointY="44.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RMRSuperordinateRoutingHierarchy" Width="1.5" PointX="40.625" PointY="25.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ScheduleBasis" Width="1.5" PointX="10.75" PointY="61.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.ScheduleType" Width="1.5" PointX="10.75" PointY="64.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.ScriptsRepository" Width="1.5" PointX="40.625" PointY="29.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecActivityLog" Width="1.5" PointX="25.75" PointY="68.875" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecActivityLogDetail" Width="1.5" PointX="28" PointY="49.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecApplication" Width="1.5" PointX="23.375" PointY="30.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecPasswordHistory" Width="1.5" PointX="25.75" PointY="20" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecPermission" Width="1.5" PointX="25.625" PointY="30" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecPolicy" Width="1.5" PointX="23.5" PointY="56.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecPolicyGroup" Width="1.5" PointX="21.25" PointY="43.625" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUser" Width="1.5" PointX="23.5" PointY="39" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroup" Width="1.5" PointX="25.625" PointY="25.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupPermission" Width="1.5" PointX="27.875" PointY="23.5" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupRelation" Width="1.5" PointX="27.875" PointY="28.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserStatus" Width="1.5" PointX="21.25" PointY="40.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserUserGroup" Width="1.5" PointX="27.875" PointY="38.375" />
+        <EntityTypeShape EntityType="PrognosDBModel.sysdiagrams" Width="1.5" PointX="40.625" PointY="33.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.System" Width="1.5" PointX="4.5" PointY="24.125" />
+        <EntityTypeShape EntityType="PrognosDBModel.tbl_locations" Width="1.5" PointX="40.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ToDoList" Width="1.5" PointX="20.125" PointY="189.25" />
+        <EntityTypeShape EntityType="PrognosDBModel.UserEmailNotification" Width="1.5" PointX="40.625" PointY="39.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.UserMeasurementAlerts" Width="1.5" PointX="25.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.UserNotificationType" Width="1.5" PointX="40.625" PointY="43.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebDropdownValue" Width="1.5" PointX="5.625" PointY="45.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebInterface" Width="1.5" PointX="7.625" PointY="45.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebInterfaceAccessRole" Width="1.5" PointX="41.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebJobs" Width="1.5" PointX="41.625" PointY="16.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebRouting" Width="1.5" PointX="41.625" PointY="20.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebView" Width="1.5" PointX="30.625" PointY="45.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.WebViewOrgRolePreviledge" Width="1.5" PointX="42.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.AssetGroup_TombStone" Width="1.5" PointX="42.625" PointY="24.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.AssetGroup_Tombstone_Temp" Width="1.5" PointX="42.625" PointY="28.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.CategorySpecification_TombStone" Width="1.5" PointX="42.625" PointY="32.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ColorCode_TombStone" Width="1.5" PointX="42.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Dec14_PMDiagramValue" Width="1.5" PointX="42.625" PointY="40.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Dec14_PMProcedureValue" Width="1.5" PointX="19.625" PointY="47.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Dec14_PMServiceForms" Width="1.5" PointX="43.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Dec14_RigEquipmentScheduleJobs_DeletedByQuery" Width="1.5" PointX="43.625" PointY="17.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Dec14_UserMeasurementAlerts" Width="1.5" PointX="38.625" PointY="47.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Documents_bk" Width="1.5" PointX="44.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Documents_duplicateDocs" Width="1.5" PointX="15.625" PointY="48.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentCategory_TombStone" Width="1.5" PointX="44.625" PointY="23.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument_bk" Width="1.5" PointX="44.625" PointY="27.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument_duplicateDocs" Width="1.5" PointX="44.625" PointY="31.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentDocument_TombStone" Width="1.5" PointX="30.625" PointY="48.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSchedule_TombStone" Width="1.5" PointX="44.625" PointY="35.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentSpecsCategory_TombStone" Width="1.5" PointX="44.625" PointY="40.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.EquipmentTemp" Width="1.5" PointX="44.625" PointY="44.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ICR_tmp" Width="1.5" PointX="5.625" PointY="49.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ImprovementCommitment_bk" Width="1.5" PointX="7.625" PointY="49.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ImprovementCommitment_TombStone1" Width="1.5" PointX="45.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.LocalizedResource_TombStone" Width="1.5" PointX="46.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MorningReport_march232017" Width="1.5" PointX="46.625" PointY="21.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.morningreport_scriptTable" Width="1.5" PointX="36.625" PointY="51.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.MorningReportSchedule" Width="1.5" PointX="47.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.mr" Width="1.5" PointX="38.625" PointY="51.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.mro" Width="1.5" PointX="47.625" PointY="16.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.NPT72Hours" Width="1.5" PointX="12.625" PointY="51.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Old_EquipmentSchedule_Tombstone" Width="1.5" PointX="14.625" PointY="52.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Old_LocalizedResource_TombStone" Width="1.5" PointX="48.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Old_OrgUserRole_TombStone" Width="1.5" PointX="16.625" PointY="52.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Old_PMServiceFormSectionProcedures_TombStone" Width="1.5" PointX="48.625" PointY="21.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Old_SecUserUserGroup_TombStone" Width="1.5" PointX="48.625" PointY="25.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole_bk" Width="1.5" PointX="48.625" PointY="28.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole_scriptTable" Width="1.5" PointX="48.625" PointY="32.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.OrgUserRole_TombStone" Width="1.5" PointX="30.625" PointY="52.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMDiagram_TombStone" Width="1.5" PointX="48.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMDiagramFields_TombStone" Width="1.5" PointX="48.625" PointY="40.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMProcedure_TombStone" Width="1.5" PointX="48.625" PointY="46.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMProcedureFields_TombStone" Width="1.5" PointX="48.625" PointY="50.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.pmserviceforms_26032017" Width="1.5" PointX="49.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSection_TombStone" Width="1.5" PointX="32.625" PointY="53.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionDiagrams_TombStone" Width="1.5" PointX="50.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.PMServiceFormSectionProcedures_TombStone" Width="1.5" PointX="50.625" PointY="20.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.QueryText" Width="1.5" PointX="25.625" PointY="46.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.ResourceTranslation_TombStone" Width="1.5" PointX="50.625" PointY="24.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEq_18Month_OverhaulPlanDetail" Width="1.5" PointX="50.625" PointY="28.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment_bk" Width="1.5" PointX="50.625" PointY="32.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipment_temp" Width="1.5" PointX="50.625" PointY="42.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentScheduleBkup" Width="1.5" PointX="50.625" PointY="48.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentSuspension" Width="1.5" PointX="50.625" PointY="53.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.RigEquipmentUnscheduledRepairDetails_TombStone" Width="1.5" PointX="51.625" PointY="13.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SECUSER_bk" Width="1.5" PointX="52.625" PointY="17.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroup_TombStone" Width="1.5" PointX="52.625" PointY="9.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupPermission_MtrBck" Width="1.5" PointX="16.625" PointY="56.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserGroupPermission_TombStone" Width="1.5" PointX="52.625" PointY="24.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.SecUserUserGroup_TombStone" Width="1.5" PointX="52.625" PointY="28.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.System_TombStone" Width="1.5" PointX="52.625" PointY="31.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.System_TombStone_23June2010select" Width="1.5" PointX="28.625" PointY="56.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.tempTableDocuments" Width="1.5" PointX="52.625" PointY="35.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Test" Width="1.5" PointX="52.625" PointY="39.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Test_PMServiceForms" Width="1.5" PointX="10.625" PointY="27.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.Test_RigEquipmentScheduleJobs" Width="1.5" PointX="27.625" PointY="46.75" />
+        <EntityTypeShape EntityType="PrognosDBModel.UserMeasurementAlerts_bk" Width="1.5" PointX="52.625" PointY="42.75" />
+        <AssociationConnector Association="PrognosDBModel.RefAssetGroup66" />
+        <AssociationConnector Association="PrognosDBModel.RefAssetGroup67" />
+        <AssociationConnector Association="PrognosDBModel.RefSystem63" />
+        <AssociationConnector Association="PrognosDBModel.RefSystem64" />
+        <AssociationConnector Association="PrognosDBModel.FK_CalibrationRegister_OrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.RefCategorySpecification84" />
+        <AssociationConnector Association="PrognosDBModel.RefCategorySpecification85" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSpecsCategory260" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit168" />
+        <AssociationConnector Association="PrognosDBModel.RefColor222" />
+        <AssociationConnector Association="PrognosDBModel.RefColorCode197" />
+        <AssociationConnector Association="PrognosDBModel.RefPMDiagram190" />
+        <AssociationConnector Association="PrognosDBModel.RefControlType191" />
+        <AssociationConnector Association="PrognosDBModel.RefControlType194" />
+        <AssociationConnector Association="PrognosDBModel.FK_DailyActivityReport_OrgRole" />
+        <AssociationConnector Association="PrognosDBModel.FK_DailyActivityReport_OrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.FK_DailyActivityReportDetails_DailyActivityReport" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser174" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit109" />
+        <AssociationConnector Association="PrognosDBModel.FK_DataImportHistory_OrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.RefDataType192" />
+        <AssociationConnector Association="PrognosDBModel.RefDataType195" />
+        <AssociationConnector Association="PrognosDBModel.RefDocuments3" />
+        <AssociationConnector Association="PrognosDBModel.RefDocumentType4" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment131" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment2059" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment5" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment56" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment59" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment85" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipment86" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentCategory61" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality6" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSpecsCategory261" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentCategory62" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality7" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSpecsCategory262" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality83" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentCriticality84" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentOneTimeJobs87" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule1058" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule1059" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule1060" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentSchedule132" />
+        <AssociationConnector Association="PrognosDBModel.RefScheduleBasis2023" />
+        <AssociationConnector Association="PrognosDBModel.RefScheduleBasis23" />
+        <AssociationConnector Association="PrognosDBModel.RefScheduleType2021" />
+        <AssociationConnector Association="PrognosDBModel.RefScheduleType21" />
+        <AssociationConnector Association="PrognosDBModel.RefEquipmentTransferHistoryLog94" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit79" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit82" />
+        <AssociationConnector Association="PrognosDBModel.FK_ExRegister_OrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetails_ExRegisterDetails" />
+        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetails_RigEquipment" />
+        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetailsHistory_ExRegisterDetails" />
+        <AssociationConnector Association="PrognosDBModel.FK_ExRegisterDetailsUpdate_OrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.RefFormTypes133" />
+        <AssociationConnector Association="PrognosDBModel.RefGraphType193" />
+        <AssociationConnector Association="PrognosDBModel.RefGraphType196" />
+        <AssociationConnector Association="PrognosDBModel.RefIACDCodes162" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser234" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser235" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser236" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser237" />
+        <AssociationConnector Association="PrognosDBModel.RefLanguage199" />
+        <AssociationConnector Association="PrognosDBModel.RefLiftingGearRegister156" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit248" />
+        <AssociationConnector Association="PrognosDBModel.RefLocalizedResource200" />
+        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferDetails_MaterialTransferHistoryLog" />
+        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferDetails_RigEquipment" />
+        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferHistoryLog_OrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.FK_MaterialTransferHistoryLog_OrgUnit1" />
+        <AssociationConnector Association="PrognosDBModel.RefMorningReport161" />
+        <AssociationConnector Association="PrognosDBModel.RefMorningReport247" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit246" />
+        <AssociationConnector Association="PrognosDBModel.RefMorningReportOperations259" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment163" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit107" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgRole130" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgRole251" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgRole47" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit104" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit108" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit1092" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit1093" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit176" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit177" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit249" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit250" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit257" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit48" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnit92" />
+        <AssociationConnector Association="PrognosDBModel.RefOrgUnitType46" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentOneTimeJobOrgUnit" />
+        <AssociationConnector Association="PrognosDBModel.RefPMDiagram188" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceForms143" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSectionDiagrams189" />
+        <AssociationConnector Association="PrognosDBModel.RefPMProcedure180" />
+        <AssociationConnector Association="PrognosDBModel.RefPMProcedure182" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceForms142" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSectionProcedures185" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormDefinition179" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormDefinition183" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceForms159" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment141" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSection181" />
+        <AssociationConnector Association="PrognosDBModel.RefPMServiceFormSection187" />
+        <AssociationConnector Association="PrognosDBModel.RefPressureVesselRegister152" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment153" />
+        <AssociationConnector Association="PrognosDBModel.RefReleifValveRegister154" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment155" />
+        <AssociationConnector Association="PrognosDBModel.FK_ReportFilesTab_ReportTab" />
+        <AssociationConnector Association="PrognosDBModel.FK_ReportTabSecUSerGroup_ReportTabSecUSerGroup" />
+        <AssociationConnector Association="PrognosDBModel.FK_RigEquipmentDocuments_RigEquipmentDocuments" />
+        <AssociationConnector Association="PrognosDBModel.FK_RigEquipmentOverallHours_RigEquipment" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment1002" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment1003" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment102" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment158" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment2" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment64" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment85" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment88" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment93" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipment96" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentOneTimeJob90" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentSchedule228" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser230" />
+        <AssociationConnector Association="PrognosDBModel.RefRigEquipmentUnscheduledRepairs98" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser165" />
+        <AssociationConnector Association="PrognosDBModel.RefSecActivityLog26" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser25" />
+        <AssociationConnector Association="PrognosDBModel.RefSecPermission27" />
+        <AssociationConnector Association="PrognosDBModel.REFSEC_APPLICATION8" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser42" />
+        <AssociationConnector Association="PrognosDBModel.REFSEC_PERMISSION23" />
+        <AssociationConnector Association="PrognosDBModel.RefSecPolicyGroup53" />
+        <AssociationConnector Association="PrognosDBModel.RefSecPolicyGroup52" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser160" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUser33" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUserStatus31" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup29" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup36" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup38" />
+        <AssociationConnector Association="PrognosDBModel.RefSecUserGroup40" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
