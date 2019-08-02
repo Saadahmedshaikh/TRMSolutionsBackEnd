@@ -34,7 +34,6 @@ namespace DataAccessLayer
             this.ToDoList = new HashSet<ToDoList>();
             this.RigStatusLog = new HashSet<RigStatusLog>();
             this.RigEquipment = new HashSet<RigEquipment>();
-            this.RigEquipment_1 = new HashSet<RigEquipment_1>();
             this.PressureVesselRegister = new HashSet<PressureVesselRegister>();
             this.ReleifValveRegister = new HashSet<ReleifValveRegister>();
             this.RamsAlert = new HashSet<RamsAlert>();
@@ -99,8 +98,6 @@ namespace DataAccessLayer
         public virtual RigDetails RigDetails1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RigEquipment> RigEquipment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RigEquipment_1> RigEquipment_1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PressureVesselRegister> PressureVesselRegister { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

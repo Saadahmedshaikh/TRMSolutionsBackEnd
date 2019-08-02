@@ -19,7 +19,6 @@ namespace DataAccessLayer
         {
             this.CategorySpecification = new HashSet<CategorySpecification>();
             this.Equipment = new HashSet<Equipment>();
-            this.Equipment_1 = new HashSet<Equipment_1>();
         }
     
         public System.Guid EquipmentSpecsCategoryID { get; set; }
@@ -34,7 +33,5 @@ namespace DataAccessLayer
         public virtual ICollection<CategorySpecification> CategorySpecification { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Equipment> Equipment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Equipment_1> Equipment_1 { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿
+using DataAccessLayer;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,13 +15,14 @@ namespace Web.Controllers
         public ActionResult Index()
         {
             PrognosDBContext prognosdbcontext = new PrognosDBContext();
-
+            //string temp = JsonConvert.SerializeObject(prognosdbcontext.usp_ListAllSchedules("144","hot") , Formatting.None);
+            return Content("try");
 
             //var temp = reh[0].RigEquipmentID.ToString();
             //Equipment equipment = prognosdbcontext.Equipment.Single(eq => eq.EquipmentID== new Guid("19EC63B4-17DB-4562-8065-00C028E2D335"));
             //var temp = equipment.EquipmentName.ToString();
-            string temp = JsonConvert.SerializeObject(prognosdbcontext.support_GetRigUserList(), Formatting.None);
-            return Content(temp);
+           // string temp = JsonConvert.SerializeObject(prognosdbcontext.support_GetRigUserList(), Formatting.None);
+            //return Content(temp);
         }
     }
 }

@@ -27,15 +27,6 @@ namespace DataAccessLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Equipment> Equipment { get; set; }
-        public virtual DbSet<RigEquipment> RigEquipment { get; set; }
-        public virtual DbSet<RigEquipmentHours> RigEquipmentHours { get; set; }
-        public virtual DbSet<DuplicateJobDetails> DuplicateJobDetails { get; set; }
-        public virtual DbSet<DuplicateJobSummary> DuplicateJobSummary { get; set; }
-        public virtual DbSet<MR_FuelUsageDetails> MR_FuelUsageDetails { get; set; }
-        public virtual DbSet<vwGeneratorDetailSpecifications> vwGeneratorDetailSpecifications { get; set; }
-        public virtual DbSet<vwPMFormsWithEquipmentNameConflicts_Details> vwPMFormsWithEquipmentNameConflicts_Details { get; set; }
-        public virtual DbSet<vwPMFormsWithEquipmentNameConflicts_Summary> vwPMFormsWithEquipmentNameConflicts_Summary { get; set; }
         public virtual DbSet<AlertModule> AlertModule { get; set; }
         public virtual DbSet<AlertModulePermission> AlertModulePermission { get; set; }
         public virtual DbSet<AssetGroup> AssetGroup { get; set; }
@@ -55,7 +46,6 @@ namespace DataAccessLayer
         public virtual DbSet<BD_ReqRigEqDetails> BD_ReqRigEqDetails { get; set; }
         public virtual DbSet<BD_Requests> BD_Requests { get; set; }
         public virtual DbSet<BD_RigEqDoc> BD_RigEqDoc { get; set; }
-        public virtual DbSet<BulkAddLog> BulkAddLog { get; set; }
         public virtual DbSet<CalibrationRegister> CalibrationRegister { get; set; }
         public virtual DbSet<CategorySpecification> CategorySpecification { get; set; }
         public virtual DbSet<ClientSynchronizations> ClientSynchronizations { get; set; }
@@ -76,16 +66,14 @@ namespace DataAccessLayer
         public virtual DbSet<DocumentType> DocumentType { get; set; }
         public virtual DbSet<EngineeringRequest> EngineeringRequest { get; set; }
         public virtual DbSet<EngineeringRequestCCNotification> EngineeringRequestCCNotification { get; set; }
-        public virtual DbSet<Equipment_1> Equipment_1 { get; set; }
+        public virtual DbSet<Equipment> Equipment { get; set; }
         public virtual DbSet<EquipmentCategory> EquipmentCategory { get; set; }
         public virtual DbSet<EquipmentCriticality> EquipmentCriticality { get; set; }
         public virtual DbSet<EquipmentDocument> EquipmentDocument { get; set; }
         public virtual DbSet<EquipmentOneTimeJobs> EquipmentOneTimeJobs { get; set; }
         public virtual DbSet<EquipmentOneTimeJobTasks> EquipmentOneTimeJobTasks { get; set; }
         public virtual DbSet<EquipmentSchedule> EquipmentSchedule { get; set; }
-        public virtual DbSet<EquipmentSchedule_1> EquipmentSchedule_1 { get; set; }
         public virtual DbSet<EquipmentSpecification> EquipmentSpecification { get; set; }
-        public virtual DbSet<EquipmentSpecification_backup> EquipmentSpecification_backup { get; set; }
         public virtual DbSet<EquipmentSpecsCategory> EquipmentSpecsCategory { get; set; }
         public virtual DbSet<EquipmentTransferHistoryLog> EquipmentTransferHistoryLog { get; set; }
         public virtual DbSet<ExRegister> ExRegister { get; set; }
@@ -151,22 +139,20 @@ namespace DataAccessLayer
         public virtual DbSet<ReportTabSecUSerGroup> ReportTabSecUSerGroup { get; set; }
         public virtual DbSet<ResourceTranslation> ResourceTranslation { get; set; }
         public virtual DbSet<RigDetails> RigDetails { get; set; }
-        public virtual DbSet<RigDetails_1> RigDetails_1 { get; set; }
         public virtual DbSet<RigDetailsHistoryLog> RigDetailsHistoryLog { get; set; }
         public virtual DbSet<RigEq_18MonthsJobPlan> RigEq_18MonthsJobPlan { get; set; }
         public virtual DbSet<RigEq_18MonthsPlanDetails> RigEq_18MonthsPlanDetails { get; set; }
-        public virtual DbSet<RigEquipment_1> RigEquipment_1 { get; set; }
+        public virtual DbSet<RigEquipment> RigEquipment { get; set; }
         public virtual DbSet<RigEquipmentDocuments> RigEquipmentDocuments { get; set; }
+        public virtual DbSet<RigEquipmentHours> RigEquipmentHours { get; set; }
         public virtual DbSet<RigEquipmentInspections> RigEquipmentInspections { get; set; }
         public virtual DbSet<RigEquipmentOneTimeJob> RigEquipmentOneTimeJob { get; set; }
         public virtual DbSet<RigEquipmentOneTimeJobTasks> RigEquipmentOneTimeJobTasks { get; set; }
         public virtual DbSet<RigEquipmentOverallHours> RigEquipmentOverallHours { get; set; }
         public virtual DbSet<RigEquipmentParentFamily> RigEquipmentParentFamily { get; set; }
         public virtual DbSet<RigEquipmentSchedule> RigEquipmentSchedule { get; set; }
-        public virtual DbSet<RigEquipmentSchedule_1> RigEquipmentSchedule_1 { get; set; }
         public virtual DbSet<RigEquipmentScheduleJobs> RigEquipmentScheduleJobs { get; set; }
         public virtual DbSet<RigEquipmentSpecification> RigEquipmentSpecification { get; set; }
-        public virtual DbSet<RigEquipmentSpecification_Backup> RigEquipmentSpecification_Backup { get; set; }
         public virtual DbSet<RigEquipmentSpecificationTemplate> RigEquipmentSpecificationTemplate { get; set; }
         public virtual DbSet<RigEquipmentTransferDetails> RigEquipmentTransferDetails { get; set; }
         public virtual DbSet<RigEquipmentUnscheduledRepairDetails> RigEquipmentUnscheduledRepairDetails { get; set; }
@@ -193,7 +179,6 @@ namespace DataAccessLayer
         public virtual DbSet<SecUserStatus> SecUserStatus { get; set; }
         public virtual DbSet<SecUserUserGroup> SecUserUserGroup { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<System> System { get; set; }
         public virtual DbSet<tbl_locations> tbl_locations { get; set; }
         public virtual DbSet<ToDoList> ToDoList { get; set; }
         public virtual DbSet<UserEmailNotification> UserEmailNotification { get; set; }
@@ -206,65 +191,17 @@ namespace DataAccessLayer
         public virtual DbSet<WebRouting> WebRouting { get; set; }
         public virtual DbSet<WebView> WebView { get; set; }
         public virtual DbSet<WebViewOrgRolePreviledge> WebViewOrgRolePreviledge { get; set; }
-        public virtual DbSet<AssetGroup_TombStone> AssetGroup_TombStone { get; set; }
-        public virtual DbSet<AssetGroup_Tombstone_Temp> AssetGroup_Tombstone_Temp { get; set; }
-        public virtual DbSet<CategorySpecification_TombStone> CategorySpecification_TombStone { get; set; }
-        public virtual DbSet<ColorCode_TombStone> ColorCode_TombStone { get; set; }
-        public virtual DbSet<Dec14_PMDiagramValue> Dec14_PMDiagramValue { get; set; }
-        public virtual DbSet<Dec14_PMProcedureValue> Dec14_PMProcedureValue { get; set; }
-        public virtual DbSet<Dec14_PMServiceForms> Dec14_PMServiceForms { get; set; }
-        public virtual DbSet<Dec14_RigEquipmentScheduleJobs_DeletedByQuery> Dec14_RigEquipmentScheduleJobs_DeletedByQuery { get; set; }
-        public virtual DbSet<Dec14_UserMeasurementAlerts> Dec14_UserMeasurementAlerts { get; set; }
-        public virtual DbSet<Documents_bk> Documents_bk { get; set; }
-        public virtual DbSet<Documents_duplicateDocs> Documents_duplicateDocs { get; set; }
-        public virtual DbSet<EquipmentCategory_TombStone> EquipmentCategory_TombStone { get; set; }
-        public virtual DbSet<EquipmentDocument_bk> EquipmentDocument_bk { get; set; }
-        public virtual DbSet<EquipmentDocument_duplicateDocs> EquipmentDocument_duplicateDocs { get; set; }
-        public virtual DbSet<EquipmentDocument_TombStone> EquipmentDocument_TombStone { get; set; }
-        public virtual DbSet<EquipmentSchedule_TombStone> EquipmentSchedule_TombStone { get; set; }
-        public virtual DbSet<EquipmentSpecsCategory_TombStone> EquipmentSpecsCategory_TombStone { get; set; }
         public virtual DbSet<EquipmentTemp> EquipmentTemp { get; set; }
         public virtual DbSet<ICR_tmp> ICR_tmp { get; set; }
-        public virtual DbSet<ImprovementCommitment_bk> ImprovementCommitment_bk { get; set; }
-        public virtual DbSet<ImprovementCommitment_TombStone1> ImprovementCommitment_TombStone1 { get; set; }
         public virtual DbSet<LocalizedResource_TombStone> LocalizedResource_TombStone { get; set; }
-        public virtual DbSet<MorningReport_march232017> MorningReport_march232017 { get; set; }
-        public virtual DbSet<morningreport_scriptTable> morningreport_scriptTable { get; set; }
         public virtual DbSet<MorningReportSchedule> MorningReportSchedule { get; set; }
-        public virtual DbSet<mr> mr { get; set; }
-        public virtual DbSet<mro> mro { get; set; }
         public virtual DbSet<NPT72Hours> NPT72Hours { get; set; }
-        public virtual DbSet<Old_EquipmentSchedule_Tombstone> Old_EquipmentSchedule_Tombstone { get; set; }
-        public virtual DbSet<Old_LocalizedResource_TombStone> Old_LocalizedResource_TombStone { get; set; }
-        public virtual DbSet<Old_OrgUserRole_TombStone> Old_OrgUserRole_TombStone { get; set; }
-        public virtual DbSet<Old_PMServiceFormSectionProcedures_TombStone> Old_PMServiceFormSectionProcedures_TombStone { get; set; }
-        public virtual DbSet<Old_SecUserUserGroup_TombStone> Old_SecUserUserGroup_TombStone { get; set; }
-        public virtual DbSet<OrgUserRole_bk> OrgUserRole_bk { get; set; }
-        public virtual DbSet<OrgUserRole_scriptTable> OrgUserRole_scriptTable { get; set; }
-        public virtual DbSet<OrgUserRole_TombStone> OrgUserRole_TombStone { get; set; }
-        public virtual DbSet<PMDiagram_TombStone> PMDiagram_TombStone { get; set; }
-        public virtual DbSet<PMDiagramFields_TombStone> PMDiagramFields_TombStone { get; set; }
-        public virtual DbSet<PMProcedure_TombStone> PMProcedure_TombStone { get; set; }
-        public virtual DbSet<PMProcedureFields_TombStone> PMProcedureFields_TombStone { get; set; }
         public virtual DbSet<pmserviceforms_26032017> pmserviceforms_26032017 { get; set; }
         public virtual DbSet<PMServiceFormSection_TombStone> PMServiceFormSection_TombStone { get; set; }
         public virtual DbSet<PMServiceFormSectionDiagrams_TombStone> PMServiceFormSectionDiagrams_TombStone { get; set; }
         public virtual DbSet<PMServiceFormSectionProcedures_TombStone> PMServiceFormSectionProcedures_TombStone { get; set; }
-        public virtual DbSet<QueryText> QueryText { get; set; }
-        public virtual DbSet<ResourceTranslation_TombStone> ResourceTranslation_TombStone { get; set; }
         public virtual DbSet<RigEq_18Month_OverhaulPlanDetail> RigEq_18Month_OverhaulPlanDetail { get; set; }
-        public virtual DbSet<RigEquipment_bk> RigEquipment_bk { get; set; }
-        public virtual DbSet<RigEquipment_temp> RigEquipment_temp { get; set; }
-        public virtual DbSet<RigEquipmentScheduleBkup> RigEquipmentScheduleBkup { get; set; }
         public virtual DbSet<RigEquipmentSuspension> RigEquipmentSuspension { get; set; }
-        public virtual DbSet<RigEquipmentUnscheduledRepairDetails_TombStone> RigEquipmentUnscheduledRepairDetails_TombStone { get; set; }
-        public virtual DbSet<SECUSER_bk> SECUSER_bk { get; set; }
-        public virtual DbSet<SecUserGroup_TombStone> SecUserGroup_TombStone { get; set; }
-        public virtual DbSet<SecUserGroupPermission_MtrBck> SecUserGroupPermission_MtrBck { get; set; }
-        public virtual DbSet<SecUserGroupPermission_TombStone> SecUserGroupPermission_TombStone { get; set; }
-        public virtual DbSet<SecUserUserGroup_TombStone> SecUserUserGroup_TombStone { get; set; }
-        public virtual DbSet<System_TombStone> System_TombStone { get; set; }
-        public virtual DbSet<System_TombStone_23June2010select> System_TombStone_23June2010select { get; set; }
         public virtual DbSet<tempTableDocuments> tempTableDocuments { get; set; }
         public virtual DbSet<Test> Test { get; set; }
         public virtual DbSet<Test_PMServiceForms> Test_PMServiceForms { get; set; }

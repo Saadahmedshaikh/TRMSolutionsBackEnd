@@ -18,9 +18,7 @@ namespace DataAccessLayer
         public EquipmentCriticality()
         {
             this.Equipment = new HashSet<Equipment>();
-            this.Equipment_1 = new HashSet<Equipment_1>();
             this.RigEquipment = new HashSet<RigEquipment>();
-            this.RigEquipment_1 = new HashSet<RigEquipment_1>();
         }
     
         public System.Guid EquipmentCriticalityId { get; set; }
@@ -33,10 +31,6 @@ namespace DataAccessLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Equipment> Equipment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Equipment_1> Equipment_1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RigEquipment> RigEquipment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RigEquipment_1> RigEquipment_1 { get; set; }
     }
 }

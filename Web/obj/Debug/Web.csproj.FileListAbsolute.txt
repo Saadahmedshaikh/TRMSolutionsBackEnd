@@ -15,6 +15,7 @@ C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Web.dll.config
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Web.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Web.pdb
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Antlr3.Runtime.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\DataAccessLayer.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\EntityFramework.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\EntityFramework.SqlServer.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Microsoft.AI.Agent.Intercept.dll
@@ -35,6 +36,7 @@ C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\System.Web.WebPages.Dep
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\System.Web.WebPages.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\System.Web.WebPages.Razor.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\WebGrease.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\DataAccessLayer.pdb
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\EntityFramework.xml
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\EntityFramework.SqlServer.xml
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Microsoft.AI.DependencyCollector.xml
@@ -55,5 +57,3 @@ C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\Newtonsoft.Json.xml
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\obj\Debug\Web.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\obj\Debug\Web.pdb
-C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\DataAccessLayer.dll
-C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Web\bin\DataAccessLayer.pdb

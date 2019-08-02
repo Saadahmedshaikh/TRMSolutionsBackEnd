@@ -18,7 +18,6 @@ namespace DataAccessLayer
         public AssetGroup()
         {
             this.Equipment = new HashSet<Equipment>();
-            this.Equipment_1 = new HashSet<Equipment_1>();
             this.FaultGroup = new HashSet<FaultGroup>();
         }
     
@@ -35,9 +34,6 @@ namespace DataAccessLayer
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Equipment> Equipment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Equipment_1> Equipment_1 { get; set; }
-        public virtual System System { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FaultGroup> FaultGroup { get; set; }
     }

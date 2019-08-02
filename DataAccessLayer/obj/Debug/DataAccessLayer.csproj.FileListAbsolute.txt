@@ -5,6 +5,6 @@ C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\bin\Debug\Entit
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\bin\Debug\EntityFramework.xml
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

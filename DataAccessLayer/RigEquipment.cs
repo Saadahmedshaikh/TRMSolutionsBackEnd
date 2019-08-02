@@ -17,7 +17,6 @@ namespace DataAccessLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RigEquipment()
         {
-            this.RigEquipmentHours = new HashSet<RigEquipmentHours>();
             this.ExRegisterDetails = new HashSet<ExRegisterDetails>();
             this.MaterialTransferDetails = new HashSet<MaterialTransferDetails>();
             this.MorningReportOperations = new HashSet<MorningReportOperations>();
@@ -32,6 +31,7 @@ namespace DataAccessLayer
             this.UserMeasurementAlerts = new HashSet<UserMeasurementAlerts>();
             this.RigEquipmentSchedule3 = new HashSet<RigEquipmentSchedule>();
             this.RigEquipmentUnscheduledRepairs = new HashSet<RigEquipmentUnscheduledRepairs>();
+            this.RigEquipmentHours = new HashSet<RigEquipmentHours>();
             this.RigEquipmentSpecification = new HashSet<RigEquipmentSpecification>();
             this.RigEquipmentOneTimeJob = new HashSet<RigEquipmentOneTimeJob>();
             this.RigEquipmentTransferDetails = new HashSet<RigEquipmentTransferDetails>();
@@ -85,8 +85,6 @@ namespace DataAccessLayer
         public Nullable<bool> IsGroupAsset { get; set; }
     
         public virtual Equipment Equipment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RigEquipmentHours> RigEquipmentHours { get; set; }
         public virtual EquipmentCriticality EquipmentCriticality { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExRegisterDetails> ExRegisterDetails { get; set; }
@@ -117,6 +115,8 @@ namespace DataAccessLayer
         public virtual ICollection<RigEquipmentSchedule> RigEquipmentSchedule3 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RigEquipmentUnscheduledRepairs> RigEquipmentUnscheduledRepairs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RigEquipmentHours> RigEquipmentHours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RigEquipmentSpecification> RigEquipmentSpecification { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

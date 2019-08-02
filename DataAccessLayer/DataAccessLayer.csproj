@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68EDE161-5DA2-49D2-9B7A-FAA27107EC2C}</ProjectGuid>
+    <ProjectGuid>{ADE62B57-D1D6-471A-95E5-A8FD2D89E12C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataAccessLayer</RootNamespace>
     <AssemblyName>DataAccessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +40,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -63,12 +61,6 @@
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AssetGroup.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AssetGroup_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AssetGroup_Tombstone_Temp.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AssetTransferRequest.cs">
@@ -122,16 +114,10 @@
     <Compile Include="BD_RigEqDoc.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BulkAddLog.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="CalibrationRegister.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CategorySpecification.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CategorySpecification_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
@@ -142,9 +128,6 @@
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ColorCode.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ColorCode_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CompanyMiscellaneousRigEquipmentAttribute.cs">
@@ -180,37 +163,10 @@
     <Compile Include="DataType.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dec14_PMDiagramValue.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dec14_PMProcedureValue.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dec14_PMServiceForms.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dec14_RigEquipmentScheduleJobs_DeletedByQuery.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Dec14_UserMeasurementAlerts.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Documents.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Documents_bk.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Documents_duplicateDocs.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DocumentType.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DuplicateJobDetails.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DuplicateJobSummary.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EngineeringRequest.cs">
@@ -225,22 +181,10 @@
     <Compile Include="EquipmentCategory.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EquipmentCategory_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EquipmentCriticality.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EquipmentDocument.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EquipmentDocument_bk.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EquipmentDocument_duplicateDocs.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EquipmentDocument_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EquipmentOneTimeJobs.cs">
@@ -252,31 +196,16 @@
     <Compile Include="EquipmentSchedule.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EquipmentSchedule_1.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EquipmentSchedule_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EquipmentSpecification.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EquipmentSpecification_backup.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EquipmentSpecsCategory.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EquipmentSpecsCategory_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EquipmentTemp.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EquipmentTransferHistoryLog.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Equipment_1.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ExRegister.cs">
@@ -316,12 +245,6 @@
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ImprovementCommitment.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ImprovementCommitment_bk.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ImprovementCommitment_TombStone1.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Jobs.cs">
@@ -384,40 +307,10 @@
     <Compile Include="MorningReportTrainings.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MorningReport_march232017.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="morningreport_scriptTable.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mr.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mro.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MR_FuelUsageDetails.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="NPT72Hours.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OilInventory.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Old_EquipmentSchedule_Tombstone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Old_LocalizedResource_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Old_OrgUserRole_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Old_PMServiceFormSectionProcedures_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Old_SecUserUserGroup_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrgRole.cs">
@@ -430,15 +323,6 @@
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrgUserRole.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrgUserRole_bk.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrgUserRole_scriptTable.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrgUserRole_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PakistanWeeklyReport_Result.cs">
@@ -456,13 +340,7 @@
     <Compile Include="PMDiagramFields.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PMDiagramFields_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="PMDiagramValue.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PMDiagram_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PMProcedure.cs">
@@ -471,13 +349,7 @@
     <Compile Include="PMProcedureFields.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PMProcedureFields_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="PMProcedureValue.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PMProcedure_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PMServiceFormDefinition.cs">
@@ -550,9 +422,6 @@
     <Compile Include="QualityReport_WorkloadStatus_Suspended_Result.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="QueryText.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="RaisedRMRAttribute.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
@@ -589,9 +458,6 @@
     <Compile Include="ResourceTranslation.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ResourceTranslation_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="rigchildren_Result.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
@@ -599,9 +465,6 @@
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RigDetailsHistoryLog.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RigDetails_1.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RigEquipment.cs">
@@ -631,22 +494,13 @@
     <Compile Include="RigEquipmentSchedule.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RigEquipmentScheduleBkup.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="RigEquipmentScheduleJobs.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RigEquipmentSchedule_1.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RigEquipmentSpecification.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RigEquipmentSpecificationTemplate.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RigEquipmentSpecification_Backup.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RigEquipmentSuspension.cs">
@@ -658,19 +512,7 @@
     <Compile Include="RigEquipmentUnscheduledRepairDetails.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RigEquipmentUnscheduledRepairDetails_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="RigEquipmentUnscheduledRepairs.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RigEquipment_1.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RigEquipment_bk.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RigEquipment_temp.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RigEq_18MonthsJobPlan.cs">
@@ -736,28 +578,13 @@
     <Compile Include="SecUserGroupPermission.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SecUserGroupPermission_MtrBck.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SecUserGroupPermission_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="SecUserGroupRelation.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SecUserGroup_TombStone.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SecUserStatus.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SecUserUserGroup.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SecUserUserGroup_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SECUSER_bk.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="spDailyActivityReportStatus_Result.cs">
@@ -850,15 +677,6 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="System.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="System_TombStone.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="System_TombStone_23June2010select.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="tbl_locations.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
@@ -932,15 +750,6 @@
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="usp_StepsForDeletionOfDuplicateEquipment_Result.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vwGeneratorDetailSpecifications.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vwPMFormsWithEquipmentNameConflicts_Details.cs">
-      <DependentUpon>PrognosDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vwPMFormsWithEquipmentNameConflicts_Summary.cs">
       <DependentUpon>PrognosDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WebDropdownValue.cs">
