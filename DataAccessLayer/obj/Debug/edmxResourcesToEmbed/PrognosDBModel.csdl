@@ -6743,6 +6743,15 @@
     <FunctionImport Name="usp_UploadCompletePMFormFinal" />
     <FunctionImport Name="usp_UploadRigEquipment" />
     <FunctionImport Name="usp_UploadRigEquipmentSpecification" />
+    <FunctionImport Name="sp_loadrigstatus" ReturnType="Collection(PrognosDBModel.sp_loadrigstatus_Result)">
+      <Parameter Name="orgunitid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LoadRigsByLoginID" ReturnType="Collection(PrognosDBModel.sp_LoadRigsByLoginID_Result)">
+      <Parameter Name="loginid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EquipmentDetails" ReturnType="Collection(PrognosDBModel.sp_EquipmentDetails_Result)">
+      <Parameter Name="EquipmentID" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="analysis_CheckForColumnUniqueValuesIssues_Result">
     <Property Type="Int32" Name="Column1" Nullable="true" />
@@ -7890,5 +7899,55 @@
     <Property Type="Boolean" Name="CATIII" Nullable="true" />
     <Property Type="Boolean" Name="CATIV" Nullable="true" />
     <Property Type="Boolean" Name="IsKeyEquipment" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_loadrigstatus_Result">
+    <Property Type="String" Name="Rig_Status" Nullable="false" MaxLength="9" />
+    <Property Type="String" Name="Secondary_Status" Nullable="true" MaxLength="1000" />
+    <Property Type="DateTime" Name="Rig_Status_Change_Date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Changed_On" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Changed_By" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_LoadRigsByLoginID_Result">
+    <Property Type="String" Name="RigName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="OrgUnitID" Nullable="false" />
+    <Property Type="Boolean" Name="ISCountryRig" Nullable="true" />
+    <Property Type="String" Name="RigType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaxStaticHookLoad" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CountryName" Nullable="false" MaxLength="100" />
+    <Property Type="Guid" Name="CountryOrgUnitID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_EquipmentDetails_Result">
+    <Property Type="Guid" Name="EquipmentId" Nullable="false" />
+    <Property Type="String" Name="EquipmentName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Make" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FamilyName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Model" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="SequenceNo" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="HasHourMeter" Nullable="false" />
+    <Property Type="String" Name="HasValveType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsAsset" Nullable="true" />
+    <Property Type="Decimal" Name="WBSSequence" Nullable="true" Precision="20" Scale="1" />
+    <Property Type="String" Name="WBSSequencetext" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="IsTagable" Nullable="true" />
+    <Property Type="String" Name="TagNStampingLocation" Nullable="true" MaxLength="2000" />
+    <Property Type="Boolean" Name="COCNo" Nullable="true" />
+    <Property Type="Boolean" Name="CALIBRIONNo" Nullable="true" />
+    <Property Type="Boolean" Name="INSPECTNo" Nullable="true" />
+    <Property Type="Boolean" Name="PRESSURENo" Nullable="true" />
+    <Property Type="Boolean" Name="LOADTESTNo" Nullable="true" />
+    <Property Type="Boolean" Name="CATIIINo" Nullable="true" />
+    <Property Type="Boolean" Name="CATIVNo" Nullable="true" />
+    <Property Type="Boolean" Name="COC" Nullable="true" />
+    <Property Type="Boolean" Name="CALIBRION" Nullable="true" />
+    <Property Type="Boolean" Name="INSPECT" Nullable="true" />
+    <Property Type="Boolean" Name="PRESSURE" Nullable="true" />
+    <Property Type="Boolean" Name="LOADTEST" Nullable="true" />
+    <Property Type="Boolean" Name="CATIII" Nullable="true" />
+    <Property Type="Boolean" Name="CATIV" Nullable="true" />
+    <Property Type="Boolean" Name="IsKeyEquipment" Nullable="false" />
+    <Property Type="String" Name="ParentEquipment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EquipmentCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EquipmentCriticalityName" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

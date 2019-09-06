@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TRMDbModelStoreContainer" CdmEntityContainer="TRMDbContext">
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="TRMDbModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+          <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+          <ScalarProperty Name="CompanyLocation" ColumnName="CompanyLocation" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyUser">
+      <EntityTypeMapping TypeName="TRMDbModel.CompanyUser">
+        <MappingFragment StoreEntitySet="CompanyUser">
+          <ScalarProperty Name="CompanyUserLoginID" ColumnName="CompanyUserLoginID" />
+          <ScalarProperty Name="CompanyUserPassword" ColumnName="CompanyUserPassword" />
+          <ScalarProperty Name="CompanyUserName" ColumnName="CompanyUserName" />
+          <ScalarProperty Name="CompanyUserPhone" ColumnName="CompanyUserPhone" />
+          <ScalarProperty Name="CompanyUserEmail" ColumnName="CompanyUserEmail" />
+          <ScalarProperty Name="CompanyUserStatus" ColumnName="CompanyUserStatus" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermission">
+      <EntityTypeMapping TypeName="TRMDbModel.UserPermission">
+        <MappingFragment StoreEntitySet="UserPermission">
+          <ScalarProperty Name="UserPermissionID" ColumnName="UserPermissionID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CanInsert" ColumnName="CanInsert" />
+          <ScalarProperty Name="CanUpdate" ColumnName="CanUpdate" />
+          <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole">
+      <EntityTypeMapping TypeName="TRMDbModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
+          <ScalarProperty Name="UserRoleDescription" ColumnName="UserRoleDescription" />
+          <ScalarProperty Name="UserPermissionID" ColumnName="UserPermissionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentSchedule">
+      <EntityTypeMapping TypeName="TRMDbModel.EquipmentSchedule">
+        <MappingFragment StoreEntitySet="EquipmentSchedule">
+          <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Leverage" ColumnName="Leverage" />
+          <ScalarProperty Name="Margin" ColumnName="Margin" />
+          <ScalarProperty Name="NextInspectionDate" ColumnName="NextInspectionDate" />
+          <ScalarProperty Name="LastInspectionDate" ColumnName="LastInspectionDate" />
+          <ScalarProperty Name="InspectionDuration" ColumnName="InspectionDuration" />
+          <ScalarProperty Name="EquipmentScheduleBasis" ColumnName="EquipmentScheduleBasis" />
+          <ScalarProperty Name="EquipmentScheduleType" ColumnName="EquipmentScheduleType" />
+          <ScalarProperty Name="EquipmentScheduleName" ColumnName="EquipmentScheduleName" />
+          <ScalarProperty Name="EquipmentScheduleID" ColumnName="EquipmentScheduleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipment">
+      <EntityTypeMapping TypeName="TRMDbModel.Equipment">
+        <MappingFragment StoreEntitySet="Equipment">
+          <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+          <ScalarProperty Name="EquipmentFamilyName" ColumnName="EquipmentFamilyName" />
+          <ScalarProperty Name="EquipmentLocation" ColumnName="EquipmentLocation" />
+          <ScalarProperty Name="EquipmentCustodian" ColumnName="EquipmentCustodian" />
+          <ScalarProperty Name="EquipmentOthers" ColumnName="EquipmentOthers" />
+          <ScalarProperty Name="EquipmentAccuracy" ColumnName="EquipmentAccuracy" />
+          <ScalarProperty Name="EquipmentRange" ColumnName="EquipmentRange" />
+          <ScalarProperty Name="EquipmentMake" ColumnName="EquipmentMake" />
+          <ScalarProperty Name="EquipmentModel" ColumnName="EquipmentModel" />
+          <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+          <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+          <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentCategory">
+      <EntityTypeMapping TypeName="TRMDbModel.EquipmentCategory">
+        <MappingFragment StoreEntitySet="EquipmentCategory">
+          <ScalarProperty Name="EquipmentCategoryImage" ColumnName="EquipmentCategoryImage" />
+          <ScalarProperty Name="EquipmentCategoryDescription" ColumnName="EquipmentCategoryDescription" />
+          <ScalarProperty Name="EquipmentCategoryName" ColumnName="EquipmentCategoryName" />
+          <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDetailsOfEquipment" FunctionName="TRMDbModel.Store.sp_getDetailsOfEquipment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TRMDbModel.sp_getDetailsOfEquipment_Result">
+          <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+          <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+          <ScalarProperty Name="EquipmentModel" ColumnName="EquipmentModel" />
+          <ScalarProperty Name="EquipmentMake" ColumnName="EquipmentMake" />
+          <ScalarProperty Name="EquipmentRange" ColumnName="EquipmentRange" />
+          <ScalarProperty Name="EquipmentAccuracy" ColumnName="EquipmentAccuracy" />
+          <ScalarProperty Name="EquipmentOthers" ColumnName="EquipmentOthers" />
+          <ScalarProperty Name="EquipmentCustodian" ColumnName="EquipmentCustodian" />
+          <ScalarProperty Name="EquipmentLocation" ColumnName="EquipmentLocation" />
+          <ScalarProperty Name="EquipmentFamilyName" ColumnName="EquipmentFamilyName" />
+          <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+          <ScalarProperty Name="EquipmentCategoryName" ColumnName="EquipmentCategoryName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

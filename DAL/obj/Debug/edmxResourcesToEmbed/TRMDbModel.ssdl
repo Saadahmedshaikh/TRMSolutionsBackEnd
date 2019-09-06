@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRMDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyLocation" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyDescription" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyPhone" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CompanyUser">
+    <Key>
+      <PropertyRef Name="CompanyUserLoginID" />
+    </Key>
+    <Property Name="CompanyUserLoginID" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CompanyUserPassword" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CompanyUserName" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyUserPhone" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyUserEmail" Type="varchar" MaxLength="30" />
+    <Property Name="CompanyUserStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="UserRoleID" Type="uniqueidentifier" />
+    <Property Name="CompanyID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="EquipmentID" />
+    </Key>
+    <Property Name="EquipmentID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EquipmentName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="EquipmentType" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentModel" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentMake" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentRange" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentAccuracy" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentOthers" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentCustodian" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentLocation" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentFamilyName" Type="varchar" MaxLength="30" />
+    <Property Name="AssetID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyID" Type="uniqueidentifier" />
+    <Property Name="EquipmentCategoryID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="EquipmentCategory">
+    <Key>
+      <PropertyRef Name="EquipmentCategoryID" />
+    </Key>
+    <Property Name="EquipmentCategoryID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EquipmentCategoryName" Type="varchar" MaxLength="20" />
+    <Property Name="EquipmentCategoryDescription" Type="varchar" MaxLength="50" />
+    <Property Name="EquipmentCategoryImage" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EquipmentSchedule">
+    <Key>
+      <PropertyRef Name="EquipmentScheduleID" />
+    </Key>
+    <Property Name="EquipmentScheduleID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EquipmentScheduleName" Type="varchar" MaxLength="30" />
+    <Property Name="EquipmentScheduleType" Type="varchar" MaxLength="10" />
+    <Property Name="EquipmentScheduleBasis" Type="varchar" MaxLength="10" />
+    <Property Name="InspectionDuration" Type="varchar" MaxLength="20" />
+    <Property Name="LastInspectionDate" Type="datetime" />
+    <Property Name="NextInspectionDate" Type="datetime" />
+    <Property Name="Margin" Type="int" />
+    <Property Name="Leverage" Type="int" />
+    <Property Name="Interval" Type="int" />
+    <Property Name="EquipmentID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="UserPermissionID" />
+    </Key>
+    <Property Name="UserPermissionID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="CanInsert" Type="char" MaxLength="1" />
+    <Property Name="CanUpdate" Type="char" MaxLength="1" />
+    <Property Name="CanDelete" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserRoleName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserRoleDescription" Type="varchar" MaxLength="100" />
+    <Property Name="UserPermissionID" Type="uniqueidentifier" />
+  </EntityType>
+  <Association Name="FK__CompanyUs__Compa__4CA06362">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CompanyUser">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CompanyUs__UserR__4BAC3F29">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+    <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="UserRoleID" />
+      </Principal>
+      <Dependent Role="CompanyUser">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Compa__02084FDA">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__0E6E26BF">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+    <End Role="EquipmentSchedule" Type="Self.EquipmentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="EquipmentID" />
+      </Principal>
+      <Dependent Role="EquipmentSchedule">
+        <PropertyRef Name="EquipmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__160F4887">
+    <End Role="EquipmentCategory" Type="Self.EquipmentCategory" Multiplicity="0..1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentCategory">
+        <PropertyRef Name="EquipmentCategoryID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="EquipmentCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRole__UserPe__45F365D3">
+    <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="0..1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPermission">
+        <PropertyRef Name="UserPermissionID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserPermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_getDetailsOfEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="equipID" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TRMDbModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyUser" EntityType="Self.CompanyUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EquipmentCategory" EntityType="Self.EquipmentCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EquipmentSchedule" EntityType="Self.EquipmentSchedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CompanyUs__Compa__4CA06362" Association="Self.FK__CompanyUs__Compa__4CA06362">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyUser" EntitySet="CompanyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CompanyUs__UserR__4BAC3F29" Association="Self.FK__CompanyUs__UserR__4BAC3F29">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="CompanyUser" EntitySet="CompanyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Compa__02084FDA" Association="Self.FK__Equipment__Compa__02084FDA">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__0E6E26BF" Association="Self.FK__Equipment__Equip__0E6E26BF">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="EquipmentSchedule" EntitySet="EquipmentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__160F4887" Association="Self.FK__Equipment__Equip__160F4887">
+      <End Role="EquipmentCategory" EntitySet="EquipmentCategory" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRole__UserPe__45F365D3" Association="Self.FK__UserRole__UserPe__45F365D3">
+      <End Role="UserPermission" EntitySet="UserPermission" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

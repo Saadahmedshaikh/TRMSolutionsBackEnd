@@ -5383,6 +5383,9 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_EquipmentDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EquipmentID" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_FuelUsageSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_GetRigEquipmentSpecificationTemplate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_GetRolesByRig" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -5399,6 +5402,12 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
         <Function Name="SP_Insert_RAMSManual_BMS_TSL_all_rigs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_LoadDistinctWellNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="OrgUnitID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="sp_LoadRigsByLoginID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="loginid" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_loadrigstatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="orgunitid" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -12950,7 +12959,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="analysis_CheckForColumnUniqueValuesIssues" ReturnType="Collection(PrognosDBModel.analysis_CheckForColumnUniqueValuesIssues_Result)" />
           <FunctionImport Name="analysis_Schedules" />
           <FunctionImport Name="ATR_FETCH_RIG_EQUIPMENT" ReturnType="Collection(PrognosDBModel.ATR_FETCH_RIG_EQUIPMENT_Result)">
-            <Parameter Name="OrgUnitID" Mode="In" Type="String" />
+          <Parameter Name="OrgUnitID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CleanUpJobs" />
           <FunctionImport Name="CreatCleanUpScriptForRigs" />
@@ -12974,15 +12983,15 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="LoginID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="FindScheduleJobs">
-            <Parameter Name="rigName" Mode="In" Type="String" />
+          <Parameter Name="rigName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="FindScheduleJobs_Main" ReturnType="Collection(PrognosDBModel.FindScheduleJobs_Main_Result)" />
           <FunctionImport Name="import_Diagrams" />
           <FunctionImport Name="LongPrint">
-            <Parameter Name="String" Mode="In" Type="String" />
+          <Parameter Name="String" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MakeMigrationScript">
-            <Parameter Name="objname" Mode="In" Type="String" />
+          <Parameter Name="objname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PakistanWeeklyReport" ReturnType="Collection(PrognosDBModel.PakistanWeeklyReport_Result)">
             <Parameter Name="from_dt" Mode="In" Type="DateTime" />
@@ -12990,58 +12999,58 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="CountryID" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus1095Days">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus1095DaysForSpecificAssetGroups">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus180Days">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus180DaysForSpecificAssetGroups">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus1825Days">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus1825DaysForSpecificAssetGroups">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus30Days">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus30DaysForSpecificAssetGroups">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus365Days">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus365DaysForSpecificAssetGroups">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus90Days">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_PMStatus90DaysForSpecificAssetGroups">
-            <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
+          <Parameter Name="cur_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_WorkloadStatus">
             <Parameter Name="from_dt" Mode="In" Type="DateTime" />
             <Parameter Name="to_dt" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_WorkloadStatus_Main" ReturnType="Collection(PrognosDBModel.QualityReport_WorkloadStatus_Main_Result)">
-            <Parameter Name="interval" Mode="In" Type="String" />
+          <Parameter Name="interval" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_WorkloadStatus_MainNewLogic" ReturnType="Collection(PrognosDBModel.QualityReport_WorkloadStatus_MainNewLogic_Result)">
-            <Parameter Name="interval" Mode="In" Type="String" />
+          <Parameter Name="interval" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_WorkloadStatus_NEW" ReturnType="Collection(PrognosDBModel.QualityReport_WorkloadStatus_NEW_Result)">
-            <Parameter Name="interval" Mode="In" Type="Int32" />
+          <Parameter Name="interval" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_WorkloadStatus_Suspended" ReturnType="Collection(PrognosDBModel.QualityReport_WorkloadStatus_Suspended_Result)" />
           <FunctionImport Name="QualityReport_WorkloadStatusByCriticality" ReturnType="Collection(PrognosDBModel.QualityReport_WorkloadStatusByCriticality_Result)" />
           <FunctionImport Name="QualityReport_WorkloadStatusForSpecificAssetGroups" ReturnType="Collection(PrognosDBModel.QualityReport_WorkloadStatusForSpecificAssetGroups_Result)">
-            <Parameter Name="interval" Mode="In" Type="Int32" />
+          <Parameter Name="interval" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="QualityReport_WorkloadStatusNewLogic">
             <Parameter Name="from_dt" Mode="In" Type="DateTime" />
@@ -13050,10 +13059,10 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="RefreshDatabaseUAT" />
           <FunctionImport Name="rigchildren" ReturnType="Collection(PrognosDBModel.rigchildren_Result)" />
           <FunctionImport Name="RigEquipmentScheduleSuspension">
-            <Parameter Name="sRigID" Mode="In" Type="Guid" />
+          <Parameter Name="sRigID" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="RigEquipmentScheduleSuspension_UAT">
-            <Parameter Name="sRigID" Mode="In" Type="Guid" />
+          <Parameter Name="sRigID" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -13091,7 +13100,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           </FunctionImport>
           <FunctionImport Name="sp_CreateXML" ReturnType="Collection(String)" />
           <FunctionImport Name="SP_CurrentAndPreviousWeeklyReportByCountry" ReturnType="Collection(PrognosDBModel.SP_CurrentAndPreviousWeeklyReportByCountry_Result)">
-            <Parameter Name="Country" Mode="In" Type="String" />
+          <Parameter Name="Country" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_dropdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -13100,7 +13109,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="sp_FuelUsageSummary" ReturnType="Collection(PrognosDBModel.sp_FuelUsageSummary_Result)" />
           <FunctionImport Name="SP_GetRigEquipmentSpecificationTemplate" ReturnType="Collection(PrognosDBModel.SP_GetRigEquipmentSpecificationTemplate_Result)" />
           <FunctionImport Name="SP_GetRolesByRig">
-            <Parameter Name="RIG" Mode="In" Type="String" />
+          <Parameter Name="RIG" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(PrognosDBModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -13112,7 +13121,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           </FunctionImport>
           <FunctionImport Name="SP_Insert_RAMSManual_BMS_TSL_all_rigs" />
           <FunctionImport Name="SP_LoadDistinctWellNo" ReturnType="Collection(String)">
-            <Parameter Name="OrgUnitID" Mode="In" Type="Guid" />
+          <Parameter Name="OrgUnitID" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="sp_renamediagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -13120,10 +13129,10 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_RigEquipmentOneTimeJob">
-            <Parameter Name="CRUD" Mode="In" Type="String" />
+          <Parameter Name="CRUD" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_RigEquipmentOTJ_Tasks">
-            <Parameter Name="CRUD" Mode="In" Type="String" />
+          <Parameter Name="CRUD" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_SearchDocuments" ReturnType="Collection(PrognosDBModel.sp_SearchDocuments_Result)">
             <Parameter Name="CRUD" Mode="In" Type="String" />
@@ -13133,7 +13142,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="DocumentTypeID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_SetRigEquipmentFamilyRelations">
-            <Parameter Name="OrgUnitId" Mode="In" Type="Guid" />
+          <Parameter Name="OrgUnitId" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="SP_SumMorningReportFieldsByLatestWell">
             <Parameter Name="EndDate" Mode="In" Type="DateTime" />
@@ -13172,7 +13181,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="SP_UpdateTemplateValue" />
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="spCloseInspection">
-            <Parameter Name="jobID" Mode="In" Type="Guid" />
+          <Parameter Name="jobID" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="spCopyEquipmentSchedule">
             <Parameter Name="pEquipmentID" Mode="In" Type="Guid" />
@@ -13196,22 +13205,22 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="pLoginid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spDailyActivityReportStatus" ReturnType="Collection(PrognosDBModel.spDailyActivityReportStatus_Result)">
-            <Parameter Name="pCountryName" Mode="In" Type="String" />
+          <Parameter Name="pCountryName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spDailyOPeration_WithRig" ReturnType="Collection(PrognosDBModel.spDailyOPeration_WithRig_Result)">
-            <Parameter Name="rig" Mode="In" Type="Int32" />
+          <Parameter Name="rig" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spDailyOperationSummaryCheck" ReturnType="Collection(PrognosDBModel.spDailyOperationSummaryCheck_Result)" />
           <FunctionImport Name="spDeleteEquipmentDocument">
-            <Parameter Name="pDocumentID" Mode="In" Type="Guid" />
+          <Parameter Name="pDocumentID" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="spGetBasicDashboard" ReturnType="Collection(PrognosDBModel.spGetBasicDashboard_Result)" />
           <FunctionImport Name="spGetChangeNotifications" />
           <FunctionImport Name="spGetEquipmentByName" ReturnType="Collection(PrognosDBModel.spGetEquipmentByName_Result)">
-            <Parameter Name="pEquipmentName" Mode="In" Type="String" />
+          <Parameter Name="pEquipmentName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spGetReportTabs" ReturnType="Collection(PrognosDBModel.spGetReportTabs_Result)">
-            <Parameter Name="pLoginID" Mode="In" Type="String" />
+          <Parameter Name="pLoginID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spGetRigGeoLocations" ReturnType="Collection(PrognosDBModel.spGetRigGeoLocations_Result)" />
           <FunctionImport Name="spInsertRigEquipmentDocuments">
@@ -13229,7 +13238,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="sortColPara" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spJobsOverduePercentByYear" ReturnType="Collection(PrognosDBModel.spJobsOverduePercentByYear_Result)">
-            <Parameter Name="year" Mode="In" Type="String" />
+          <Parameter Name="year" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spJobsOverduePMsByDate" ReturnType="Collection(PrognosDBModel.spJobsOverduePMsByDate_Result)" />
           <FunctionImport Name="Split" IsComposable="true" ReturnType="Collection(String)">
@@ -13237,7 +13246,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="Delimiter" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spMonthlyRigJobReport" ReturnType="Collection(PrognosDBModel.spMonthlyRigJobReport_Result)">
-            <Parameter Name="pRigName" Mode="In" Type="String" />
+          <Parameter Name="pRigName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spNewMonthlyRigJobReport" ReturnType="Collection(PrognosDBModel.spNewMonthlyRigJobReport_Result)" />
           <FunctionImport Name="spPMFormsWithEquipmentNameConflicts_Resolve" />
@@ -13341,12 +13350,12 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           </FunctionImport>
           <FunctionImport Name="support_CopytoRigStatusLog" />
           <FunctionImport Name="support_CorrectOneTimeJob">
-            <Parameter Name="OneTimeJobId" Mode="In" Type="Guid" />
+          <Parameter Name="OneTimeJobId" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="support_DeleteEquipmentMarkedAsDelete" />
           <FunctionImport Name="support_FindCasesWhereAfterAckOriginalJobScrewed" ReturnType="Collection(PrognosDBModel.support_FindCasesWhereAfterAckOriginalJobScrewed_Result)" />
           <FunctionImport Name="support_FindPMSUnackedBySeniorToolPusher" ReturnType="Collection(PrognosDBModel.support_FindPMSUnackedBySeniorToolPusher_Result)">
-            <Parameter Name="RigNo" Mode="In" Type="String" />
+          <Parameter Name="RigNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="support_FixCasesWhereMultiAckTasksForToolPusher" />
           <FunctionImport Name="support_FixCasesWherePMAckedAndSTPJobIsIncomplete" />
@@ -13355,7 +13364,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="Type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="support_GetDataForPMsAndMorningReportByRig" ReturnType="Collection(PrognosDBModel.support_GetDataForPMsAndMorningReportByRig_Result)">
-            <Parameter Name="USerId" Mode="In" Type="String" />
+          <Parameter Name="USerId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="support_GetRigUserList" ReturnType="Collection(PrognosDBModel.support_GetRigUserList_Result)" />
           <FunctionImport Name="support_MapFormDefToData" ReturnType="Collection(PrognosDBModel.support_MapFormDefToData_Result)" />
@@ -13385,10 +13394,10 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="support_Reset_Elect_Mech_STP_Pass_Private05" />
           <FunctionImport Name="support_RigStatusByRegion" ReturnType="Collection(PrognosDBModel.support_RigStatusByRegion_Result)" />
           <FunctionImport Name="support_SetPasswordExpiryPolicy">
-            <Parameter Name="Prm" Mode="In" Type="Int32" />
+          <Parameter Name="Prm" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="support_WhoLastSynced" ReturnType="Collection(PrognosDBModel.support_WhoLastSynced_Result)">
-            <Parameter Name="Prm" Mode="In" Type="String" />
+          <Parameter Name="Prm" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="temp_DownloadExistingSch" ReturnType="Collection(PrognosDBModel.temp_DownloadExistingSch_Result)" />
           <FunctionImport Name="TestMonthlyActivityReport" ReturnType="Collection(PrognosDBModel.TestMonthlyActivityReport_Result)" />
@@ -13400,7 +13409,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="usp_ASsociatePMBasedOnFamily" />
           <FunctionImport Name="usp_CheckAllActivityForPMandService" ReturnType="Collection(PrognosDBModel.usp_CheckAllActivityForPMandService_Result)" />
           <FunctionImport Name="usp_CleanRougueSchedules">
-            <Parameter Name="OrgUnit" Mode="In" Type="String" />
+          <Parameter Name="OrgUnit" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_CloneRig">
             <Parameter Name="FromOrgUnitName" Mode="In" Type="String" />
@@ -13409,7 +13418,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImport Name="usp_CreateAllScript" />
           <FunctionImport Name="usp_DeleteDataFromAllTables" />
           <FunctionImport Name="usp_DeleteEquipment">
-            <Parameter Name="EquipmentId" Mode="In" Type="Guid" />
+          <Parameter Name="EquipmentId" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="usp_Doc">
             <Parameter Name="DocName" Mode="In" Type="String" />
@@ -13427,7 +13436,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="SeqNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_GetAllSchedules" ReturnType="Collection(PrognosDBModel.usp_GetAllSchedules_Result)">
-            <Parameter Name="RigNo" Mode="In" Type="String" />
+          <Parameter Name="RigNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_GetDataForTranslation" ReturnType="Collection(PrognosDBModel.usp_GetDataForTranslation_Result)">
             <Parameter Name="ruLanguageID" Mode="In" Type="Guid" />
@@ -13448,7 +13457,7 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           </FunctionImport>
           <FunctionImport Name="usp_helper_CompareEquipmentFamilySchedules" ReturnType="Collection(PrognosDBModel.usp_helper_CompareEquipmentFamilySchedules_Result)" />
           <FunctionImport Name="usp_Helper_ListAllSchedules" ReturnType="Collection(PrognosDBModel.usp_Helper_ListAllSchedules_Result)">
-            <Parameter Name="RigNo" Mode="In" Type="String" />
+          <Parameter Name="RigNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_HorizontalizeDiagramMeasurements" />
           <FunctionImport Name="usp_ImportLanguageTranslationFile">
@@ -13477,12 +13486,21 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
             <Parameter Name="AddOnly" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_SetupTombStone">
-            <Parameter Name="rvcTableName" Mode="In" Type="String" />
+          <Parameter Name="rvcTableName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_StepsForDeletionOfDuplicateEquipment" ReturnType="Collection(PrognosDBModel.usp_StepsForDeletionOfDuplicateEquipment_Result)" />
           <FunctionImport Name="usp_UploadCompletePMFormFinal" />
           <FunctionImport Name="usp_UploadRigEquipment" />
           <FunctionImport Name="usp_UploadRigEquipmentSpecification" />
+          <FunctionImport Name="sp_loadrigstatus" ReturnType="Collection(PrognosDBModel.sp_loadrigstatus_Result)">
+          <Parameter Name="orgunitid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_LoadRigsByLoginID" ReturnType="Collection(PrognosDBModel.sp_LoadRigsByLoginID_Result)">
+          <Parameter Name="loginid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_EquipmentDetails" ReturnType="Collection(PrognosDBModel.sp_EquipmentDetails_Result)">
+            <Parameter Name="EquipmentID" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="analysis_CheckForColumnUniqueValuesIssues_Result">
           <Property Type="Int32" Name="Column1" Nullable="true" />
@@ -14630,6 +14648,56 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <Property Type="Boolean" Name="CATIII" Nullable="true" />
           <Property Type="Boolean" Name="CATIV" Nullable="true" />
           <Property Type="Boolean" Name="IsKeyEquipment" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_loadrigstatus_Result">
+          <Property Type="String" Name="Rig_Status" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="Secondary_Status" Nullable="true" MaxLength="1000" />
+          <Property Type="DateTime" Name="Rig_Status_Change_Date" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Changed_On" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Changed_By" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="sp_LoadRigsByLoginID_Result">
+          <Property Type="String" Name="RigName" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="OrgUnitID" Nullable="false" />
+          <Property Type="Boolean" Name="ISCountryRig" Nullable="true" />
+          <Property Type="String" Name="RigType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaxStaticHookLoad" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CountryName" Nullable="false" MaxLength="100" />
+          <Property Type="Guid" Name="CountryOrgUnitID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_EquipmentDetails_Result">
+          <Property Type="Guid" Name="EquipmentId" Nullable="false" />
+          <Property Type="String" Name="EquipmentName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Make" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FamilyName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Model" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="SequenceNo" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+          <Property Type="Boolean" Name="HasHourMeter" Nullable="false" />
+          <Property Type="String" Name="HasValveType" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsAsset" Nullable="true" />
+          <Property Type="Decimal" Name="WBSSequence" Nullable="true" Precision="20" Scale="1" />
+          <Property Type="String" Name="WBSSequencetext" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="IsTagable" Nullable="true" />
+          <Property Type="String" Name="TagNStampingLocation" Nullable="true" MaxLength="2000" />
+          <Property Type="Boolean" Name="COCNo" Nullable="true" />
+          <Property Type="Boolean" Name="CALIBRIONNo" Nullable="true" />
+          <Property Type="Boolean" Name="INSPECTNo" Nullable="true" />
+          <Property Type="Boolean" Name="PRESSURENo" Nullable="true" />
+          <Property Type="Boolean" Name="LOADTESTNo" Nullable="true" />
+          <Property Type="Boolean" Name="CATIIINo" Nullable="true" />
+          <Property Type="Boolean" Name="CATIVNo" Nullable="true" />
+          <Property Type="Boolean" Name="COC" Nullable="true" />
+          <Property Type="Boolean" Name="CALIBRION" Nullable="true" />
+          <Property Type="Boolean" Name="INSPECT" Nullable="true" />
+          <Property Type="Boolean" Name="PRESSURE" Nullable="true" />
+          <Property Type="Boolean" Name="LOADTEST" Nullable="true" />
+          <Property Type="Boolean" Name="CATIII" Nullable="true" />
+          <Property Type="Boolean" Name="CATIV" Nullable="true" />
+          <Property Type="Boolean" Name="IsKeyEquipment" Nullable="false" />
+          <Property Type="String" Name="ParentEquipment" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="EquipmentCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EquipmentCriticalityName" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -19747,6 +19815,68 @@ warning 6002: The table/view 'WDI_RAMS.dbo.UserMeasurementAlerts_bk' does not ha
           <FunctionImportMapping FunctionImportName="usp_UploadCompletePMFormFinal" FunctionName="PrognosDBModel.Store.usp_UploadCompletePMFormFinal" />
           <FunctionImportMapping FunctionImportName="usp_UploadRigEquipment" FunctionName="PrognosDBModel.Store.usp_UploadRigEquipment" />
           <FunctionImportMapping FunctionImportName="usp_UploadRigEquipmentSpecification" FunctionName="PrognosDBModel.Store.usp_UploadRigEquipmentSpecification" />
+          <FunctionImportMapping FunctionImportName="sp_loadrigstatus" FunctionName="PrognosDBModel.Store.sp_loadrigstatus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PrognosDBModel.sp_loadrigstatus_Result">
+                <ScalarProperty Name="Rig_Status" ColumnName="Rig Status" />
+                <ScalarProperty Name="Secondary_Status" ColumnName="Secondary Status" />
+                <ScalarProperty Name="Rig_Status_Change_Date" ColumnName="Rig Status Change Date" />
+                <ScalarProperty Name="Changed_On" ColumnName="Changed On" />
+                <ScalarProperty Name="Changed_By" ColumnName="Changed By" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_LoadRigsByLoginID" FunctionName="PrognosDBModel.Store.sp_LoadRigsByLoginID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PrognosDBModel.sp_LoadRigsByLoginID_Result">
+                <ScalarProperty Name="RigName" ColumnName="RigName" />
+                <ScalarProperty Name="OrgUnitID" ColumnName="OrgUnitID" />
+                <ScalarProperty Name="ISCountryRig" ColumnName="ISCountryRig" />
+                <ScalarProperty Name="RigType" ColumnName="RigType" />
+                <ScalarProperty Name="MaxStaticHookLoad" ColumnName="MaxStaticHookLoad" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryOrgUnitID" ColumnName="CountryOrgUnitID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_EquipmentDetails" FunctionName="PrognosDBModel.Store.sp_EquipmentDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PrognosDBModel.sp_EquipmentDetails_Result">
+                <ScalarProperty Name="EquipmentId" ColumnName="EquipmentId" />
+                <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="HasHourMeter" ColumnName="HasHourMeter" />
+                <ScalarProperty Name="HasValveType" ColumnName="HasValveType" />
+                <ScalarProperty Name="IsAsset" ColumnName="IsAsset" />
+                <ScalarProperty Name="WBSSequence" ColumnName="WBSSequence" />
+                <ScalarProperty Name="WBSSequencetext" ColumnName="WBSSequencetext" />
+                <ScalarProperty Name="IsTagable" ColumnName="IsTagable" />
+                <ScalarProperty Name="TagNStampingLocation" ColumnName="TagNStampingLocation" />
+                <ScalarProperty Name="COCNo" ColumnName="COCNo" />
+                <ScalarProperty Name="CALIBRIONNo" ColumnName="CALIBRIONNo" />
+                <ScalarProperty Name="INSPECTNo" ColumnName="INSPECTNo" />
+                <ScalarProperty Name="PRESSURENo" ColumnName="PRESSURENo" />
+                <ScalarProperty Name="LOADTESTNo" ColumnName="LOADTESTNo" />
+                <ScalarProperty Name="CATIIINo" ColumnName="CATIIINo" />
+                <ScalarProperty Name="CATIVNo" ColumnName="CATIVNo" />
+                <ScalarProperty Name="COC" ColumnName="COC" />
+                <ScalarProperty Name="CALIBRION" ColumnName="CALIBRION" />
+                <ScalarProperty Name="INSPECT" ColumnName="INSPECT" />
+                <ScalarProperty Name="PRESSURE" ColumnName="PRESSURE" />
+                <ScalarProperty Name="LOADTEST" ColumnName="LOADTEST" />
+                <ScalarProperty Name="CATIII" ColumnName="CATIII" />
+                <ScalarProperty Name="CATIV" ColumnName="CATIV" />
+                <ScalarProperty Name="IsKeyEquipment" ColumnName="IsKeyEquipment" />
+                <ScalarProperty Name="ParentEquipment" ColumnName="ParentEquipment" />
+                <ScalarProperty Name="EquipmentCategoryName" ColumnName="EquipmentCategoryName" />
+                <ScalarProperty Name="EquipmentCriticalityName" ColumnName="EquipmentCriticalityName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

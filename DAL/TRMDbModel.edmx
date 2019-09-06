@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TRMDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="30" />
+          <Property Name="CompanyLocation" Type="varchar" MaxLength="30" />
+          <Property Name="CompanyDescription" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyPhone" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CompanyUser">
+          <Key>
+            <PropertyRef Name="CompanyUserLoginID" />
+          </Key>
+          <Property Name="CompanyUserLoginID" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CompanyUserPassword" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CompanyUserName" Type="varchar" MaxLength="30" />
+          <Property Name="CompanyUserPhone" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyUserEmail" Type="varchar" MaxLength="30" />
+          <Property Name="CompanyUserStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserRoleID" Type="uniqueidentifier" />
+          <Property Name="CompanyID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="EquipmentID" />
+          </Key>
+          <Property Name="EquipmentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EquipmentName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EquipmentType" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentModel" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentMake" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentRange" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentAccuracy" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentOthers" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentCustodian" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentLocation" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentFamilyName" Type="varchar" MaxLength="30" />
+          <Property Name="AssetID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyID" Type="uniqueidentifier" />
+          <Property Name="EquipmentCategoryID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="EquipmentCategory">
+          <Key>
+            <PropertyRef Name="EquipmentCategoryID" />
+          </Key>
+          <Property Name="EquipmentCategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EquipmentCategoryName" Type="varchar" MaxLength="20" />
+          <Property Name="EquipmentCategoryDescription" Type="varchar" MaxLength="50" />
+          <Property Name="EquipmentCategoryImage" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EquipmentSchedule">
+          <Key>
+            <PropertyRef Name="EquipmentScheduleID" />
+          </Key>
+          <Property Name="EquipmentScheduleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EquipmentScheduleName" Type="varchar" MaxLength="30" />
+          <Property Name="EquipmentScheduleType" Type="varchar" MaxLength="10" />
+          <Property Name="EquipmentScheduleBasis" Type="varchar" MaxLength="10" />
+          <Property Name="InspectionDuration" Type="varchar" MaxLength="20" />
+          <Property Name="LastInspectionDate" Type="datetime" />
+          <Property Name="NextInspectionDate" Type="datetime" />
+          <Property Name="Margin" Type="int" />
+          <Property Name="Leverage" Type="int" />
+          <Property Name="Interval" Type="int" />
+          <Property Name="EquipmentID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="UserPermission">
+          <Key>
+            <PropertyRef Name="UserPermissionID" />
+          </Key>
+          <Property Name="UserPermissionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="CanInsert" Type="char" MaxLength="1" />
+          <Property Name="CanUpdate" Type="char" MaxLength="1" />
+          <Property Name="CanDelete" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserRoleName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UserRoleDescription" Type="varchar" MaxLength="100" />
+          <Property Name="UserPermissionID" Type="uniqueidentifier" />
+        </EntityType>
+        <Association Name="FK__CompanyUs__Compa__4CA06362">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyUser">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanyUs__UserR__4BAC3F29">
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+          <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="CompanyUser">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Equipment__Compa__02084FDA">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Equipment__Equip__0E6E26BF">
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+          <End Role="EquipmentSchedule" Type="Self.EquipmentSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="EquipmentID" />
+            </Principal>
+            <Dependent Role="EquipmentSchedule">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Equipment__Equip__160F4887">
+          <End Role="EquipmentCategory" Type="Self.EquipmentCategory" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EquipmentCategory">
+              <PropertyRef Name="EquipmentCategoryID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="EquipmentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRole__UserPe__45F365D3">
+          <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="0..1" />
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPermission">
+              <PropertyRef Name="UserPermissionID" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserPermissionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_getDetailsOfEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="equipID" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="TRMDbModelStoreContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyUser" EntityType="Self.CompanyUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipmentCategory" EntityType="Self.EquipmentCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipmentSchedule" EntityType="Self.EquipmentSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CompanyUs__Compa__4CA06362" Association="Self.FK__CompanyUs__Compa__4CA06362">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="CompanyUser" EntitySet="CompanyUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanyUs__UserR__4BAC3F29" Association="Self.FK__CompanyUs__UserR__4BAC3F29">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="CompanyUser" EntitySet="CompanyUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Equipment__Compa__02084FDA" Association="Self.FK__Equipment__Compa__02084FDA">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Equipment__Equip__0E6E26BF" Association="Self.FK__Equipment__Equip__0E6E26BF">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="EquipmentSchedule" EntitySet="EquipmentSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Equipment__Equip__160F4887" Association="Self.FK__Equipment__Equip__160F4887">
+            <End Role="EquipmentCategory" EntitySet="EquipmentCategory" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRole__UserPe__45F365D3" Association="Self.FK__UserRole__UserPe__45F365D3">
+            <End Role="UserPermission" EntitySet="UserPermission" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TRMDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CompanyUser" Relationship="Self.FK__CompanyUs__Compa__4CA06362" FromRole="Company" ToRole="CompanyUser" />
+          <Property Name="CompanyLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Compa__02084FDA" FromRole="Company" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="CompanyUser">
+          <Key>
+            <PropertyRef Name="CompanyUserLoginID" />
+          </Key>
+          <Property Name="CompanyUserLoginID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyUserPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyUserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyUserPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyUserEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyUserStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UserRoleID" Type="Guid" />
+          <Property Name="CompanyID" Type="Guid" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__CompanyUs__Compa__4CA06362" FromRole="CompanyUser" ToRole="Company" />
+          <NavigationProperty Name="UserRole" Relationship="Self.FK__CompanyUs__UserR__4BAC3F29" FromRole="CompanyUser" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserPermission">
+          <Key>
+            <PropertyRef Name="UserPermissionID" />
+          </Key>
+          <Property Name="UserPermissionID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CanInsert" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CanUpdate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CanDelete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="UserRole" Relationship="Self.FK__UserRole__UserPe__45F365D3" FromRole="UserPermission" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="Guid" Nullable="false" />
+          <Property Name="UserRoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserRoleDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserPermissionID" Type="Guid" />
+          <NavigationProperty Name="CompanyUser" Relationship="Self.FK__CompanyUs__UserR__4BAC3F29" FromRole="UserRole" ToRole="CompanyUser" />
+          <NavigationProperty Name="UserPermission" Relationship="Self.FK__UserRole__UserPe__45F365D3" FromRole="UserRole" ToRole="UserPermission" />
+        </EntityType>
+        <Association Name="FK__CompanyUs__Compa__4CA06362">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyUser">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanyUs__UserR__4BAC3F29">
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+          <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="CompanyUser">
+              <PropertyRef Name="UserRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRole__UserPe__45F365D3">
+          <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="0..1" />
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPermission">
+              <PropertyRef Name="UserPermissionID" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserPermissionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TRMDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Company" EntityType="Self.Company" />
+          <EntitySet Name="CompanyUser" EntityType="Self.CompanyUser" />
+          <EntitySet Name="UserPermission" EntityType="Self.UserPermission" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" />
+          <AssociationSet Name="FK__CompanyUs__Compa__4CA06362" Association="Self.FK__CompanyUs__Compa__4CA06362">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="CompanyUser" EntitySet="CompanyUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanyUs__UserR__4BAC3F29" Association="Self.FK__CompanyUs__UserR__4BAC3F29">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="CompanyUser" EntitySet="CompanyUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRole__UserPe__45F365D3" Association="Self.FK__UserRole__UserPe__45F365D3">
+            <End Role="UserPermission" EntitySet="UserPermission" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <EntitySet Name="EquipmentSchedule" EntityType="TRMDbModel.EquipmentSchedule" />
+          <EntitySet Name="Equipment" EntityType="TRMDbModel.Equipment" />
+          <EntitySet Name="EquipmentCategory" EntityType="TRMDbModel.EquipmentCategory" />
+          <AssociationSet Name="FK__Equipment__Compa__02084FDA" Association="TRMDbModel.FK__Equipment__Compa__02084FDA">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Equipment__Equip__0E6E26BF" Association="TRMDbModel.FK__Equipment__Equip__0E6E26BF">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="EquipmentSchedule" EntitySet="EquipmentSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Equipment__Equip__160F4887" Association="TRMDbModel.FK__Equipment__Equip__160F4887">
+            <End Role="EquipmentCategory" EntitySet="EquipmentCategory" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <FunctionImport Name="sp_getDetailsOfEquipment" ReturnType="Collection(TRMDbModel.sp_getDetailsOfEquipment_Result)">
+            <Parameter Name="equipID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="EquipmentSchedule">
+          <Key>
+            <PropertyRef Name="EquipmentScheduleID" />
+          </Key>
+          <Property Name="EquipmentScheduleID" Type="Guid" Nullable="false" />
+          <Property Name="EquipmentScheduleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentScheduleType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentScheduleBasis" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InspectionDuration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastInspectionDate" Type="DateTime" Precision="3" />
+          <Property Name="NextInspectionDate" Type="DateTime" Precision="3" />
+          <Property Name="Margin" Type="Int32" />
+          <Property Name="Leverage" Type="Int32" />
+          <Property Name="Interval" Type="Int32" />
+          <Property Name="EquipmentID" Type="Guid" />
+          <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Equip__0E6E26BF" FromRole="EquipmentSchedule" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="EquipmentID" />
+          </Key>
+          <Property Name="EquipmentID" Type="Guid" Nullable="false" />
+          <Property Name="EquipmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentModel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentMake" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentRange" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentAccuracy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentOthers" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentCustodian" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentFamilyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AssetID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyID" Type="Guid" />
+          <Property Name="EquipmentCategoryID" Type="Guid" />
+          <NavigationProperty Name="Company" Relationship="TRMDbModel.FK__Equipment__Compa__02084FDA" FromRole="Equipment" ToRole="Company" />
+          <NavigationProperty Name="EquipmentSchedule" Relationship="TRMDbModel.FK__Equipment__Equip__0E6E26BF" FromRole="Equipment" ToRole="EquipmentSchedule" />
+          <NavigationProperty Name="EquipmentCategory" Relationship="TRMDbModel.FK__Equipment__Equip__160F4887" FromRole="Equipment" ToRole="EquipmentCategory" />
+        </EntityType>
+        <EntityType Name="EquipmentCategory">
+          <Key>
+            <PropertyRef Name="EquipmentCategoryID" />
+          </Key>
+          <Property Name="EquipmentCategoryID" Type="Guid" Nullable="false" />
+          <Property Name="EquipmentCategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentCategoryDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentCategoryImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Equip__160F4887" FromRole="EquipmentCategory" ToRole="Equipment" />
+        </EntityType>
+        <Association Name="FK__Equipment__Compa__02084FDA">
+          <End Type="TRMDbModel.Company" Role="Company" Multiplicity="0..1" />
+          <End Type="TRMDbModel.Equipment" Role="Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Equipment__Equip__0E6E26BF">
+          <End Type="TRMDbModel.Equipment" Role="Equipment" Multiplicity="0..1" />
+          <End Type="TRMDbModel.EquipmentSchedule" Role="EquipmentSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="EquipmentID" />
+            </Principal>
+            <Dependent Role="EquipmentSchedule">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Equipment__Equip__160F4887">
+          <End Type="TRMDbModel.EquipmentCategory" Role="EquipmentCategory" Multiplicity="0..1" />
+          <End Type="TRMDbModel.Equipment" Role="Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EquipmentCategory">
+              <PropertyRef Name="EquipmentCategoryID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="EquipmentCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_getDetailsOfEquipment_Result">
+          <Property Type="String" Name="EquipmentName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="EquipmentType" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentModel" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentMake" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentRange" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentAccuracy" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentOthers" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentCustodian" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentLocation" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="EquipmentFamilyName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AssetID" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="20" />
+          <Property Type="Guid" Name="EquipmentCategoryID" Nullable="true" />
+          <Property Type="String" Name="EquipmentCategoryName" Nullable="true" MaxLength="20" />
+          <Property Type="Guid" Name="CompanyID" Nullable="true" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TRMDbModelStoreContainer" CdmEntityContainer="TRMDbContext">
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="TRMDbModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+                <ScalarProperty Name="CompanyLocation" ColumnName="CompanyLocation" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyUser">
+            <EntityTypeMapping TypeName="TRMDbModel.CompanyUser">
+              <MappingFragment StoreEntitySet="CompanyUser">
+                <ScalarProperty Name="CompanyUserLoginID" ColumnName="CompanyUserLoginID" />
+                <ScalarProperty Name="CompanyUserPassword" ColumnName="CompanyUserPassword" />
+                <ScalarProperty Name="CompanyUserName" ColumnName="CompanyUserName" />
+                <ScalarProperty Name="CompanyUserPhone" ColumnName="CompanyUserPhone" />
+                <ScalarProperty Name="CompanyUserEmail" ColumnName="CompanyUserEmail" />
+                <ScalarProperty Name="CompanyUserStatus" ColumnName="CompanyUserStatus" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPermission">
+            <EntityTypeMapping TypeName="TRMDbModel.UserPermission">
+              <MappingFragment StoreEntitySet="UserPermission">
+                <ScalarProperty Name="UserPermissionID" ColumnName="UserPermissionID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CanInsert" ColumnName="CanInsert" />
+                <ScalarProperty Name="CanUpdate" ColumnName="CanUpdate" />
+                <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="TRMDbModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
+                <ScalarProperty Name="UserRoleDescription" ColumnName="UserRoleDescription" />
+                <ScalarProperty Name="UserPermissionID" ColumnName="UserPermissionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentSchedule">
+            <EntityTypeMapping TypeName="TRMDbModel.EquipmentSchedule">
+              <MappingFragment StoreEntitySet="EquipmentSchedule">
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="Interval" ColumnName="Interval" />
+                <ScalarProperty Name="Leverage" ColumnName="Leverage" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
+                <ScalarProperty Name="NextInspectionDate" ColumnName="NextInspectionDate" />
+                <ScalarProperty Name="LastInspectionDate" ColumnName="LastInspectionDate" />
+                <ScalarProperty Name="InspectionDuration" ColumnName="InspectionDuration" />
+                <ScalarProperty Name="EquipmentScheduleBasis" ColumnName="EquipmentScheduleBasis" />
+                <ScalarProperty Name="EquipmentScheduleType" ColumnName="EquipmentScheduleType" />
+                <ScalarProperty Name="EquipmentScheduleName" ColumnName="EquipmentScheduleName" />
+                <ScalarProperty Name="EquipmentScheduleID" ColumnName="EquipmentScheduleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipment">
+            <EntityTypeMapping TypeName="TRMDbModel.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="EquipmentFamilyName" ColumnName="EquipmentFamilyName" />
+                <ScalarProperty Name="EquipmentLocation" ColumnName="EquipmentLocation" />
+                <ScalarProperty Name="EquipmentCustodian" ColumnName="EquipmentCustodian" />
+                <ScalarProperty Name="EquipmentOthers" ColumnName="EquipmentOthers" />
+                <ScalarProperty Name="EquipmentAccuracy" ColumnName="EquipmentAccuracy" />
+                <ScalarProperty Name="EquipmentRange" ColumnName="EquipmentRange" />
+                <ScalarProperty Name="EquipmentMake" ColumnName="EquipmentMake" />
+                <ScalarProperty Name="EquipmentModel" ColumnName="EquipmentModel" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentCategory">
+            <EntityTypeMapping TypeName="TRMDbModel.EquipmentCategory">
+              <MappingFragment StoreEntitySet="EquipmentCategory">
+                <ScalarProperty Name="EquipmentCategoryImage" ColumnName="EquipmentCategoryImage" />
+                <ScalarProperty Name="EquipmentCategoryDescription" ColumnName="EquipmentCategoryDescription" />
+                <ScalarProperty Name="EquipmentCategoryName" ColumnName="EquipmentCategoryName" />
+                <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDetailsOfEquipment" FunctionName="TRMDbModel.Store.sp_getDetailsOfEquipment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TRMDbModel.sp_getDetailsOfEquipment_Result">
+                <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="EquipmentModel" ColumnName="EquipmentModel" />
+                <ScalarProperty Name="EquipmentMake" ColumnName="EquipmentMake" />
+                <ScalarProperty Name="EquipmentRange" ColumnName="EquipmentRange" />
+                <ScalarProperty Name="EquipmentAccuracy" ColumnName="EquipmentAccuracy" />
+                <ScalarProperty Name="EquipmentOthers" ColumnName="EquipmentOthers" />
+                <ScalarProperty Name="EquipmentCustodian" ColumnName="EquipmentCustodian" />
+                <ScalarProperty Name="EquipmentLocation" ColumnName="EquipmentLocation" />
+                <ScalarProperty Name="EquipmentFamilyName" ColumnName="EquipmentFamilyName" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+                <ScalarProperty Name="EquipmentCategoryName" ColumnName="EquipmentCategoryName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

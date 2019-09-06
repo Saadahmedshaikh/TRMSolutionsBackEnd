@@ -1,0 +1,10 @@
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\DAL.dll.config
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\DAL.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\DAL.pdb
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\EntityFramework.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\EntityFramework.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\obj\Debug\DAL.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\DAL\obj\Debug\DAL.pdb

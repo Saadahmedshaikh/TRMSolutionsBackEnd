@@ -5111,5 +5111,67 @@
     <FunctionImportMapping FunctionImportName="usp_UploadCompletePMFormFinal" FunctionName="PrognosDBModel.Store.usp_UploadCompletePMFormFinal" />
     <FunctionImportMapping FunctionImportName="usp_UploadRigEquipment" FunctionName="PrognosDBModel.Store.usp_UploadRigEquipment" />
     <FunctionImportMapping FunctionImportName="usp_UploadRigEquipmentSpecification" FunctionName="PrognosDBModel.Store.usp_UploadRigEquipmentSpecification" />
+    <FunctionImportMapping FunctionImportName="sp_loadrigstatus" FunctionName="PrognosDBModel.Store.sp_loadrigstatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PrognosDBModel.sp_loadrigstatus_Result">
+          <ScalarProperty Name="Rig_Status" ColumnName="Rig Status" />
+          <ScalarProperty Name="Secondary_Status" ColumnName="Secondary Status" />
+          <ScalarProperty Name="Rig_Status_Change_Date" ColumnName="Rig Status Change Date" />
+          <ScalarProperty Name="Changed_On" ColumnName="Changed On" />
+          <ScalarProperty Name="Changed_By" ColumnName="Changed By" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_LoadRigsByLoginID" FunctionName="PrognosDBModel.Store.sp_LoadRigsByLoginID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PrognosDBModel.sp_LoadRigsByLoginID_Result">
+          <ScalarProperty Name="RigName" ColumnName="RigName" />
+          <ScalarProperty Name="OrgUnitID" ColumnName="OrgUnitID" />
+          <ScalarProperty Name="ISCountryRig" ColumnName="ISCountryRig" />
+          <ScalarProperty Name="RigType" ColumnName="RigType" />
+          <ScalarProperty Name="MaxStaticHookLoad" ColumnName="MaxStaticHookLoad" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryOrgUnitID" ColumnName="CountryOrgUnitID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_EquipmentDetails" FunctionName="PrognosDBModel.Store.sp_EquipmentDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PrognosDBModel.sp_EquipmentDetails_Result">
+          <ScalarProperty Name="EquipmentId" ColumnName="EquipmentId" />
+          <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="HasHourMeter" ColumnName="HasHourMeter" />
+          <ScalarProperty Name="HasValveType" ColumnName="HasValveType" />
+          <ScalarProperty Name="IsAsset" ColumnName="IsAsset" />
+          <ScalarProperty Name="WBSSequence" ColumnName="WBSSequence" />
+          <ScalarProperty Name="WBSSequencetext" ColumnName="WBSSequencetext" />
+          <ScalarProperty Name="IsTagable" ColumnName="IsTagable" />
+          <ScalarProperty Name="TagNStampingLocation" ColumnName="TagNStampingLocation" />
+          <ScalarProperty Name="COCNo" ColumnName="COCNo" />
+          <ScalarProperty Name="CALIBRIONNo" ColumnName="CALIBRIONNo" />
+          <ScalarProperty Name="INSPECTNo" ColumnName="INSPECTNo" />
+          <ScalarProperty Name="PRESSURENo" ColumnName="PRESSURENo" />
+          <ScalarProperty Name="LOADTESTNo" ColumnName="LOADTESTNo" />
+          <ScalarProperty Name="CATIIINo" ColumnName="CATIIINo" />
+          <ScalarProperty Name="CATIVNo" ColumnName="CATIVNo" />
+          <ScalarProperty Name="COC" ColumnName="COC" />
+          <ScalarProperty Name="CALIBRION" ColumnName="CALIBRION" />
+          <ScalarProperty Name="INSPECT" ColumnName="INSPECT" />
+          <ScalarProperty Name="PRESSURE" ColumnName="PRESSURE" />
+          <ScalarProperty Name="LOADTEST" ColumnName="LOADTEST" />
+          <ScalarProperty Name="CATIII" ColumnName="CATIII" />
+          <ScalarProperty Name="CATIV" ColumnName="CATIV" />
+          <ScalarProperty Name="IsKeyEquipment" ColumnName="IsKeyEquipment" />
+          <ScalarProperty Name="ParentEquipment" ColumnName="ParentEquipment" />
+          <ScalarProperty Name="EquipmentCategoryName" ColumnName="EquipmentCategoryName" />
+          <ScalarProperty Name="EquipmentCriticalityName" ColumnName="EquipmentCriticalityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

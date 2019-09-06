@@ -24,5 +24,19 @@ namespace Web.Controllers
            // string temp = JsonConvert.SerializeObject(prognosdbcontext.support_GetRigUserList(), Formatting.None);
             //return Content(temp);
         }
+        [ActionName("find")]
+        public string GetOrg(string id)
+        {
+            PrognosDBContext prognosdbcontext = new PrognosDBContext();
+            OrgUnit org = prognosdbcontext.OrgUnit.Single(ou => ou.OrgNamePrm == id);
+
+            var temp = org.OrgUnitID;
+            IQueryable<RigStatusLog> query = prognosdbcontext.RigStatusLog.Where(rs => rs.OrgUnitID == temp);
+            //var result = query.RigActivityStartDate.ToString();
+            string result = JsonConvert.SerializeObject(query.ToArray());
+            return result;
+
+
+        }
     }
 }

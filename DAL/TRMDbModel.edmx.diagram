@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57d257ddc86a4e5d9417f3c9e8e80575" Name="Diagram1">
+        <EntityTypeShape EntityType="TRMDbModel.Company" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TRMDbModel.CompanyUser" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TRMDbModel.UserPermission" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TRMDbModel.UserRole" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="TRMDbModel.FK__CompanyUs__Compa__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="TRMDbModel.FK__CompanyUs__UserR__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="TRMDbModel.FK__UserRole__UserPe__45F365D3" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TRMDbModel.EquipmentSchedule" Width="1.5" PointX="7.625" PointY="5.375" />
+        <EntityTypeShape EntityType="TRMDbModel.Equipment" Width="1.5" PointX="5.25" PointY="5.375" />
+        <EntityTypeShape EntityType="TRMDbModel.EquipmentCategory" Width="1.5" PointX="3" PointY="8.75" />
+        <AssociationConnector Association="TRMDbModel.FK__Equipment__Compa__02084FDA" />
+        <AssociationConnector Association="TRMDbModel.FK__Equipment__Equip__0E6E26BF" />
+        <AssociationConnector Association="TRMDbModel.FK__Equipment__Equip__160F4887" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

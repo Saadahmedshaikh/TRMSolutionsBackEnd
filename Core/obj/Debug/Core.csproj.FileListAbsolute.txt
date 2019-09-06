@@ -20,3 +20,22 @@ C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\bin\Debug\NLog.xml
 C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
 C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\obj\Debug\Core.dll
 C:\Users\E242438\Desktop\PMS NEW\PMS_Web\Core\obj\Debug\Core.pdb
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Core.dll.config
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Core.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Core.pdb
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Common.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\NLog.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Web.Cors.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Web.Http.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Common.pdb
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\NLog.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Web.Http.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\obj\Debug\Core.dll
+C:\Users\E242438\Desktop\Prognos_Web\Prognos_Web\Core\obj\Debug\Core.pdb

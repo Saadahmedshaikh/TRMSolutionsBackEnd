@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRMDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Guid" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CompanyUser" Relationship="Self.FK__CompanyUs__Compa__4CA06362" FromRole="Company" ToRole="CompanyUser" />
+    <Property Name="CompanyLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Compa__02084FDA" FromRole="Company" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="CompanyUser">
+    <Key>
+      <PropertyRef Name="CompanyUserLoginID" />
+    </Key>
+    <Property Name="CompanyUserLoginID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyUserPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyUserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyUserPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyUserEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyUserStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="UserRoleID" Type="Guid" />
+    <Property Name="CompanyID" Type="Guid" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__CompanyUs__Compa__4CA06362" FromRole="CompanyUser" ToRole="Company" />
+    <NavigationProperty Name="UserRole" Relationship="Self.FK__CompanyUs__UserR__4BAC3F29" FromRole="CompanyUser" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="UserPermissionID" />
+    </Key>
+    <Property Name="UserPermissionID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CanInsert" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CanUpdate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CanDelete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="UserRole" Relationship="Self.FK__UserRole__UserPe__45F365D3" FromRole="UserPermission" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="Guid" Nullable="false" />
+    <Property Name="UserRoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserRoleDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserPermissionID" Type="Guid" />
+    <NavigationProperty Name="CompanyUser" Relationship="Self.FK__CompanyUs__UserR__4BAC3F29" FromRole="UserRole" ToRole="CompanyUser" />
+    <NavigationProperty Name="UserPermission" Relationship="Self.FK__UserRole__UserPe__45F365D3" FromRole="UserRole" ToRole="UserPermission" />
+  </EntityType>
+  <Association Name="FK__CompanyUs__Compa__4CA06362">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CompanyUser">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CompanyUs__UserR__4BAC3F29">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+    <End Role="CompanyUser" Type="Self.CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="UserRoleID" />
+      </Principal>
+      <Dependent Role="CompanyUser">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserRole__UserPe__45F365D3">
+    <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="0..1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPermission">
+        <PropertyRef Name="UserPermissionID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserPermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TRMDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Company" EntityType="Self.Company" />
+    <EntitySet Name="CompanyUser" EntityType="Self.CompanyUser" />
+    <EntitySet Name="UserPermission" EntityType="Self.UserPermission" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" />
+    <AssociationSet Name="FK__CompanyUs__Compa__4CA06362" Association="Self.FK__CompanyUs__Compa__4CA06362">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyUser" EntitySet="CompanyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CompanyUs__UserR__4BAC3F29" Association="Self.FK__CompanyUs__UserR__4BAC3F29">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="CompanyUser" EntitySet="CompanyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserRole__UserPe__45F365D3" Association="Self.FK__UserRole__UserPe__45F365D3">
+      <End Role="UserPermission" EntitySet="UserPermission" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <EntitySet Name="EquipmentSchedule" EntityType="TRMDbModel.EquipmentSchedule" />
+    <EntitySet Name="Equipment" EntityType="TRMDbModel.Equipment" />
+    <EntitySet Name="EquipmentCategory" EntityType="TRMDbModel.EquipmentCategory" />
+    <AssociationSet Name="FK__Equipment__Compa__02084FDA" Association="TRMDbModel.FK__Equipment__Compa__02084FDA">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__0E6E26BF" Association="TRMDbModel.FK__Equipment__Equip__0E6E26BF">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="EquipmentSchedule" EntitySet="EquipmentSchedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__160F4887" Association="TRMDbModel.FK__Equipment__Equip__160F4887">
+      <End Role="EquipmentCategory" EntitySet="EquipmentCategory" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <FunctionImport Name="sp_getDetailsOfEquipment" ReturnType="Collection(TRMDbModel.sp_getDetailsOfEquipment_Result)">
+      <Parameter Name="equipID" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="EquipmentSchedule">
+    <Key>
+      <PropertyRef Name="EquipmentScheduleID" />
+    </Key>
+    <Property Name="EquipmentScheduleID" Type="Guid" Nullable="false" />
+    <Property Name="EquipmentScheduleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentScheduleType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentScheduleBasis" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="InspectionDuration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastInspectionDate" Type="DateTime" Precision="3" />
+    <Property Name="NextInspectionDate" Type="DateTime" Precision="3" />
+    <Property Name="Margin" Type="Int32" />
+    <Property Name="Leverage" Type="Int32" />
+    <Property Name="Interval" Type="Int32" />
+    <Property Name="EquipmentID" Type="Guid" />
+    <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Equip__0E6E26BF" FromRole="EquipmentSchedule" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="EquipmentID" />
+    </Key>
+    <Property Name="EquipmentID" Type="Guid" Nullable="false" />
+    <Property Name="EquipmentName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentModel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentMake" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentRange" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentAccuracy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentOthers" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentCustodian" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentFamilyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AssetID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyID" Type="Guid" />
+    <Property Name="EquipmentCategoryID" Type="Guid" />
+    <NavigationProperty Name="Company" Relationship="TRMDbModel.FK__Equipment__Compa__02084FDA" FromRole="Equipment" ToRole="Company" />
+    <NavigationProperty Name="EquipmentSchedule" Relationship="TRMDbModel.FK__Equipment__Equip__0E6E26BF" FromRole="Equipment" ToRole="EquipmentSchedule" />
+    <NavigationProperty Name="EquipmentCategory" Relationship="TRMDbModel.FK__Equipment__Equip__160F4887" FromRole="Equipment" ToRole="EquipmentCategory" />
+  </EntityType>
+  <EntityType Name="EquipmentCategory">
+    <Key>
+      <PropertyRef Name="EquipmentCategoryID" />
+    </Key>
+    <Property Name="EquipmentCategoryID" Type="Guid" Nullable="false" />
+    <Property Name="EquipmentCategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentCategoryDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentCategoryImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Equip__160F4887" FromRole="EquipmentCategory" ToRole="Equipment" />
+  </EntityType>
+  <Association Name="FK__Equipment__Compa__02084FDA">
+    <End Type="TRMDbModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="TRMDbModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__0E6E26BF">
+    <End Type="TRMDbModel.Equipment" Role="Equipment" Multiplicity="0..1" />
+    <End Type="TRMDbModel.EquipmentSchedule" Role="EquipmentSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="EquipmentID" />
+      </Principal>
+      <Dependent Role="EquipmentSchedule">
+        <PropertyRef Name="EquipmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__160F4887">
+    <End Type="TRMDbModel.EquipmentCategory" Role="EquipmentCategory" Multiplicity="0..1" />
+    <End Type="TRMDbModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentCategory">
+        <PropertyRef Name="EquipmentCategoryID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="EquipmentCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_getDetailsOfEquipment_Result">
+    <Property Type="String" Name="EquipmentName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="EquipmentType" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentModel" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentMake" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentRange" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentAccuracy" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentOthers" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentCustodian" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentLocation" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="EquipmentFamilyName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="AssetID" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="20" />
+    <Property Type="Guid" Name="EquipmentCategoryID" Nullable="true" />
+    <Property Type="String" Name="EquipmentCategoryName" Nullable="true" MaxLength="20" />
+    <Property Type="Guid" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="30" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model List<DataAccessLayer.PrognosDBContext>
+
+@foreach(var item in Model)
+{
+    <tr>
+        <td>@item.Equipment</td>
+    </tr>
+}

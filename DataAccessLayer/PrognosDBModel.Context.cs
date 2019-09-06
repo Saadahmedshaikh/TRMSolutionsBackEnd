@@ -2076,5 +2076,32 @@ namespace DataAccessLayer
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_UploadRigEquipmentSpecification");
         }
+    
+        public virtual ObjectResult<sp_loadrigstatus_Result> sp_loadrigstatus(string orgunitid)
+        {
+            var orgunitidParameter = orgunitid != null ?
+                new ObjectParameter("orgunitid", orgunitid) :
+                new ObjectParameter("orgunitid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_loadrigstatus_Result>("sp_loadrigstatus", orgunitidParameter);
+        }
+    
+        public virtual ObjectResult<sp_LoadRigsByLoginID_Result> sp_LoadRigsByLoginID(string loginid)
+        {
+            var loginidParameter = loginid != null ?
+                new ObjectParameter("loginid", loginid) :
+                new ObjectParameter("loginid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_LoadRigsByLoginID_Result>("sp_LoadRigsByLoginID", loginidParameter);
+        }
+    
+        public virtual ObjectResult<sp_EquipmentDetails_Result> sp_EquipmentDetails(string equipmentID)
+        {
+            var equipmentIDParameter = equipmentID != null ?
+                new ObjectParameter("EquipmentID", equipmentID) :
+                new ObjectParameter("EquipmentID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_EquipmentDetails_Result>("sp_EquipmentDetails", equipmentIDParameter);
+        }
     }
 }
