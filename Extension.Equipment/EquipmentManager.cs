@@ -60,7 +60,9 @@ where eq.EquipmentID=@equipID";
             using (var db = new TRMDbContext())
             {
                // var query = db.EquipmentSchedule.Where(es => es.EquipmentID == new Guid(EquipmentId)).ToList();
-                string query = @"select  es.EquipmentScheduleName,
+                string query = @"select 
+                                es.EquipmentScheduleID,
+                                es.EquipmentScheduleName,
                                 es.EquipmentScheduleType,
                                 es.EquipmentScheduleBasis,	
                                 es.Interval,	

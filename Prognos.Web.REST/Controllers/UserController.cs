@@ -25,6 +25,14 @@ namespace Prognos.Web.REST.Controllers
         }
 
         [HttpGet]
+        [Route("User/getuser/{id}")]
+        public string getUser(string id)
+        {
+            return JsonConvert.SerializeObject(user.getUser(id), Formatting.None);
+
+        }
+
+        [HttpGet]
         [Route("User/search/{id}")]
         public string searchUsers(string id)
         {
@@ -101,6 +109,41 @@ namespace Prognos.Web.REST.Controllers
 
 
         }
+
+        [HttpPost]
+        [Route("User/Update")]
+        public HttpResponseMessage updateUser(CompanyUser user)
+        {
+            try
+            {
+
+
+                using (var db = new TRMDbContext())
+                {
+                    CompanyUser temp= db.CompanyUser.Where(cu => cu.CompanyUserLoginID == user.CompanyUserLoginID).First();
+
+                    temp.CompanyUserPassword = user.CompanyUserPassword;
+                    temp.CompanyUserName = user.CompanyUserName;
+                    temp.CompanyUserPhone = user.CompanyUserPhone;
+                    temp.CompanyUserStatus = user.CompanyUserStatus;
+
+
+                    db.SaveChanges();
+                    var message = Request.CreateResponse(HttpStatusCode.Created, user);
+                    return message;
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.ToString());
+                // var message = Request.CreateResponse(HttpStatusCode.Created, ex);
+                //return message;
+            }
+
+
+        }
+
+
         [HttpGet]
         [Route("Country/Count")]
         public string countCompanies()
@@ -120,6 +163,16 @@ namespace Prognos.Web.REST.Controllers
         {
             return JsonConvert.SerializeObject(user.getRoleNames(), Formatting.None);
         }
+
+        [HttpGet]
+        [Route("Categories/getAll")]
+        public string getCategories()
+        {
+            return JsonConvert.SerializeObject(user.getCategories(), Formatting.None);
+        }
+
+
+
         [HttpGet]
         [Route("Roles/move")]
         public void move()

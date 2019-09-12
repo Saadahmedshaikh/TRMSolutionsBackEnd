@@ -8,6 +8,7 @@ namespace Classes
 {
     public class EquipSchedule
     {
+        public Guid EquipmentScheduleID { get; set; }
         public string EquipmentScheduleName { get; set; }
         public string EquipmentScheduleType { get; set; }
         public string EquipmentScheduleBasis { get; set; }

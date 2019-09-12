@@ -71,6 +71,35 @@ namespace Prognos.Web.REST.Controllers
             }
 
         }
+
+
+        [HttpPost]
+        [Route("Schedule/AddNew")]
+        public HttpResponseMessage addSchedule(EquipmentSchedule schedule)
+        {
+            try
+            {
+
+                Guid sid = Guid.NewGuid();
+                schedule.EquipmentScheduleID = sid;
+                using (var db = new TRMDbContext())
+                {
+                    db.EquipmentSchedule.Add(schedule);
+                    db.SaveChanges();
+
+                    var message = Request.CreateResponse(HttpStatusCode.Created, schedule);
+                    return message;
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+
+        }
+
+
+
         [HttpGet]
         [Route("Equipment/getequipment")]
         public string GetEquipments()

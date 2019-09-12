@@ -11,6 +11,7 @@ namespace Extension.User
 {
     public class UserManager
     {
+
         public string DeleteUser(string Id)
         {
             using (var db = new TRMDbContext())
@@ -69,6 +70,21 @@ cm.CompanyName like '%'+@id+'%'  ";
 
             }
         }
+
+        public List<UserInfo> getUser(string id)
+        {
+            using (var db = new TRMDbContext())
+            {
+                string query = @"select us.CompanyUserLoginID,us.CompanyUserPassword,us.CompanyUserName
+                  , us.CompanyUserEmail,us.CompanyUserPhone,us.CompanyUserStatus,us.CompanyID,(Select CompanyName from Company where CompanyID=us.CompanyID) as CompanyName,us.UserRoleId,(Select UserRoleName from UserRole where UserRoleID=us.UserRoleId) as UserRoleName
+                    from CompanyUser us where us.CompanyUserLoginID=@loginid";
+                var IDparam = new SqlParameter("@loginid", id);
+                var tem = db.Database.SqlQuery<UserInfo>(query,IDparam).ToList();
+                
+                return tem;
+
+            }
+        }
         public List<CompanyInfo> getAllCompanies()
         {
             using(var db = new TRMDbContext())
@@ -111,11 +127,33 @@ cm.CompanyName like '%'+@id+'%'  ";
                 return temp;
             }
         }
+        public List<CatInfo> getCategories()
+        {
+            using (var db = new TRMDbContext())
+            {
+                var temp = db.EquipmentCategory.Select(ec => new CatInfo
+                {
+                    EquipmentCategoryID = ec.EquipmentCategoryID,
+                    EquipmentCategoryName = ec.EquipmentCategoryName,
+                    EquipmentCategoryImage = ec.EquipmentCategoryImage,
+                    EquipmentCategoryDescription = ec.EquipmentCategoryDescription
+                }).ToList();
+            return temp;
+            }
+        }
     }
     public class RoleInfo
     {
         public string UserRoleId { get; set; }
         public string UserRoleName { get; set; }
     }
-    
+    public class CatInfo
+    {
+        public Guid EquipmentCategoryID { get; set; }
+        public string EquipmentCategoryName { get; set; }
+        public string EquipmentCategoryDescription { get; set; }
+        public string EquipmentCategoryImage { get; set; }
+
+    }
+
 }

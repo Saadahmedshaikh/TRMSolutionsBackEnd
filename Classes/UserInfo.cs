@@ -14,7 +14,9 @@ namespace Classes
         public string CompanyUserPhone { get; set; }
         public string CompanyUserEmail { get; set; }
         public string CompanyUserStatus { get; set; }
+        public Guid CompanyID { get; set; }
         public string CompanyName { get; set; }
+        public Guid UserRoleID { get; set; }
         public string UserRoleName { get; set; }
     }
 }
