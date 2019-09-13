@@ -56,7 +56,7 @@
           <Property Name="EquipmentCategoryID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="EquipmentCategoryName" Type="varchar" MaxLength="20" />
           <Property Name="EquipmentCategoryDescription" Type="varchar" MaxLength="50" />
-          <Property Name="EquipmentCategoryImage" Type="varchar" MaxLength="50" />
+          <Property Name="EquipmentCategoryImage" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="EquipmentSchedule">
           <Key>
@@ -167,6 +167,11 @@
         </Association>
         <Function Name="sp_getDetailsOfEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="equipID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_insertcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="image" Type="varchar(max)" Mode="In" />
         </Function>
         <EntityContainer Name="TRMDbModelStoreContainer">
           <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
@@ -323,7 +328,12 @@
             <End Role="Equipment" EntitySet="Equipment" />
           </AssociationSet>
           <FunctionImport Name="sp_getDetailsOfEquipment" ReturnType="Collection(TRMDbModel.sp_getDetailsOfEquipment_Result)">
-            <Parameter Name="equipID" Mode="In" Type="String" />
+          <Parameter Name="equipID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insertcategory">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="image" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="EquipmentSchedule">
@@ -374,7 +384,7 @@
           <Property Name="EquipmentCategoryID" Type="Guid" Nullable="false" />
           <Property Name="EquipmentCategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="EquipmentCategoryDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EquipmentCategoryImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentCategoryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Equipment" Relationship="TRMDbModel.FK__Equipment__Equip__160F4887" FromRole="EquipmentCategory" ToRole="Equipment" />
         </EntityType>
         <Association Name="FK__Equipment__Compa__02084FDA">
@@ -556,6 +566,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_insertcategory" FunctionName="TRMDbModel.Store.sp_insertcategory" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

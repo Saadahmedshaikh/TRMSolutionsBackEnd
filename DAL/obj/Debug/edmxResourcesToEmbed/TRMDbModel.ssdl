@@ -51,7 +51,7 @@
     <Property Name="EquipmentCategoryID" Type="uniqueidentifier" Nullable="false" />
     <Property Name="EquipmentCategoryName" Type="varchar" MaxLength="20" />
     <Property Name="EquipmentCategoryDescription" Type="varchar" MaxLength="50" />
-    <Property Name="EquipmentCategoryImage" Type="varchar" MaxLength="50" />
+    <Property Name="EquipmentCategoryImage" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="EquipmentSchedule">
     <Key>
@@ -162,6 +162,11 @@
   </Association>
   <Function Name="sp_getDetailsOfEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="equipID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_insertcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="image" Type="varchar(max)" Mode="In" />
   </Function>
   <EntityContainer Name="TRMDbModelStoreContainer">
     <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />

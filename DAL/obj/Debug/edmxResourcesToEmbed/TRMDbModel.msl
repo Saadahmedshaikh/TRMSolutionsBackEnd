@@ -119,5 +119,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_insertcategory" FunctionName="TRMDbModel.Store.sp_insertcategory" />
   </EntityContainerMapping>
 </Mapping>

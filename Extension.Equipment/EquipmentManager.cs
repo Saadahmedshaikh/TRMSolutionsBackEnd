@@ -128,6 +128,23 @@ where eq.EquipmentID=@equipID";
                 return temp;
             }
         }
+
+        public Category getCategory(string id)
+        {
+            using (var db = new TRMDbContext())
+            {
+
+                var temp = db.EquipmentCategory.Select(cat => new Category
+                {
+                    EquipmentCategoryID = cat.EquipmentCategoryID,
+                    EquipmentCategoryName = cat.EquipmentCategoryName,
+                    EquipmentCategoryImage=cat.EquipmentCategoryImage,
+                    EquipmentCategoryDescription=cat.EquipmentCategoryDescription
+                }).Where(ec => ec.EquipmentCategoryID == new Guid(id)).FirstOrDefault();
+
+                return temp;
+            }
+        }
         public string countEquipments()
         {
             using (var db= new TRMDbContext())
@@ -161,6 +178,8 @@ where eq.EquipmentID=@equipID";
         {
             public Guid EquipmentCategoryID { get; set; }
             public string EquipmentCategoryName { get; set; }
+            public string EquipmentCategoryImage { get; set; }
+            public string EquipmentCategoryDescription { get; set; }
 
         }
     }

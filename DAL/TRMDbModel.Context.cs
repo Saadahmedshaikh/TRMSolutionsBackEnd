@@ -43,5 +43,22 @@ namespace DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getDetailsOfEquipment_Result>("sp_getDetailsOfEquipment", equipIDParameter);
         }
+    
+        public virtual int sp_insertcategory(string name, string description, string image)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
+    
+            var imageParameter = image != null ?
+                new ObjectParameter("image", image) :
+                new ObjectParameter("image", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insertcategory", nameParameter, descriptionParameter, imageParameter);
+        }
     }
 }
